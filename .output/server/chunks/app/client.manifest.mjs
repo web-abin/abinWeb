@@ -1,4 +1,4 @@
-export default {
+const client_manifest = {
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
     "resourceType": "style",
     "file": "error-404.23f2309d.css",
@@ -75,4 +75,7 @@ export default {
     "isDynamicEntry": true,
     "src": "virtual:nuxt:/Users/wangjunbin/projects/github-abinweb/.nuxt/error-component.mjs"
   }
-}
+};
+
+export { client_manifest as default };
+//# sourceMappingURL=client.manifest.mjs.map
