@@ -8,7 +8,7 @@ export default {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-404.052c8359.js",
+    "file": "error-404.78d28b13.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -28,7 +28,7 @@ export default {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-500.453f3a85.js",
+    "file": "error-500.3c17d33f.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -39,27 +39,45 @@ export default {
     "file": "error-500.aa16ed4d.css",
     "resourceType": "style"
   },
-  "node_modules/nuxt/dist/app/entry.css": {
-    "resourceType": "style",
-    "file": "entry.dd64dcb9.css",
-    "src": "node_modules/nuxt/dist/app/entry.css"
-  },
   "node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
-    "css": [
-      "entry.dd64dcb9.css"
-    ],
     "dynamicImports": [
       "virtual:nuxt:/Users/wangjunbin/projects/github-abinweb/.nuxt/error-component.mjs"
     ],
-    "file": "entry.7d76a17c.js",
+    "file": "entry.82af92e8.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
   },
-  "entry.dd64dcb9.css": {
-    "file": "entry.dd64dcb9.css",
-    "resourceType": "style"
+  "pages/about/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "file": "index.a525afac.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/about/index.vue"
+  },
+  "pages/about/one.vue": {
+    "resourceType": "script",
+    "module": true,
+    "file": "one.660ce940.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/about/one.vue"
+  },
+  "pages/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "file": "index.b92e4a92.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/index.vue"
   },
   "virtual:nuxt:/Users/wangjunbin/projects/github-abinweb/.nuxt/error-component.mjs": {
     "resourceType": "script",
@@ -68,7 +86,7 @@ export default {
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "error-component.48990d80.js",
+    "file": "error-component.f3add296.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
