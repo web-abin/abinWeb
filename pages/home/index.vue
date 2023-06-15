@@ -1,11 +1,11 @@
 <template>
-关于我页面
+  首页home
 </template>
 
 <script setup>
 
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 </style>
