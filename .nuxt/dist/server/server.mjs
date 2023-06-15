@@ -1,4 +1,4 @@
-import { reactive, hasInjectionContext, getCurrentInstance, version, unref, inject, ref, watchEffect, watch, toRef, isRef, isShallow, isReactive, toRaw, nextTick, shallowRef, computed, isReadonly, defineComponent, h, resolveComponent, useSSRContext, Suspense, Transition, provide, withCtx, createTextVNode, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, defineAsyncComponent, createApp } from "vue";
+import { reactive, hasInjectionContext, getCurrentInstance, version, unref, toRef, isRef, inject, isShallow, isReactive, toRaw, nextTick, shallowRef, computed, isReadonly, defineComponent, ref, h, resolveComponent, useSSRContext, Suspense, Transition, provide, withCtx, createTextVNode, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, defineAsyncComponent, createApp } from "vue";
 import { $fetch } from "ofetch";
 import { useRuntimeConfig as useRuntimeConfig$1 } from "#internal/nitro";
 import { createHooks } from "hookable";
@@ -6,7 +6,7 @@ import { getContext, executeAsync } from "unctx";
 import "devalue";
 import { sanitizeStatusCode, createError as createError$1 } from "h3";
 import { renderSSRHead } from "@unhead/ssr";
-import { createServerHead as createServerHead$1, getActiveHead } from "unhead";
+import { createServerHead as createServerHead$1 } from "unhead";
 import { defineHeadPlugin } from "@unhead/shared";
 import { createMemoryHistory, createRouter, START_LOCATION, RouterView } from "vue-router";
 import { hasProtocol, parseURL, joinURL, parseQuery, withTrailingSlash, withoutTrailingSlash } from "ufo";
@@ -226,9 +226,6 @@ function resolveUnrefHeadInput(ref2, lastKey = "") {
 }
 const Vue3 = version.startsWith("3");
 const headSymbol = "usehead";
-function injectHead() {
-  return getCurrentInstance() && inject(headSymbol) || getActiveHead();
-}
 function vueInstall(head) {
   const plugin2 = {
     install(app) {
@@ -261,34 +258,6 @@ function VueReactiveUseHeadPlugin() {
       }
     }
   });
-}
-function clientUseHead(input, options = {}) {
-  const head = injectHead();
-  const deactivated = ref(false);
-  const resolvedInput = ref({});
-  watchEffect(() => {
-    resolvedInput.value = deactivated.value ? {} : resolveUnrefHeadInput(input);
-  });
-  const entry2 = head.push(resolvedInput.value, options);
-  watch(resolvedInput, (e) => {
-    entry2.patch(e);
-  });
-  getCurrentInstance();
-  return entry2;
-}
-function serverUseHead(input, options = {}) {
-  const head = injectHead();
-  return head.push(input, options);
-}
-function useHead(input, options = {}) {
-  var _a;
-  const head = injectHead();
-  if (head) {
-    const isBrowser = !!((_a = head.resolvedOptions) == null ? void 0 : _a.document);
-    if (options.mode === "server" && isBrowser || options.mode === "client" && !isBrowser)
-      return;
-    return isBrowser ? clientUseHead(input, options) : serverUseHead(input, options);
-  }
 }
 const appHead = { "meta": [{ "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "charset": "utf-8" }], "link": [], "style": [], "script": [], "noscript": [] };
 const appPageTransition = false;
@@ -422,7 +391,7 @@ const reducers = {
   Ref: (data) => isRef(data) && data.value,
   Reactive: (data) => isReactive(data) && toRaw(data)
 };
-const revive_payload_server_eJ33V7gbc6 = /* @__PURE__ */ defineNuxtPlugin({
+const revive_payload_server_rIoAwaDaQH = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:revive-payload:server",
   setup() {
     for (const reducer in reducers) {
@@ -433,7 +402,7 @@ const revive_payload_server_eJ33V7gbc6 = /* @__PURE__ */ defineNuxtPlugin({
 const components_plugin_KR1HBZs4kY = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components"
 });
-const unhead_KgADcZ0jPj = /* @__PURE__ */ defineNuxtPlugin({
+const unhead_wPszXYGobz = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:head",
   setup(nuxtApp) {
     const createHead = createServerHead;
@@ -702,9 +671,9 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
   }
 }, 1);
 const _plugins = [
-  revive_payload_server_eJ33V7gbc6,
+  revive_payload_server_rIoAwaDaQH,
   components_plugin_KR1HBZs4kY,
-  unhead_KgADcZ0jPj,
+  unhead_wPszXYGobz,
   plugin
 ];
 const firstNonUndefined = (...args) => args.find((arg) => arg !== void 0);
@@ -1088,7 +1057,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-91fd0297.js").then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-461a5ce5.js").then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/island-renderer-be0ec920.js").then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
@@ -1127,7 +1096,7 @@ const _sfc_main = {
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/components/nuxt-root.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 const RootComponent = _sfc_main;
@@ -1155,8 +1124,7 @@ const plugins = normalizePlugins(_plugins);
 const entry$1 = (ctx) => entry(ctx);
 export {
   _export_sfc as _,
-  useHead as a,
-  __nuxt_component_0 as b,
+  __nuxt_component_0 as a,
   createError as c,
   entry$1 as default,
   useRoute as u
