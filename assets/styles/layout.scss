@@ -1,0 +1,10 @@
+$--header-height: 50px;
+$--padding-side: 20px;
+$--navigation: #fff;
+
+
+@media (max-width: 480px) {
+  .box{
+    width: 90vw !important;
+  }
+}

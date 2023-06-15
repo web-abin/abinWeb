@@ -1,4 +1,4 @@
-import { reactive, hasInjectionContext, getCurrentInstance, version, unref, toRef, isRef, inject, isShallow, isReactive, toRaw, nextTick, shallowRef, computed, isReadonly, defineComponent, ref, h, resolveComponent, useSSRContext, Suspense, Transition, provide, withCtx, createTextVNode, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, defineAsyncComponent, createApp } from "vue";
+import { reactive, hasInjectionContext, getCurrentInstance, version, unref, toRef, isRef, inject, isShallow, isReactive, toRaw, nextTick, shallowRef, computed, isReadonly, h, defineComponent, Transition, Suspense, provide, withCtx, createVNode, useSSRContext, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, defineAsyncComponent, createApp } from "vue";
 import { $fetch } from "ofetch";
 import { useRuntimeConfig as useRuntimeConfig$1 } from "#internal/nitro";
 import { createHooks } from "hookable";
@@ -8,11 +8,11 @@ import { sanitizeStatusCode, createError as createError$1 } from "h3";
 import { renderSSRHead } from "@unhead/ssr";
 import { createServerHead as createServerHead$1 } from "unhead";
 import { defineHeadPlugin } from "@unhead/shared";
-import { createMemoryHistory, createRouter, START_LOCATION, RouterView } from "vue-router";
-import { hasProtocol, parseURL, joinURL, parseQuery, withTrailingSlash, withoutTrailingSlash } from "ufo";
+import { createMemoryHistory, createRouter, START_LOCATION, useRoute as useRoute$1, RouterView } from "vue-router";
+import { hasProtocol, parseURL, joinURL } from "ufo";
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSuspense, ssrRenderVNode } from "vue/server-renderer";
-import { defu } from "defu";
 import "destr";
+import { defu } from "defu";
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
 const nuxtAppCtx = /* @__PURE__ */ getContext("nuxt-app");
@@ -205,11 +205,11 @@ function defineGetter(obj, key, val) {
 function resolveUnref(r) {
   return typeof r === "function" ? r() : unref(r);
 }
-function resolveUnrefHeadInput(ref2, lastKey = "") {
-  if (ref2 instanceof Promise)
-    return ref2;
-  const root = resolveUnref(ref2);
-  if (!ref2 || !root)
+function resolveUnrefHeadInput(ref, lastKey = "") {
+  if (ref instanceof Promise)
+    return ref;
+  const root = resolveUnref(ref);
+  if (!ref || !root)
     return root;
   if (Array.isArray(root))
     return root.map((r) => resolveUnrefHeadInput(r, lastKey));
@@ -259,7 +259,8 @@ function VueReactiveUseHeadPlugin() {
     }
   });
 }
-const appHead = { "meta": [{ "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "charset": "utf-8" }], "link": [], "style": [], "script": [], "noscript": [] };
+const appHead = { "meta": [{ "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "charset": "utf-8" }], "link": [], "style": [], "script": [{ "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" }, { "src": "https//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [] };
+const appLayoutTransition = false;
 const appPageTransition = false;
 const appKeepalive = false;
 function definePayloadReducer(name, reduce) {
@@ -424,20 +425,36 @@ const unhead_wPszXYGobz = /* @__PURE__ */ defineNuxtPlugin({
 });
 const _routes = [
   {
-    name: "about",
-    path: "/about",
+    name: "demos",
+    path: "/demos",
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-59c8df50.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-8f1258c0.js").then((m) => m.default || m)
   },
   {
-    name: "about-one",
-    path: "/about/one",
+    name: "error-404",
+    path: "/error/404",
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/one-e6cb87f5.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/404-b61ed939.js").then((m) => m.default || m)
+  },
+  {
+    name: "games",
+    path: "/games",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/index-07232b24.js").then((m) => m.default || m)
+  },
+  {
+    name: "home",
+    path: "/home",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/index-22fd6717.js").then((m) => m.default || m)
   },
   {
     name: "index",
@@ -446,6 +463,46 @@ const _routes = [
     alias: [],
     redirect: void 0,
     component: () => import("./_nuxt/index-3d43f073.js").then((m) => m.default || m)
+  },
+  {
+    name: "links",
+    path: "/links",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/index-ed5f9eb1.js").then((m) => m.default || m)
+  },
+  {
+    name: "notes",
+    path: "/notes",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/index-c886149f.js").then((m) => m.default || m)
+  },
+  {
+    name: "relax-components-fish",
+    path: "/relax/components/fish",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/fish-b6d6949c.js").then((m) => m.default || m)
+  },
+  {
+    name: "relax",
+    path: "/relax",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/index-73967547.js").then((m) => m.default || m)
+  },
+  {
+    name: "tools",
+    path: "/tools",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/index-fbcdec3b.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -676,215 +733,57 @@ const _plugins = [
   unhead_wPszXYGobz,
   plugin
 ];
-const firstNonUndefined = (...args) => args.find((arg) => arg !== void 0);
-const DEFAULT_EXTERNAL_REL_ATTRIBUTE = "noopener noreferrer";
-function defineNuxtLink(options) {
-  const componentName = options.componentName || "NuxtLink";
-  const resolveTrailingSlashBehavior = (to, resolve) => {
-    if (!to || options.trailingSlash !== "append" && options.trailingSlash !== "remove") {
-      return to;
-    }
-    const normalizeTrailingSlash = options.trailingSlash === "append" ? withTrailingSlash : withoutTrailingSlash;
-    if (typeof to === "string") {
-      return normalizeTrailingSlash(to, true);
-    }
-    const path = "path" in to ? to.path : resolve(to).path;
-    return {
-      ...to,
-      name: void 0,
-      // named routes would otherwise always override trailing slash behavior
-      path: normalizeTrailingSlash(path, true)
+const _wrapIf = (component, props, slots) => {
+  props = props === true ? {} : props;
+  return { default: () => {
+    var _a;
+    return props ? h(component, props, slots) : (_a = slots.default) == null ? void 0 : _a.call(slots);
+  } };
+};
+const layouts = {
+  default: () => import("./_nuxt/default-37fd2628.js").then((m) => m.default || m)
+};
+const LayoutLoader = /* @__PURE__ */ defineComponent({
+  name: "LayoutLoader",
+  inheritAttrs: false,
+  props: {
+    name: String,
+    ...{}
+  },
+  async setup(props, context) {
+    const LayoutComponent = await layouts[props.name]().then((r) => r.default || r);
+    return () => {
+      return h(LayoutComponent, context.attrs, context.slots);
     };
-  };
-  return /* @__PURE__ */ defineComponent({
-    name: componentName,
-    props: {
-      // Routing
-      to: {
-        type: [String, Object],
-        default: void 0,
-        required: false
-      },
-      href: {
-        type: [String, Object],
-        default: void 0,
-        required: false
-      },
-      // Attributes
-      target: {
-        type: String,
-        default: void 0,
-        required: false
-      },
-      rel: {
-        type: String,
-        default: void 0,
-        required: false
-      },
-      noRel: {
-        type: Boolean,
-        default: void 0,
-        required: false
-      },
-      // Prefetching
-      prefetch: {
-        type: Boolean,
-        default: void 0,
-        required: false
-      },
-      noPrefetch: {
-        type: Boolean,
-        default: void 0,
-        required: false
-      },
-      // Styling
-      activeClass: {
-        type: String,
-        default: void 0,
-        required: false
-      },
-      exactActiveClass: {
-        type: String,
-        default: void 0,
-        required: false
-      },
-      prefetchedClass: {
-        type: String,
-        default: void 0,
-        required: false
-      },
-      // Vue Router's `<RouterLink>` additional props
-      replace: {
-        type: Boolean,
-        default: void 0,
-        required: false
-      },
-      ariaCurrentValue: {
-        type: String,
-        default: void 0,
-        required: false
-      },
-      // Edge cases handling
-      external: {
-        type: Boolean,
-        default: void 0,
-        required: false
-      },
-      // Slot API
-      custom: {
-        type: Boolean,
-        default: void 0,
-        required: false
-      }
-    },
-    setup(props, { slots }) {
-      const router = useRouter();
-      const to = computed(() => {
-        const path = props.to || props.href || "";
-        return resolveTrailingSlashBehavior(path, router.resolve);
-      });
-      const isExternal = computed(() => {
-        if (props.external) {
-          return true;
-        }
-        if (props.target && props.target !== "_self") {
-          return true;
-        }
-        if (typeof to.value === "object") {
-          return false;
-        }
-        return to.value === "" || hasProtocol(to.value, { acceptRelative: true });
-      });
-      const prefetched = ref(false);
-      const el = void 0;
-      const elRef = void 0;
-      return () => {
-        var _a, _b;
-        if (!isExternal.value) {
-          const routerLinkProps = {
-            ref: elRef,
-            to: to.value,
-            activeClass: props.activeClass || options.activeClass,
-            exactActiveClass: props.exactActiveClass || options.exactActiveClass,
-            replace: props.replace,
-            ariaCurrentValue: props.ariaCurrentValue,
-            custom: props.custom
-          };
-          if (!props.custom) {
-            if (prefetched.value) {
-              routerLinkProps.class = props.prefetchedClass || options.prefetchedClass;
-            }
-            routerLinkProps.rel = props.rel;
-          }
-          return h(
-            resolveComponent("RouterLink"),
-            routerLinkProps,
-            slots.default
-          );
-        }
-        const href = typeof to.value === "object" ? ((_a = router.resolve(to.value)) == null ? void 0 : _a.href) ?? null : to.value || null;
-        const target = props.target || null;
-        const rel = props.noRel ? null : firstNonUndefined(props.rel, options.externalRelAttribute, href ? DEFAULT_EXTERNAL_REL_ATTRIBUTE : "") || null;
-        const navigate = () => navigateTo(href, { replace: props.replace });
-        if (props.custom) {
-          if (!slots.default) {
-            return null;
-          }
-          return slots.default({
-            href,
-            navigate,
-            get route() {
-              if (!href) {
-                return void 0;
-              }
-              const url = parseURL(href);
-              return {
-                path: url.pathname,
-                fullPath: url.pathname,
-                get query() {
-                  return parseQuery(url.search);
-                },
-                hash: url.hash,
-                // stub properties for compat with vue-router
-                params: {},
-                name: void 0,
-                matched: [],
-                redirectedFrom: void 0,
-                meta: {},
-                href
-              };
-            },
-            rel,
-            target,
-            isExternal: isExternal.value,
-            isActive: false,
-            isExactActive: false
-          });
-        }
-        return h("a", { ref: el, href, rel, target }, (_b = slots.default) == null ? void 0 : _b.call(slots));
-      };
-    }
-  });
-}
-const __nuxt_component_0 = /* @__PURE__ */ defineNuxtLink({ componentName: "NuxtLink" });
-const _export_sfc = (sfc, props) => {
-  const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
-    target[key] = val;
   }
-  return target;
-};
-const _sfc_main$2 = {};
-function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
-  _push(` hello word `);
-}
-const _sfc_setup$2 = _sfc_main$2.setup;
-_sfc_main$2.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/HelloWord.vue");
-  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
-};
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["ssrRender", _sfc_ssrRender$1]]);
+});
+const __nuxt_component_0 = /* @__PURE__ */ defineComponent({
+  name: "NuxtLayout",
+  inheritAttrs: false,
+  props: {
+    name: {
+      type: [String, Boolean, Object],
+      default: null
+    }
+  },
+  setup(props, context) {
+    const injectedRoute = inject("_route");
+    const route = injectedRoute === useRoute() ? useRoute$1() : injectedRoute;
+    const layout = computed(() => unref(props.name) ?? route.meta.layout ?? "default");
+    return () => {
+      const hasLayout = layout.value && layout.value in layouts;
+      const transitionProps = route.meta.layoutTransition ?? appLayoutTransition;
+      return _wrapIf(Transition, hasLayout && transitionProps, {
+        default: () => _wrapIf(LayoutLoader, hasLayout && {
+          key: layout.value,
+          name: layout.value,
+          ...{},
+          ...context.attrs
+        }, context.slots).default()
+      }).default();
+    };
+  }
+});
 const interpolatePath = (route, match) => {
   return match.path.replace(/(:\w+)\([^)]+\)/g, "$1").replace(/(:\w+)[?+*]/g, "$1").replace(/:\w+/g, (r) => {
     var _a;
@@ -902,14 +801,7 @@ const generateRouteKey = (routeProps, override) => {
 const wrapInKeepAlive = (props, children) => {
   return { default: () => children };
 };
-const _wrapIf = (component, props, slots) => {
-  props = props === true ? {} : props;
-  return { default: () => {
-    var _a;
-    return props ? h(component, props, slots) : (_a = slots.default) == null ? void 0 : _a.call(slots);
-  } };
-};
-const __nuxt_component_2 = /* @__PURE__ */ defineComponent({
+const __nuxt_component_1 = /* @__PURE__ */ defineComponent({
   name: "NuxtPage",
   inheritAttrs: false,
   props: {
@@ -998,52 +890,30 @@ const RouteProvider = /* @__PURE__ */ defineComponent({
     };
   }
 });
+const _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
 const _sfc_main$1 = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
-  const _component_NuxtLink = __nuxt_component_0;
-  const _component_hello_word = __nuxt_component_1;
-  const _component_HelloWord = __nuxt_component_1;
-  const _component_NuxtPage = __nuxt_component_2;
+  const _component_NuxtLayout = __nuxt_component_0;
+  const _component_NuxtPage = __nuxt_component_1;
   _push(`<div${ssrRenderAttrs(_attrs)}>`);
-  _push(ssrRenderComponent(_component_NuxtLink, { to: "/about" }, {
+  _push(ssrRenderComponent(_component_NuxtLayout, null, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        _push2(`关于我`);
+        _push2(ssrRenderComponent(_component_NuxtPage, null, null, _parent2, _scopeId));
       } else {
         return [
-          createTextVNode("关于我")
+          createVNode(_component_NuxtPage)
         ];
       }
     }),
     _: 1
   }, _parent));
-  _push(ssrRenderComponent(_component_NuxtLink, { to: "/about/one?id=123" }, {
-    default: withCtx((_, _push2, _parent2, _scopeId) => {
-      if (_push2) {
-        _push2(`第二页`);
-      } else {
-        return [
-          createTextVNode("第二页")
-        ];
-      }
-    }),
-    _: 1
-  }, _parent));
-  _push(ssrRenderComponent(_component_NuxtLink, { to: "/" }, {
-    default: withCtx((_, _push2, _parent2, _scopeId) => {
-      if (_push2) {
-        _push2(`首页`);
-      } else {
-        return [
-          createTextVNode("首页")
-        ];
-      }
-    }),
-    _: 1
-  }, _parent));
-  _push(ssrRenderComponent(_component_hello_word, null, null, _parent));
-  _push(ssrRenderComponent(_component_HelloWord, null, null, _parent));
-  _push(ssrRenderComponent(_component_NuxtPage, null, null, _parent));
   _push(`</div>`);
 }
 const _sfc_setup$1 = _sfc_main$1.setup;
@@ -1057,8 +927,8 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-461a5ce5.js").then((r) => r.default || r));
-    const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/island-renderer-be0ec920.js").then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-7e4edb3e.js").then((r) => r.default || r));
+    const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/island-renderer-c6ceb0d6.js").then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     nuxtApp.ssrContext.url;
@@ -1124,9 +994,10 @@ const plugins = normalizePlugins(_plugins);
 const entry$1 = (ctx) => entry(ctx);
 export {
   _export_sfc as _,
-  __nuxt_component_0 as a,
+  useRouter as a,
   createError as c,
   entry$1 as default,
+  navigateTo as n,
   useRoute as u
 };
 //# sourceMappingURL=server.mjs.map
