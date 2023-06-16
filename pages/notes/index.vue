@@ -665,7 +665,7 @@ const onLookPanel = (item) => {
   align-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 20px;
-  background: url(@/assets/images/paper.png);
+  background: url(~/assets/images/paper.png);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
 }
 .item-box{

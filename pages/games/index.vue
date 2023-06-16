@@ -1,21 +1,21 @@
 <template>
   <div class="box">
-    <a class="game-item" target="_blank" :href="`${isLocal?'../../abin-web/public':'.'}/games/snake.html`">
-      <img src="@/assets/games/logo-snake.png" alt="" class="game-logo">
+    <a class="game-item" target="_blank" href="https://web-abin.gitee.io/abin-web/games/snake.html">
+      <img src="~/assets/games/logo-snake.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">贪吃蛇</div>
         <div class="game-desc">好玩的贪吃蛇</div>
       </div>
     </a>
-    <a class="game-item" target="_blank" :href="`${isLocal?'../../abin-web/public':'.'}/games/five-chess.html`">
-      <img src="@/assets/games/logo-five-chess.png" alt="" class="game-logo">
+    <a class="game-item" target="_blank" href="https://web-abin.gitee.io/abin-web/games/five-chess.html">
+      <img src="~/assets/games/logo-five-chess.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">五子棋</div>
         <div class="game-desc">让我来看看你的棋艺！</div>
       </div>
     </a>
-    <a class="game-item" target="_blank" :href="`${isLocal?'../../abin-web/public':'.'}/games/fly-bird/index.html`">
-      <img src="@/assets/games/logo-fly-bird.png" alt="" class="game-logo">
+    <a class="game-item" target="_blank" href="https://web-abin.gitee.io/abin-web/games/fly-bird/index.html">
+      <img src="~/assets/games/logo-fly-bird.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">飞翔的小鸟</div>
         <div class="game-desc">小鸟很愤怒，后果很严重～</div>
@@ -36,14 +36,14 @@
       </div>
     </a>
     <a class="game-item" target="_blank" href="http://www.itmind.net/xbw/">
-      <img src="@/assets/games/logo-300game.png" alt="" class="game-logo">
+      <img src="~/assets/games/logo-300game.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">300游戏光碟</div>
         <div class="game-desc">童年的味道～啊，真香</div>
       </div>
     </a>
     <a class="game-item" target="_blank" href="https://2020game.io/">
-      <img src="@/assets/icons/11.png" alt="" class="game-logo">
+      <img src="~/assets/icons/11.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">2000游戏</div>
         <div class="game-desc">重点推荐，闯关类游戏！</div>
@@ -57,21 +57,21 @@
       </div>
     </a>
     <a class="game-item" target="_blank" href="http://www.itmind.net/tetris/">
-      <img src="@/assets/icons/12.png" alt="" class="game-logo">
+      <img src="~/assets/icons/12.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">俄罗斯方块</div>
         <div class="game-desc">经典俄罗斯方块网页版</div>
       </div>
     </a>
     <a class="game-item" target="_blank" href="https://lines.frvr.com/">
-      <img src="@/assets/icons/13.png" alt="" class="game-logo">
+      <img src="~/assets/icons/13.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">连线游戏</div>
         <div class="game-desc">一款轻松的益智在线小游戏，游戏主要的玩法就是让相同颜色两点之间连上线段，并且还要保证要经过游戏界面中的每一个小白点，玩家根据图中的画线方式连接即可轻松过关。</div>
       </div>
     </a>
     <a class="game-item" target="_blank" href="http://www.heyzxz.me/pcol/">
-      <img src="@/assets/icons/14.png" alt="" class="game-logo">
+      <img src="~/assets/icons/14.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">沉浸式3D台球</div>
         <div class="game-desc">在线台球游戏，画质很精美</div>
@@ -89,7 +89,6 @@
 </template>
 
 <script setup>
-const isLocal = window.location.hostname === 'localhost'
 </script>
 
 <style lang="scss" scoped>
