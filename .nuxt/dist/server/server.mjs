@@ -465,7 +465,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./_nuxt/index-39bfe811.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-63ec1a48.js").then((m) => m.default || m)
   },
   {
     name: "links",
@@ -497,7 +497,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-f3dae0d4.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-fb295cc7.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -580,9 +580,7 @@ const validate = /* @__PURE__ */ defineNuxtRouteMiddleware(async (to) => {
 const globalMiddleware = [
   validate
 ];
-const namedMiddleware = {
-  "unknown-route": () => import("./_nuxt/unknownRoute-ffa3f211.js")
-};
+const namedMiddleware = {};
 const plugin = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:router",
   enforce: "pre",
