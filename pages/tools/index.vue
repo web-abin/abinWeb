@@ -28,9 +28,16 @@
 <script setup>
 import { ref } from 'vue'
 //动态加载图片
-const getAssetsFile = (name) => {
-  return new URL(`../../assets/icons/${name}.png`, import.meta.url).href
-}
+const glob = import.meta.glob("~/assets/icons/*", {
+  eager: true,
+});
+const getAssetsFile = (imageName)  => {
+  return glob[`/assets/icons/${imageName}.png`]["default"];
+};
+
+// const getAssetsFile = (name) => {
+//   return new URL(`../../assets/icons/${name}.png`, import.meta.url).href
+// }
 
 const list = ref([
 {
@@ -58,7 +65,7 @@ const list = ref([
         link: 'https://www.hlcode.cn/'
       },
       {
-        icon: '../../assets/icons/15.png',
+        icon: getAssetsFile('15'),
         name: '正则表达式测试',
         link: 'http://www.jsons.cn/reg/'
       },
