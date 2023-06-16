@@ -423,6 +423,9 @@ const unhead_wPszXYGobz = /* @__PURE__ */ defineNuxtPlugin({
     }
   }
 });
+const __nuxt_page_meta = {
+  layout: false
+};
 const _routes = [
   {
     name: "demos",
@@ -446,7 +449,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-07232b24.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-bff2b1b4.js").then((m) => m.default || m)
   },
   {
     name: "home",
@@ -457,12 +460,12 @@ const _routes = [
     component: () => import("./_nuxt/index-22fd6717.js").then((m) => m.default || m)
   },
   {
-    name: "index",
-    path: "/",
-    meta: {},
-    alias: [],
-    redirect: void 0,
-    component: () => import("./_nuxt/index-3d43f073.js").then((m) => m.default || m)
+    name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
+    path: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.path) ?? "/",
+    meta: __nuxt_page_meta || {},
+    alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
+    redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
+    component: () => import("./_nuxt/index-c147f43d.js").then((m) => m.default || m)
   },
   {
     name: "links",
@@ -494,7 +497,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-73a42878.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-4dbf0346.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -502,7 +505,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-1c377bda.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-dc4711d2.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {

@@ -1,11 +1,14 @@
 <script setup lang="ts">
 const route = useRoute()
+
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <template>
   <div>
-    <h1>nuxt 路由设置成功!</h1>
-    <p>Current route: {{ route.path }}</p>
-    <a href="https://nuxt.com/docs/getting-started/routing" target="_blank">Learn more about Nuxt Routing</a>
+    <h1>前端助手</h1>
+    <NuxtLink class="navigation-link" to="/tools">进入</NuxtLink>
   </div>
 </template>
