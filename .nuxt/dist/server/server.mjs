@@ -428,20 +428,20 @@ const __nuxt_page_meta = {
 };
 const _routes = [
   {
+    name: "404",
+    path: "/404",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./_nuxt/404-cb60b008.js").then((m) => m.default || m)
+  },
+  {
     name: "demos",
     path: "/demos",
     meta: {},
     alias: [],
     redirect: void 0,
     component: () => import("./_nuxt/index-5522974e.js").then((m) => m.default || m)
-  },
-  {
-    name: "error-404",
-    path: "/error/404",
-    meta: {},
-    alias: [],
-    redirect: void 0,
-    component: () => import("./_nuxt/404-0b735380.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -465,7 +465,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./_nuxt/index-0ca624cb.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-e920651f.js").then((m) => m.default || m)
   },
   {
     name: "links",
@@ -497,7 +497,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-5027ce26.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-a37bfd35.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -580,7 +580,9 @@ const validate = /* @__PURE__ */ defineNuxtRouteMiddleware(async (to) => {
 const globalMiddleware = [
   validate
 ];
-const namedMiddleware = {};
+const namedMiddleware = {
+  "unknown-route": () => import("./_nuxt/unknownRoute-ffa3f211.js")
+};
 const plugin = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:router",
   enforce: "pre",

@@ -1,5 +1,5 @@
 {
-  "_10.35185719.js": {
+  "_10.de2f8c0e.js": {
     "resourceType": "script",
     "module": true,
     "assets": [
@@ -8,7 +8,7 @@
       "6.40608090.png",
       "10.ca5d671e.png"
     ],
-    "file": "10.35185719.js",
+    "file": "10.de2f8c0e.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ]
@@ -33,13 +33,13 @@
     "resourceType": "image",
     "mimeType": "image/png"
   },
-  "_14.5ef57c12.js": {
+  "_14.04f7fa34.js": {
     "resourceType": "script",
     "module": true,
     "assets": [
       "13.4ba0ca33.png"
     ],
-    "file": "14.5ef57c12.js",
+    "file": "14.04f7fa34.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ]
@@ -49,18 +49,18 @@
     "resourceType": "image",
     "mimeType": "image/png"
   },
-  "_nuxt-link.5c2a33a5.js": {
+  "_nuxt-link.9e9129c5.js": {
     "resourceType": "script",
     "module": true,
-    "file": "nuxt-link.5c2a33a5.js",
+    "file": "nuxt-link.9e9129c5.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_vue.505b826e.f19381f8.js": {
+  "_vue.505b826e.321fd40c.js": {
     "resourceType": "script",
     "module": true,
-    "file": "vue.505b826e.f19381f8.js",
+    "file": "vue.505b826e.321fd40c.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ]
@@ -284,9 +284,9 @@
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "default.87d92f89.js",
+    "file": "default.d51797e2.js",
     "imports": [
-      "_nuxt-link.5c2a33a5.js",
+      "_nuxt-link.9e9129c5.js",
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -295,6 +295,13 @@
   "default.77ae1cb8.css": {
     "file": "default.77ae1cb8.css",
     "resourceType": "style"
+  },
+  "middleware/unknownRoute.js": {
+    "resourceType": "script",
+    "module": true,
+    "file": "unknownRoute.45819320.js",
+    "isDynamicEntry": true,
+    "src": "middleware/unknownRoute.js"
   },
   "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
     "resourceType": "style",
@@ -305,10 +312,10 @@
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-404.79292f45.js",
+    "file": "error-404.8dab0121.js",
     "imports": [
-      "_nuxt-link.5c2a33a5.js",
-      "_vue.505b826e.f19381f8.js",
+      "_nuxt-link.9e9129c5.js",
+      "_vue.505b826e.321fd40c.js",
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -327,9 +334,9 @@
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-500.2dd8de2d.js",
+    "file": "error-500.5f4b7896.js",
     "imports": [
-      "_vue.505b826e.f19381f8.js",
+      "_vue.505b826e.321fd40c.js",
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -351,15 +358,36 @@
       "entry.c0922643.css"
     ],
     "dynamicImports": [
+      "middleware/unknownRoute.js",
       "layouts/default.vue",
       "virtual:nuxt:/Users/wangjunbin/projects/github-abinweb/.nuxt/error-component.mjs"
     ],
-    "file": "entry.079f9b36.js",
+    "file": "entry.6a7a2ce2.js",
     "isEntry": true,
     "src": "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
   },
   "entry.c0922643.css": {
     "file": "entry.c0922643.css",
+    "resourceType": "style"
+  },
+  "pages/404.css": {
+    "resourceType": "style",
+    "file": "404.ec278db1.css",
+    "src": "pages/404.css"
+  },
+  "pages/404.vue": {
+    "resourceType": "script",
+    "module": true,
+    "css": [],
+    "file": "404.c82a3482.js",
+    "imports": [
+      "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/404.vue"
+  },
+  "404.ec278db1.css": {
+    "file": "404.ec278db1.css",
     "resourceType": "style"
   },
   "pages/demos/index.css": {
@@ -374,7 +402,7 @@
       "qq-code.30f0f86d.jpeg"
     ],
     "css": [],
-    "file": "index.bf044099.js",
+    "file": "index.5711e6db.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -390,26 +418,6 @@
     "resourceType": "image",
     "mimeType": "image/jpeg"
   },
-  "pages/error/404.css": {
-    "resourceType": "style",
-    "file": "404.cdcc90bb.css",
-    "src": "pages/error/404.css"
-  },
-  "pages/error/404.vue": {
-    "resourceType": "script",
-    "module": true,
-    "css": [],
-    "file": "404.8e6b2fe3.js",
-    "imports": [
-      "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "pages/error/404.vue"
-  },
-  "404.cdcc90bb.css": {
-    "file": "404.cdcc90bb.css",
-    "resourceType": "style"
-  },
   "pages/games/index.css": {
     "resourceType": "style",
     "file": "index.74d3a027.css",
@@ -424,10 +432,10 @@
       "logo-300game.2a9b49ba.png"
     ],
     "css": [],
-    "file": "index.32f9449f.js",
+    "file": "index.4c6d7107.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js",
-      "_14.5ef57c12.js"
+      "_14.04f7fa34.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/games/index.vue"
@@ -454,7 +462,7 @@
   "pages/home/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.07d6e00c.js",
+    "file": "index.46002845.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -463,7 +471,7 @@
   },
   "pages/index.css": {
     "resourceType": "style",
-    "file": "index.52f8f75e.css",
+    "file": "index.5bd7497a.css",
     "src": "pages/index.css"
   },
   "pages/index.vue": {
@@ -473,16 +481,16 @@
       "home.332c003f.jpg"
     ],
     "css": [],
-    "file": "index.1e706007.js",
+    "file": "index.fac9280c.js",
     "imports": [
-      "_nuxt-link.5c2a33a5.js",
+      "_nuxt-link.9e9129c5.js",
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/index.vue"
   },
-  "index.52f8f75e.css": {
-    "file": "index.52f8f75e.css",
+  "index.5bd7497a.css": {
+    "file": "index.5bd7497a.css",
     "resourceType": "style"
   },
   "home.332c003f.jpg": {
@@ -502,7 +510,7 @@
       "bg4.d9b1b957.jpeg"
     ],
     "css": [],
-    "file": "index.1daa1ac3.js",
+    "file": "index.7498755b.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -527,7 +535,7 @@
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "index.448b90ca.js",
+    "file": "index.496c90d7.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -547,7 +555,7 @@
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "fish.2fc7eb9a.js",
+    "file": "fish.195a0c0d.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -560,24 +568,24 @@
   },
   "pages/relax/index.css": {
     "resourceType": "style",
-    "file": "index.da13af8d.css",
+    "file": "index.8cd3647c.css",
     "src": "pages/relax/index.css"
   },
   "pages/relax/index.vue": {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "index.7d07e70e.js",
+    "file": "index.6d699203.js",
     "imports": [
-      "_10.35185719.js",
+      "_10.de2f8c0e.js",
       "pages/relax/components/fish.vue",
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/relax/index.vue"
   },
-  "index.da13af8d.css": {
-    "file": "index.da13af8d.css",
+  "index.8cd3647c.css": {
+    "file": "index.8cd3647c.css",
     "resourceType": "style"
   },
   "pages/tools/index.css": {
@@ -615,11 +623,11 @@
       "55.8b3edeb6.png"
     ],
     "css": [],
-    "file": "index.667d8083.js",
+    "file": "index.af79cc20.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js",
-      "_10.35185719.js",
-      "_14.5ef57c12.js"
+      "_10.de2f8c0e.js",
+      "_14.04f7fa34.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/tools/index.vue"
@@ -755,7 +763,7 @@
       "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "error-component.fb3fff64.js",
+    "file": "error-component.06308912.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/entry.js"
     ],

@@ -18,7 +18,7 @@ definePageMeta({
 .page{
   width: 100vw;
   height: 100vh;
-  background: url(~/assets/images/home.jpg);
+  background: url(../assets/images/home.jpg);
   background-size: cover;
   overflow: hidden;
   color: #fff;
