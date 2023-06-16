@@ -2,7 +2,7 @@ const isDev = process.env.NODE_ENV === "development";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  // devtools: { enabled: true }, //开发工具
   app: {
     baseURL: isDev?'/':'/abinWeb/',
     head: {

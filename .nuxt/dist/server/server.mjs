@@ -433,7 +433,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-8f1258c0.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-5522974e.js").then((m) => m.default || m)
   },
   {
     name: "error-404",
@@ -441,7 +441,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/404-b61ed939.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/404-0b735380.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -449,7 +449,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-bff2b1b4.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-42cf9864.js").then((m) => m.default || m)
   },
   {
     name: "home",
@@ -465,7 +465,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./_nuxt/index-c147f43d.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-0ca624cb.js").then((m) => m.default || m)
   },
   {
     name: "links",
@@ -473,7 +473,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-ed5f9eb1.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-0bc64f7e.js").then((m) => m.default || m)
   },
   {
     name: "notes",
@@ -481,7 +481,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-c886149f.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-c9ad95c0.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -497,7 +497,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-d44b0172.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-5027ce26.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -505,7 +505,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-dc4711d2.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-5de2e861.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -744,7 +744,7 @@ const _wrapIf = (component, props, slots) => {
   } };
 };
 const layouts = {
-  default: () => import("./_nuxt/default-b4ae1f4e.js").then((m) => m.default || m)
+  default: () => import("./_nuxt/default-b78af79e.js").then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
@@ -893,6 +893,7 @@ const RouteProvider = /* @__PURE__ */ defineComponent({
     };
   }
 });
+const app_vue_vue_type_style_index_0_lang = "";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -930,7 +931,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-7e4edb3e.js").then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-cb959047.js").then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/island-renderer-c6ceb0d6.js").then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
@@ -997,10 +998,9 @@ const plugins = normalizePlugins(_plugins);
 const entry$1 = (ctx) => entry(ctx);
 export {
   _export_sfc as _,
-  useRouter as a,
   createError as c,
   entry$1 as default,
   navigateTo as n,
-  useRoute as u
+  useRouter as u
 };
 //# sourceMappingURL=server.mjs.map

@@ -231,6 +231,11 @@ const list = ref([
         link: 'https://pxhere.com/'
       },
       {
+        icon: 'https://www.3gbizhi.com/assets/mobile/images/favicon.ico',
+        name: '3G壁纸',
+        link: 'https://www.3gbizhi.com/'
+      },
+      {
         icon: 'https://huatu.98youxi.com/favicon.ico',
         name: '流程图/思维导图',
         link: 'https://huatu.98youxi.com/home/myfile/'
