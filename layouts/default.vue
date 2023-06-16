@@ -14,7 +14,7 @@
 
   <footer>
     <div class="site-links">
-      <a href="https://gitee.com/web-abin/abin-web" target="_blank">源码链接</a>、
+      <a href="https://github.com/web-abin/abinWeb" target="_blank">源码链接</a>、
       <a href="https://github.com/web-abin" target="_blank">GitHub主页</a>、
       <a href="https://juejin.cn/user/994399097982728" target="_blank">掘金主页</a>、
       <a href="https://blog.csdn.net/qq_38974163?type=blog" target="_blank">CSDN主页</a>、
