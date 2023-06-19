@@ -1,20 +1,44 @@
 <script setup lang="ts">
-
 definePageMeta({
   layout: false,
 });
+
+const isLoading = ref(true)
+onMounted(() => {
+  const bg = new Image()
+bg.src = "/images/home.jpg"
+bg.onload=() => {
+  isLoading.value = false
+}
+})
+
 </script>
 
 <template>
-  <div class="page">
+  <div class="load-box" v-if="isLoading">
+    <loading/>
+  </div>
+  
+  <div class="page" v-else>
     <img src="/images/home.jpg" class="bg" alt="">
-    <h1>前端助手</h1>
+    <img src="/images/logo-text.png" alt="前端助手" style="width: 500px;">
     <NuxtLink class="enter" to="/tools">进入</NuxtLink>
   </div>
 </template>
 
 
 <style lang="scss" scoped>
+.load-box{
+  background: #639;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .page{
   position: relative;
@@ -79,4 +103,5 @@ definePageMeta({
   background: #ffffff;
   color: #000000;
 }
+
 </style>
