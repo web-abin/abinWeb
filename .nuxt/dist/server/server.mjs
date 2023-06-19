@@ -441,7 +441,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-5522974e.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-e08f2a37.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -449,15 +449,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-42cf9864.js").then((m) => m.default || m)
-  },
-  {
-    name: "home",
-    path: "/home",
-    meta: {},
-    alias: [],
-    redirect: void 0,
-    component: () => import("./_nuxt/index-22fd6717.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-ad7f173b.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
@@ -465,7 +457,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./_nuxt/index-63ec1a48.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-78e1246b.js").then((m) => m.default || m)
   },
   {
     name: "links",
@@ -473,7 +465,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-0bc64f7e.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-38164a9c.js").then((m) => m.default || m)
   },
   {
     name: "notes",
@@ -481,7 +473,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-c9ad95c0.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-b3397361.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -497,7 +489,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-47731c92.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-eaf11b3d.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -505,7 +497,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-5de2e861.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-106b6c1a.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {

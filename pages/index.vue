@@ -7,7 +7,7 @@ definePageMeta({
 
 <template>
   <div class="page">
-    <img src="~/assets/images/home.jpg" class="bg" alt="">
+    <img src="/images/home.jpg" class="bg" alt="">
     <h1>前端助手</h1>
     <NuxtLink class="enter" to="/tools">进入</NuxtLink>
   </div>

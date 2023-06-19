@@ -28,16 +28,12 @@
 <script setup>
 import { ref } from 'vue'
 //动态加载图片
-const glob = import.meta.glob("~/assets/icons/*", {
+const glob = import.meta.glob("/images/icons/*", {
   eager: true,
 });
 const getAssetsFile = (imageName)  => {
-  return glob[`/assets/icons/${imageName}.png`]["default"];
+  return glob[`/images/icons/${imageName}.png`]["default"];
 };
-
-// const getAssetsFile = (name) => {
-//   return new URL(`../../assets/icons/${name}.png`, import.meta.url).href
-// }
 
 const list = ref([
 {
