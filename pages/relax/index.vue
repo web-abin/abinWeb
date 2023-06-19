@@ -112,17 +112,20 @@
 
 <script setup name="Relax">
 import fish from "./components/fish.vue";
-import { onMounted } from 'vue';
 
-onMounted(() => {
-  var fishJs = document.getElementById('fish');
-  if (!fishJs) {
-    let script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.id = 'fish'
-    script.src = 'https://web-abin.gitee.io/abin-web/js/fish.js'
-    document.body.appendChild(script);
-  }
+useHead({
+  script:[
+      {
+        type: 'text/javascript',
+        src:'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+        body: true //<script>是否在body中
+      },
+      {
+        type: 'text/javascript',
+        src:'https://web-abin.gitee.io/abin-web/js/fish.js',
+        body: true //<script>是否在body中
+      },
+  ]
 })
 </script>
 

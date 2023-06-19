@@ -259,7 +259,7 @@ function VueReactiveUseHeadPlugin() {
     }
   });
 }
-const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "hid": "description", "name": "description", "content": "My awesome app" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" }, { "src": "https//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
+const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "hid": "description", "name": "description", "content": "My awesome app" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
 const appLayoutTransition = false;
 const appPageTransition = false;
 const appKeepalive = false;
@@ -457,7 +457,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./_nuxt/index-78e1246b.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-792267ce.js").then((m) => m.default || m)
   },
   {
     name: "links",
@@ -489,7 +489,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-8e70fc98.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-c2b51c96.js").then((m) => m.default || m)
   },
   {
     name: "tools",
