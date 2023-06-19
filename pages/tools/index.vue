@@ -27,15 +27,6 @@
 
 <script setup>
 import { ref } from 'vue'
-//动态加载图片
-const glob = import.meta.glob("/icons/*", {
-  eager: true,
-});
-const getAssetsFile = (imageName)  => {
-  console.log('=====',glob);
-
-  return glob[`/icons/${imageName}.png`]?.default
-};
 
 const list = ref([
 {
@@ -73,7 +64,7 @@ const list = ref([
         link: 'https://any86.github.io/any-rule/'
       },
       {
-        icon: "/icons/16.png",
+        icon: "../icons/16.png",
         name: '文件格式转换',
         link: 'https://convertio.co/zh/'
       },
@@ -83,17 +74,17 @@ const list = ref([
         link: 'https://www.aconvert.com/cn/audio/'
       },
       {
-        icon: getAssetsFile('17'),
+        icon: "../icons/17.png",
         name: '中文简繁体转换',
         link: 'https://tool.lu/zhconvert'
       },
       {
-        icon: getAssetsFile('18'),
+        icon: "../icons/18.png",
         name: '字数统计',
         link: 'https://www.eteste.com/'
       },
       {
-        icon: getAssetsFile('19'),
+        icon: "../icons/19.png",
         name: '时间戳转换',
         link: 'https://www.epochconverter.com/'
       },
@@ -134,12 +125,12 @@ const list = ref([
         link: 'https://www.toptal.com/developers/css/sprite-generator'
       },
       {
-        icon: getAssetsFile('20'),
+        icon: "../icons/20.png",
         name: '视频转GIF',
         link: 'https://www.tutieshi.com/'
       },
       {
-        icon: getAssetsFile('21'),
+        icon: "../icons/21.png",
         name: '在线SVG制作',
         link: 'https://51tools.info/svg/'
       },
@@ -149,7 +140,7 @@ const list = ref([
         link: 'https://c.runoob.com/more/svgeditor/'
       },
       {
-        icon: getAssetsFile('1'),
+        icon: "../icons/1.png",
         name: '趣作图',
         link: 'https://www.pickwant.com/home'
       },
@@ -159,72 +150,72 @@ const list = ref([
         link: 'https://www.remove.bg/zh'
       },
       {
-        icon: getAssetsFile('22'),
+        icon: "../icons/22.png",
         name: '图片在线编辑',
         link: 'https://www.iloveimg.com/zh-cn'
       },
       {
-        icon: getAssetsFile('23'),
+        icon: "../icons/23.png",
         name: '在线PS',
         link: 'https://www.uupoop.com/#/'
       },
       {
-        icon: getAssetsFile('24'),
+        icon: "../icons/24.png",
         name: '图片加水印',
         link: 'https://www.onlinedo.cn/img-shuiyin'
       },
       {
-        icon: getAssetsFile('25'),
+        icon: "../icons/25.png",
         name: '图片去水印',
         link: 'https://www.apowersoft.cn/image-watermark-remover'
       },
       {
-        icon: getAssetsFile('26'),
+        icon: "../icons/26.png",
         name: '图片合并切割',
         link: 'http://www.zuohaotu.com/'
       },
       {
-        icon: getAssetsFile('27'),
+        icon: "../icons/27.png",
         name: '生成透明Icon',
         link: 'http://www.ico51.cn/'
       },
       {
-        icon: getAssetsFile('28'),
+        icon: "../icons/28.png",
         name: 'logo设计',
         link: 'https://www.designevo.com/cn/logo-maker/'
       },
       {
-        icon: getAssetsFile('29'),
+        icon: "../icons/29.png",
         name: '搞怪图片生成',
         link: 'https://c.tianhezulin.com/'
       },
       {
-        icon: getAssetsFile('30'),
+        icon: "../icons/30.png",
         name: '表情包',
         link: 'https://www.fabiaoqing.com/'
       },
       {
-        icon: getAssetsFile('31'),
+        icon: "../icons/31.png",
         name: '表情包制作器',
         link: 'https://www.wakatool.com/maker'
       },
       {
-        icon: getAssetsFile('32'),
+        icon: "../icons/32.png",
         name: '朋克图片生成器',
         link: 'https://photomosh.com/'
       },
       {
-        icon: getAssetsFile('33'),
+        icon: "../icons/33.png",
         name: 'Pexels图片素材',
         link: 'https://www.pexels.com/zh-cn/'
       },
       {
-        icon: getAssetsFile('34'),
+        icon: "../icons/34.png",
         name: 'Pixabay图片素材',
         link: 'https://pixabay.com/'
       },
       {
-        icon: getAssetsFile('35'),
+        icon: "../icons/35.png",
         name: 'Pxhere图片素材',
         link: 'https://pxhere.com/'
       },
@@ -280,7 +271,7 @@ const list = ref([
         link: 'https://box-shadow.art/'
       },
       {
-        icon: getAssetsFile('36'),
+        icon: "../icons/36.png",
         name: '在线clip-path',
         link: 'http://tools.jb51.net/code/css3path'
       },
@@ -336,12 +327,12 @@ const list = ref([
         link: 'https://www.handsome-css.com/buttons'
       },
       {
-        icon: getAssetsFile('37'),
+        icon: "../icons/37.png",
         name: 'css动画',
         link: 'http://www.bootstrapmb.com/tag/cssdonghua'
       },
       {
-        icon: getAssetsFile('2'),
+        icon: "../icons/2.png",
         name: 'CSS Tricks',
         link: 'https://qishaoxuan.github.io/css_tricks/'
       },
@@ -423,12 +414,12 @@ const list = ref([
         link: 'https://chat.aidutu.cn/'
       },
       {
-        icon: getAssetsFile('53'),
+        icon: "../icons/53.png",
         name: 'AI EDU',
         link: 'https://ai.aigcfun.com/'
       },
       {
-        icon: getAssetsFile('54'),
+        icon: "../icons/54.png",
         name: 'chatbot',
         link: 'https://chatbot.theb.ai/#/chat'
       },
@@ -454,17 +445,17 @@ const list = ref([
     name: 'Chrome插件',
     collection: [
       {
-        icon: getAssetsFile('38'),
+        icon: "../icons/38.png",
         name: 'OneTab标签管理',
         link: 'https://chrome.google.com/webstore/category/extensions?hl=zh-CN'
       },
       {
-        icon: getAssetsFile('39'),
+        icon: "../icons/39.png",
         name: '前端助手插件',
         link: 'http://www.itmind.net/1470.html'
       },
       {
-        icon: getAssetsFile('40'),
+        icon: "../icons/40.png",
         name: 'Postman网页版',
         link: 'http://www.itmind.net/1334.html'
       },
@@ -479,27 +470,27 @@ const list = ref([
         link: 'https://www.0z.gs/webDevelopment/1736.html'
       },
       {
-        icon: getAssetsFile('41'),
+        icon: "../icons/41.png",
         name: 'GitHub加速插件',
         link: 'http://www.itmind.net/217.html'
       },
       {
-        icon: getAssetsFile('42'),
+        icon: "../icons/42.png",
         name: '视频下载插件',
         link: 'http://www.itmind.net/3092.html'
       },
       {
-        icon: getAssetsFile('43'),
+        icon: "../icons/43.png",
         name: 'Vue.js devtools',
         link: 'http://www.itmind.net/6438.html'
       },
       {
-        icon: getAssetsFile('51'),
+        icon: "../icons/51.png",
         name: '广告拦截器',
         link: 'https://extfans.com/productivity/bgnkhhnnamicmpeenaelnjfhikgbkllg/'
       },
       {
-        icon: getAssetsFile('52'),
+        icon: "../icons/52.png",
         name: '密码管理',
         link: 'https://extfans.com/productivity/hdokiejnpimakedhajhdlcegeplioahd/'
       }
@@ -515,22 +506,22 @@ const list = ref([
         link: 'https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser'
       },
       {
-        icon: getAssetsFile('44'),
+        icon: "../icons/44.png",
         name: 'Git Graph',
         link: 'https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph'
       },
       {
-        icon: getAssetsFile('45'),
+        icon: "../icons/45.png",
         name: 'GitLens',
         link: 'https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens'
       },
       {
-        icon: getAssetsFile('46'),
+        icon: "../icons/46.png",
         name: 'Git History',
         link: 'https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory'
       },
       {
-        icon: getAssetsFile('47'),
+        icon: "../icons/47.png",
         name: 'Git Blame',
         link: 'https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame'
       },
@@ -555,22 +546,22 @@ const list = ref([
         link: 'https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag'
       },
       {
-        icon: getAssetsFile('48'),
+        icon: "../icons/48.png",
         name: '代码美化',
         link: 'https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify'
       },
       {
-        icon: getAssetsFile('49'),
+        icon: "../icons/49.png",
         name: '代码书签',
         link: 'https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks'
       },
       {
-        icon: getAssetsFile('50'),
+        icon: "../icons/50.png",
         name: 'FileSize',
         link: 'https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks'
       },
       {
-        icon: getAssetsFile('55'),
+        icon: "../icons/55.png",
         name: 'Markdown预览',
         link: 'https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts'
       },
