@@ -32,7 +32,8 @@ const glob = import.meta.glob("/images/icons/*", {
   eager: true,
 });
 const getAssetsFile = (imageName)  => {
-  return glob[`/images/icons/${imageName}.png`]["default"];
+
+  return glob[`/images/icons/${imageName}.png`]?.default
 };
 
 const list = ref([
