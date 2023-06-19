@@ -28,12 +28,13 @@
 <script setup>
 import { ref } from 'vue'
 //动态加载图片
-const glob = import.meta.glob("/images/icons/*", {
+const glob = import.meta.glob("/icons/*", {
   eager: true,
 });
 const getAssetsFile = (imageName)  => {
+  console.log('=====',glob);
 
-  return glob[`/images/icons/${imageName}.png`]?.default
+  return glob[`/icons/${imageName}.png`]?.default
 };
 
 const list = ref([
@@ -62,7 +63,7 @@ const list = ref([
         link: 'https://www.hlcode.cn/'
       },
       {
-        icon: getAssetsFile('15'),
+        icon: "/icons/15.png",
         name: '正则表达式测试',
         link: 'http://www.jsons.cn/reg/'
       },
@@ -72,7 +73,7 @@ const list = ref([
         link: 'https://any86.github.io/any-rule/'
       },
       {
-        icon: getAssetsFile('16'),
+        icon: "/icons/16.png",
         name: '文件格式转换',
         link: 'https://convertio.co/zh/'
       },
