@@ -54,7 +54,7 @@ const list = ref([
         link: 'https://www.hlcode.cn/'
       },
       {
-        icon: "/icons/15.png",
+        icon: "../icons/15.png",
         name: '正则表达式测试',
         link: 'http://www.jsons.cn/reg/'
       },
