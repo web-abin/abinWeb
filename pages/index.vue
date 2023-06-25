@@ -6,10 +6,10 @@ definePageMeta({
 const isLoading = ref(true)
 onMounted(() => {
   const bg = new Image()
-bg.src = "/images/home.jpg"
-bg.onload=() => {
-  isLoading.value = false
-}
+  bg.src = "/images/home.jpg"
+  bg.onload=() => {
+    isLoading.value = false
+  }
 })
 
 </script>
