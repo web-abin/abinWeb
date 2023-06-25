@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import homeImg from "/images/home.jpg";
 definePageMeta({
   layout: false,
 });
@@ -6,7 +7,7 @@ definePageMeta({
 const isLoading = ref(true)
 onMounted(() => {
   const bg = new Image()
-  bg.src = "/images/home.jpg"
+  bg.src = homeImg
   bg.onload=() => {
     isLoading.value = false
   }
