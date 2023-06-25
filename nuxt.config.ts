@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   // devtools: { enabled: true }, //开发工具
   app: {
     baseURL: isDev?'/':'/abinWeb/',
+    buildAssetsDir: 'nuxt',
     head: {
         title: '前端助手',
         meta: [
@@ -16,7 +17,7 @@ export default defineNuxtConfig({
           { rel: 'icon', type: 'image/x-icon', href: '/abinWeb/favicon.ico' }
         ],
         script: [
-            { src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }
+          { src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }
         ]
     },
   },
@@ -33,5 +34,5 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
     },
-  },
+  }
 })
