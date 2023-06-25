@@ -313,6 +313,9 @@ const list = ref([
     others: [{
       link: 'http://57code.gitee.io/nuxt3-docs-zh/getting-started/installation.html',
       name: 'nuxt3 中文文档'
+    },{
+      link: 'https://ezdoc.cn/docs/nuxtjs/nuxt-config',
+      name: 'Nuxt.js v3.5.3 中文开发文档手册'
     }]
 },
 {
