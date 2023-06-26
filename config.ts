@@ -1,6 +1,7 @@
 export default {
   title: "阿彬的前端助手",                                       // 网站标题
   author: "前端阿彬",                                           // 作者
+  contact: "852370486",                                        //联系方式
   SEO_title: "前端助手",                                        // 搜索引擎显示的标题
   SEO_description: "前端助手是面向前端开发工程师的资源分享平台，通过工具。文档，游戏，摸鱼，案例等板块，建立一个完整的前端资源体系，提高前端开发者的开发效率，免费造福前端开发者的工具平台",               // description meta header
   SEO_keywords: "前端工具，导航，前端资源，网站资源", // keywords meta header

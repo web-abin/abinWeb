@@ -12,13 +12,18 @@
     <slot/>
   </main>
 
+  <NuxtLink class="btn-home" to="/">
+    <Home/>
+  </NuxtLink>
+
   <footer>
     <div class="site-links">
-      <a href="https://github.com/web-abin/abinWeb" target="_blank">源码链接</a>、
-      <a href="https://github.com/web-abin" target="_blank">GitHub主页</a>、
+      <a href="https://github.com/web-abin/abinWeb" target="_blank" rel="nofollow external">源码链接</a>、
+      <a href="https://github.com/web-abin" target="_blank" rel="nofollow external">GitHub主页</a>、
       <a href="https://juejin.cn/user/994399097982728" target="_blank">掘金主页</a>、
       <a href="https://blog.csdn.net/qq_38974163?type=blog" target="_blank">CSDN主页</a>、
-      <a href="http://web-abin.gitee.io/blog" target="_blank">个人博客</a>
+      <a href="http://web-abin.gitee.io/blog" target="_blank">个人博客</a>、
+      <NuxtLink class="navigation-link" to="/links">友情链接</NuxtLink>
     </div>
     
     <div class="site-data">
@@ -31,6 +36,7 @@
 
 <script setup>
 import { reactive,ref } from "vue"
+import Home from "~/components/Home.vue";
 
 let siteData = reactive({
   site_pv: 0,
@@ -103,6 +109,23 @@ const siteCreateDays = function () {
   background: $--color-body;
 }
 
+.btn-home{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
 footer {
   position: relative;
   width: 100%;
@@ -149,6 +172,10 @@ footer {
   .navigation-link-pc{
     display: none !important;
   }
+  .btn-home{
+    display: none;
+  }
+
 }
 
 </style>

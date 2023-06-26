@@ -18,7 +18,7 @@ export default defineNuxtConfig({
           },
           { name: "description", content: config.SEO_description },
           { name: "keywords", content: config.SEO_keywords },
-          { name: "author", content: config.nickName }
+          { name: "author", content: config.author }
         ],
         
         link: [
@@ -41,6 +41,7 @@ export default defineNuxtConfig({
         }
     }
   },
+  css: ['@/assets/styles/global.scss'],
   postcss: {
     plugins: {
       tailwindcss: {},
