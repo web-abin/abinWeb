@@ -8,7 +8,10 @@ const isLoading = ref(true)
 onMounted(() => {
   const bg = new Image()
   bg.src = homeImg
-  bg.onload=() => {
+  bg.onload =() => {
+    isLoading.value = false
+  }
+  bg.onerror =() => {
     isLoading.value = false
   }
 })

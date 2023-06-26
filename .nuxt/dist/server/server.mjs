@@ -259,7 +259,7 @@ function VueReactiveUseHeadPlugin() {
     }
   });
 }
-const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "hid": "description", "name": "description", "content": "My awesome app" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
+const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" }, { "name": "description", "content": "云与原的博客，书写值得书写的东西" }, { "name": "keywords", "content": "yunyuyuan,yunyuyuan's blog,云与原,云与原的博客" }, { "name": "author", "content": "云与原" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
 const appLayoutTransition = false;
 const appPageTransition = false;
 const appKeepalive = false;
@@ -457,7 +457,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./nuxt/index-acd5c097.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-2e92e443.js").then((m) => m.default || m)
   },
   {
     name: "links",
@@ -489,7 +489,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-2ffac990.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-1bcf65ea.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -497,7 +497,15 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-cc8939ba.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-9c6324c0.js").then((m) => m.default || m)
+  },
+  {
+    name: "tools-tools",
+    path: "/tools/tools",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import("./nuxt/tools-d7df9c6a.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -923,7 +931,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/error-component-b25c7b59.js").then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/error-component-538e271b.js").then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/island-renderer-c6ceb0d6.js").then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
