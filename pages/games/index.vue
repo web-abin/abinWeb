@@ -89,6 +89,11 @@
 </template>
 
 <script setup>
+import config from "~/config";
+
+useSeoMeta({
+  description: config.GAMES_description
+})
 </script>
 
 <style lang="scss" scoped>

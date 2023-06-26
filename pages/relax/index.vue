@@ -112,8 +112,14 @@
 
 <script setup name="Relax">
 import fish from "./components/fish.vue";
+import config from "~/config";
 
 useHead({
+  head: {
+        meta: [
+          { name: "description", content: config.RELAX_description }
+        ],
+  },
   script:[
       {
         type: 'text/javascript',
