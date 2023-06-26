@@ -36,10 +36,7 @@ useSeoMeta({
 
 const list = ref()
 onMounted(() => {
-  setTimeout(() => {
-    list.value = tools
-  }, 500);
-  
+  list.value = tools
 })
 
 const curIndex = ref(0)

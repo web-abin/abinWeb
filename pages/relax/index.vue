@@ -82,7 +82,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" rel="nofollow external" href="http://www.staggeringbeauty.com/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://gate.ofo.moe/">
       <fish>
         <img src="https://gate.ofo.moe/social/32x32.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -114,12 +114,10 @@
 import fish from "./components/fish.vue";
 import config from "~/config";
 
+useSeoMeta({
+  description: config.RELAX_description
+})
 useHead({
-  head: {
-        meta: [
-          { name: "description", content: config.RELAX_description }
-        ],
-  },
   script:[
       {
         type: 'text/javascript',
