@@ -16,8 +16,8 @@
       <section v-for="(tool, index) in list" :key="index">
         <span :id="tool.id" class="point"></span>
         <header>{{ tool.name }}</header>
-        <a target="_blank" class="tool-item" v-for="link in tool.collection" :key="link.link" :href="link.link"
-          ><img alt="" loading="lazy" :src="link.icon" />
+        <a target="_blank" rel="nofollow external" class="tool-item" v-for="link in tool.collection" :key="link.link" :href="link.link"
+          ><img alt="" decoding="async" loading="lazy" :src="link.icon" />
           <span class="tool-name">{{ link.name }}</span></a
         >
       </section>
