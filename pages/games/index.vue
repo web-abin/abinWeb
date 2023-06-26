@@ -50,7 +50,7 @@
       </div>
     </a>
     <a class="game-item" target="_blank" rel="nofollow external" href="https://yzyx.info/">
-      <img src="https://yzyx.info/favicon.png" alt="" class="game-logo">
+      <img src="https://yzyx.info/images/favicon.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">益智游戏</div>
         <div class="game-desc">魔性解压网站，急速晃动还会闪亮你的眼</div>
