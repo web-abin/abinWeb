@@ -25,7 +25,7 @@ onMounted(() => {
   
   <div class="page" v-else>
     <img src="/images/home.jpg" class="bg" alt="">
-    <img src="/images/logo-text.png" alt="前端助手" style="width: 500px;">
+    <img src="/images/logo-text.png" alt="前端助手" height="130">
     <NuxtLink class="enter" to="/tools">进入</NuxtLink>
   </div>
 </template>
