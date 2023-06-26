@@ -202,6 +202,7 @@ function useRuntimeConfig() {
 function defineGetter(obj, key, val) {
   Object.defineProperty(obj, key, { get: () => val });
 }
+const global = "";
 function resolveUnref(r) {
   return typeof r === "function" ? r() : unref(r);
 }
@@ -259,7 +260,7 @@ function VueReactiveUseHeadPlugin() {
     }
   });
 }
-const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" }, { "name": "description", "content": "前端助手是面向前端开发工程师的资源分享平台，通过工具。文档，游戏，摸鱼，案例等板块，建立一个完整的前端资源体系，提高前端开发者的开发效率，免费造福前端开发者的工具平台" }, { "name": "keywords", "content": "前端工具，导航，前端资源，网站资源" }, { "name": "author" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
+const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" }, { "name": "description", "content": "前端助手是面向前端开发工程师的资源分享平台，通过工具。文档，游戏，摸鱼，案例等板块，建立一个完整的前端资源体系，提高前端开发者的开发效率，免费造福前端开发者的工具平台" }, { "name": "keywords", "content": "前端工具，导航，前端资源，网站资源" }, { "name": "author", "content": "前端阿彬" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
 const appLayoutTransition = false;
 const appPageTransition = false;
 const appKeepalive = false;
@@ -423,6 +424,9 @@ const unhead_wPszXYGobz = /* @__PURE__ */ defineNuxtPlugin({
     }
   }
 });
+const __nuxt_page_meta$1 = {
+  layout: false
+};
 const __nuxt_page_meta = {
   layout: false
 };
@@ -433,7 +437,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/404-75afc768.js").then((m) => m.default || m)
+    component: () => import("./nuxt/404-bdbec3b7.js").then((m) => m.default || m)
   },
   {
     name: "demos",
@@ -441,7 +445,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-a27a1d3d.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-ba48238f.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -449,23 +453,23 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-4cd6dd62.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-ce530e70.js").then((m) => m.default || m)
   },
   {
-    name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
-    path: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.path) ?? "/",
+    name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "index",
+    path: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.path) ?? "/",
+    meta: __nuxt_page_meta$1 || {},
+    alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
+    redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
+    component: () => import("./nuxt/index-f46da901.js").then((m) => m.default || m)
+  },
+  {
+    name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "links",
+    path: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.path) ?? "/links",
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./nuxt/index-d04c6f5a.js").then((m) => m.default || m)
-  },
-  {
-    name: "links",
-    path: "/links",
-    meta: {},
-    alias: [],
-    redirect: void 0,
-    component: () => import("./nuxt/index-f33dba05.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-a1f75547.js").then((m) => m.default || m)
   },
   {
     name: "notes",
@@ -473,7 +477,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-074a1740.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-e7fa2561.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -481,7 +485,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/fish-556b0efa.js").then((m) => m.default || m)
+    component: () => import("./nuxt/fish-c34b2f2b.js").then((m) => m.default || m)
   },
   {
     name: "relax",
@@ -489,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-6f06291a.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-8fe7578e.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -497,7 +501,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-ba30b1b0.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-43901d8d.js").then((m) => m.default || m)
   },
   {
     name: "tools-tools",
@@ -744,7 +748,7 @@ const _wrapIf = (component, props, slots) => {
   } };
 };
 const layouts = {
-  default: () => import("./nuxt/default-05ea02fa.js").then((m) => m.default || m)
+  default: () => import("./nuxt/default-d64c988a.js").then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
