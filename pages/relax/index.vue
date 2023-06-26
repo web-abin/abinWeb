@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <a class="relax-item" target="_blank" href="https://bruno-simon.com/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://bruno-simon.com/">
       <fish>
         <img src="/icons/3.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -9,7 +9,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://fishpi.cn/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://fishpi.cn/">
       <fish>
         <img src="/icons/4.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -18,7 +18,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://strobe.cool/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://strobe.cool/">
       <fish>
         <img src="/icons/5.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -27,7 +27,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://adarkroom.doublespeakgames.com/?lang=zh_cn">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://adarkroom.doublespeakgames.com/?lang=zh_cn">
       <fish>
         <img src="/icons/6.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -36,7 +36,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://www.webhek.com/post/draw-a-stickman/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://www.webhek.com/post/draw-a-stickman/">
       <fish>
         <img src="/icons/7.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -45,7 +45,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://zoom.earth/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://zoom.earth/">
       <fish>
         <img src="/icons/8.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -54,7 +54,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://bellwoods.xyz/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://bellwoods.xyz/">
       <fish>
         <img src="/icons/9.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -63,7 +63,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://www.autopiano.cn/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://www.autopiano.cn/">
       <fish>
         <img src="https://www.autopiano.cn/favicon.ico" alt="" class="fish-eye">
         <div class="game-info">
@@ -73,7 +73,7 @@
       </fish>
 
     </a>
-    <a class="relax-item" target="_blank" href="http://www.staggeringbeauty.com/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="http://www.staggeringbeauty.com/">
       <fish>
         <img src="/icons/10.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -82,7 +82,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="http://www.staggeringbeauty.com/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="http://www.staggeringbeauty.com/">
       <fish>
         <img src="https://gate.ofo.moe/social/32x32.png" alt="" class="fish-eye">
         <div class="game-info">
@@ -91,7 +91,7 @@
         </div>
       </fish>
     </a>
-    <a class="relax-item" target="_blank" href="https://oreo.ddiu.me/">
+    <a class="relax-item" target="_blank" rel="nofollow external" href="https://oreo.ddiu.me/">
       <fish>
         <img src="https://oreo.ddiu.me/favicon.ico" alt="" class="fish-eye">
         <div class="game-info">

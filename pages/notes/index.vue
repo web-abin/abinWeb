@@ -18,9 +18,9 @@
     <div class="popup" v-if="showPanel" @click.stop>
       <h3>【 {{  activeDocs.name }} 】</h3>
       <p>官方文档</p>
-      <a :href="link1.link" target="_blank" v-for="(link1,link1Index) in activeDocs.official" :key="link1.link">{{  link1.name?link1.name:`${activeDocs.name} 官方文档${ activeDocs.official.length > 1?link1Index + 1:'' }` }}</a>
+      <a target="_blank" rel="nofollow external" :href="link1.link" v-for="(link1,link1Index) in activeDocs.official" :key="link1.link">{{  link1.name?link1.name:`${activeDocs.name} 官方文档${ activeDocs.official.length > 1?link1Index + 1:'' }` }}</a>
       <p v-if="activeDocs.others && activeDocs.others.length">相关文档</p>
-      <a :href="link2.link" target="_blank" v-for="link2 in activeDocs.others" :key="link2.link">{{  link2.name }}</a>
+      <a target="_blank" rel="nofollow external" :href="link2.link" v-for="link2 in activeDocs.others" :key="link2.link">{{  link2.name }}</a>
     </div>
   </div>
 </template>

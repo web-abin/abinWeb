@@ -449,7 +449,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-a3e10b48.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-a9012dd0.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
@@ -473,7 +473,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-a3295a1c.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-b47f0fc7.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -489,7 +489,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-89c00951.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-2ffac990.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -497,7 +497,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-0dd7ead8.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-cc8939ba.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
