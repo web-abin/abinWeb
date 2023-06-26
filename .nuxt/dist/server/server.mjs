@@ -259,7 +259,7 @@ function VueReactiveUseHeadPlugin() {
     }
   });
 }
-const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" }, { "name": "description", "content": "云与原的博客，书写值得书写的东西" }, { "name": "keywords", "content": "yunyuyuan,yunyuyuan's blog,云与原,云与原的博客" }, { "name": "author", "content": "云与原" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
+const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" }, { "name": "description", "content": "前端助手是面向前端开发工程师的资源分享平台，通过工具。文档，游戏，摸鱼，案例等板块，建立一个完整的前端资源体系，提高前端开发者的开发效率，免费造福前端开发者的工具平台" }, { "name": "keywords", "content": "前端工具，导航，前端资源，网站资源" }, { "name": "author" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }], "noscript": [], "title": "前端助手" };
 const appLayoutTransition = false;
 const appPageTransition = false;
 const appKeepalive = false;
@@ -441,7 +441,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-ec2b3339.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-a27a1d3d.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -449,7 +449,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-a9012dd0.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-d8c450ca.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
@@ -473,7 +473,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-b47f0fc7.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-074a1740.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -489,7 +489,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-8398f3b1.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-4642d80f.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -497,7 +497,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-9c6324c0.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-37cc3932.js").then((m) => m.default || m)
   },
   {
     name: "tools-tools",
@@ -931,7 +931,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/error-component-538e271b.js").then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/error-component-e4341b08.js").then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/island-renderer-c6ceb0d6.js").then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();

@@ -27,6 +27,11 @@
 
 <script setup>
 import { nextTick, ref } from "vue";
+import config from "~/config";
+
+useSeoMeta({
+  description: config.NOTES_description
+})
 
 const list = ref([
 {

@@ -28,14 +28,18 @@
 <script setup>
 import { ref } from 'vue'
 import tools from "./tools.ts";
+import config from "~/config";
 
 useSeoMeta({
-  description: 'This is my amazing site, let me tell you all about it.'
+  description: config.TOOLS_description
 })
 
 const list = ref()
 onMounted(() => {
-  list.value = tools
+  setTimeout(() => {
+    list.value = tools
+  }, 500);
+  
 })
 
 const curIndex = ref(0)
