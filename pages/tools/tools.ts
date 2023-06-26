@@ -12,7 +12,7 @@ const tools = [{
       "link": "https://www.bootcdn.cn/"
     },
     {
-      "icon": "https://cdn.sojson.com/sojson/favicon32.png",
+      "icon": "../icons/56.png",
       "name": "json在线解析",
       "link": "https://www.sojson.com/"
     },
