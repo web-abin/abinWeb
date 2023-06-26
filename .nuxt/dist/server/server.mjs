@@ -449,7 +449,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-d8c450ca.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-4cd6dd62.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
@@ -489,7 +489,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-6b840ac8.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-de75f4f8.js").then((m) => m.default || m)
   },
   {
     name: "tools",
