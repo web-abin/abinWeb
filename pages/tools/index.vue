@@ -17,7 +17,7 @@
         <span :id="tool.id" class="point"></span>
         <header>{{ tool.name }}</header>
         <a target="_blank" class="tool-item" v-for="link in tool.collection" :key="link.link" :href="link.link"
-          ><img :data-src="link.icon" alt="" :src="link.icon" />
+          ><img alt="" :src="link.icon" />
           <span class="tool-name">{{ link.name }}</span></a
         >
       </section>
