@@ -1,5 +1,6 @@
 //动态图片用本地相对路径访问有问题，暂时改用线上地址
 const remoteImg = (name:string | number) => {
+  return `~/assets/icons/${name}.png`
   return `https://web-abin.github.io/abinWeb/icons/${name}.png`
 }
 
