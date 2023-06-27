@@ -381,7 +381,23 @@ const tools = [{
 {
   "id": "chatGPT",
   "name": "chatGPT",
-  "collection": [{
+  "collection": [
+    {
+      "icon": "https://ai.aging.run/pwa-192.png",
+      "name": "AIer",
+      "link": "https://ai.aging.run/"
+    },
+    {
+      "icon": "https://ai.tgmeng.com/favicon.ico",
+      "name": "糖果梦",
+      "link": "https://ai.tgmeng.com/"
+    },
+    {
+      "icon": "https://ai.aging.run/pwa-192.png",
+      "name": "糖果梦",
+      "link": "https://ai.aging.run/"
+    },
+    {
       "icon": "https://cdn.aidutu.cn/res/head/ai.png",
       "name": "AiDuTu",
       "link": "https://chat.aidutu.cn/"
