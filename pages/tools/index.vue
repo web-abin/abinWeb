@@ -34,10 +34,7 @@ useSeoMeta({
   description: config.TOOLS_description
 })
 
-const list = ref()
-onMounted(() => {
-  list.value = tools
-})
+const list = ref(tools)
 
 const curIndex = ref(0)
 const toNav = (index) => {
