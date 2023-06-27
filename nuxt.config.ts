@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   // devtools: { enabled: true }, //开发工具
   app: {
     baseURL: isDev?'/':'/abinWeb/',
-    buildAssetsDir: 'nuxt',  //修改站点资产的文件夹名称，默认是_nuxt
+    buildAssetsDir: 'static',  //修改站点资产的文件夹名称，默认是_nuxt
     head: {
         title: '前端助手',
         meta: [

@@ -437,7 +437,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/404-bdbec3b7.js").then((m) => m.default || m)
+    component: () => import("./static/404-922b67a0.js").then((m) => m.default || m)
   },
   {
     name: "demos",
@@ -445,7 +445,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-1284d34b.js").then((m) => m.default || m)
+    component: () => import("./static/index-e10fa85b.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -453,7 +453,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-436a76d6.js").then((m) => m.default || m)
+    component: () => import("./static/index-fe92b715.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "index",
@@ -461,7 +461,7 @@ const _routes = [
     meta: __nuxt_page_meta$1 || {},
     alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
     redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
-    component: () => import("./nuxt/index-e676c5a2.js").then((m) => m.default || m)
+    component: () => import("./static/index-72494413.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "links",
@@ -469,7 +469,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./nuxt/index-a1f75547.js").then((m) => m.default || m)
+    component: () => import("./static/index-82f39773.js").then((m) => m.default || m)
   },
   {
     name: "notes",
@@ -477,7 +477,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-e7fa2561.js").then((m) => m.default || m)
+    component: () => import("./static/index-db6abc2a.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -485,7 +485,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/fish-c34b2f2b.js").then((m) => m.default || m)
+    component: () => import("./static/fish-8c4a5117.js").then((m) => m.default || m)
   },
   {
     name: "relax",
@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-4e44df80.js").then((m) => m.default || m)
+    component: () => import("./static/index-1b9fa0d8.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -501,7 +501,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-43901d8d.js").then((m) => m.default || m)
+    component: () => import("./static/index-41e5a374.js").then((m) => m.default || m)
   },
   {
     name: "tools-tools",
@@ -509,7 +509,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/tools-f93e6633.js").then((m) => m.default || m)
+    component: () => import("./static/tools-f93e6633.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -748,7 +748,7 @@ const _wrapIf = (component, props, slots) => {
   } };
 };
 const layouts = {
-  default: () => import("./nuxt/default-d64c988a.js").then((m) => m.default || m)
+  default: () => import("./static/default-e69221cd.js").then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
@@ -935,8 +935,8 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/error-component-e4341b08.js").then((r) => r.default || r));
-    const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./nuxt/island-renderer-c6ceb0d6.js").then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./static/error-component-29ff302f.js").then((r) => r.default || r));
+    const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./static/island-renderer-c6ceb0d6.js").then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     nuxtApp.ssrContext.url;
