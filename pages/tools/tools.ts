@@ -32,7 +32,7 @@ const tools = [{
       "link": "https://www.hlcode.cn/"
     },
     {
-      "icon": remoteImg(15),
+      "icon": new URL('~/assets/images/bg2.jpeg', import.meta.url).href,
       "name": "正则表达式测试",
       "link": "http://www.jsons.cn/reg/"
     },
