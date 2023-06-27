@@ -1,5 +1,5 @@
 <template>
-  <img src="/images/qq-code.jpeg" alt=""/>
+  <img src="~/assets/images/qq-code.jpeg" alt=""/>
 </template>
 
 <script setup>

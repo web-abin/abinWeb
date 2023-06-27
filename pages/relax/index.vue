@@ -56,7 +56,7 @@
     </a>
     <a class="relax-item" target="_blank" rel="nofollow external" href="https://bellwoods.xyz/">
       <fish>
-        <img src="~/assets/icons/9.png" alt="" class="fish-eye">
+        <img src="/icons/9.png" alt="" class="fish-eye">
         <div class="game-info">
           <div class="game-title">在线放风筝</div>
           <div class="game-desc">移动鼠标可以让风筝飞翔，伴随着音乐</div>

@@ -1,21 +1,21 @@
 <template>
   <div class="box">
     <a class="game-item" target="_blank" rel="nofollow external" href="https://web-abin.gitee.io/abin-web/games/snake.html">
-      <img src="/games/logo-snake.png" alt="" class="game-logo">
+      <img src="~/assets/games/logo-snake.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">贪吃蛇</div>
         <div class="game-desc">好玩的贪吃蛇</div>
       </div>
     </a>
     <a class="game-item" target="_blank" rel="nofollow external" href="https://web-abin.gitee.io/abin-web/games/five-chess.html">
-      <img src="/games/logo-five-chess.png" alt="" class="game-logo">
+      <img src="~/assets/games/logo-five-chess.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">五子棋</div>
         <div class="game-desc">让我来看看你的棋艺！</div>
       </div>
     </a>
     <a class="game-item" target="_blank" rel="nofollow external" href="https://web-abin.gitee.io/abin-web/games/fly-bird/index.html">
-      <img src="/games/logo-fly-bird.png" alt="" class="game-logo">
+      <img src="~/assets/games/logo-fly-bird.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">飞翔的小鸟</div>
         <div class="game-desc">小鸟很愤怒，后果很严重～</div>
@@ -36,7 +36,7 @@
       </div>
     </a>
     <a class="game-item" target="_blank" rel="nofollow external" href="http://www.itmind.net/xbw/">
-      <img src="/games/logo-300game.png" alt="" class="game-logo">
+      <img src="~/assets/games/logo-300game.png" alt="" class="game-logo">
       <div class="game-info">
         <div class="game-title">300游戏光碟</div>
         <div class="game-desc">童年的味道～啊，真香</div>
