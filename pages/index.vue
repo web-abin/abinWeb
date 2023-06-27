@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import homeImg from "/images/home.jpg";
+import homeImg from "~/assets/images/home.jpg";
 definePageMeta({
   layout: false,
 });
@@ -24,8 +24,8 @@ onMounted(() => {
   </div>
   
   <div class="page" v-else>
-    <img src="/images/home.jpg" class="bg" alt="">
-    <img src="/images/logo-text.png" alt="前端助手" height="130">
+    <img src="~/assets/images/home.jpg" class="bg" alt="">
+    <img src="~/assets/images/logo-text.png" alt="前端助手" height="130">
     <NuxtLink class="enter" to="/tools">进入</NuxtLink>
   </div>
 </template>

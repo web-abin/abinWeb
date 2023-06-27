@@ -445,7 +445,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-ba48238f.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-1284d34b.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -453,7 +453,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-ce530e70.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-436a76d6.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "index",
@@ -461,7 +461,7 @@ const _routes = [
     meta: __nuxt_page_meta$1 || {},
     alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
     redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
-    component: () => import("./nuxt/index-f46da901.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-e676c5a2.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "links",
@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-d39abf58.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-4e44df80.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -501,7 +501,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/index-f293ab4e.js").then((m) => m.default || m)
+    component: () => import("./nuxt/index-43901d8d.js").then((m) => m.default || m)
   },
   {
     name: "tools-tools",
@@ -509,7 +509,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./nuxt/tools-1bbc3bc7.js").then((m) => m.default || m)
+    component: () => import("./nuxt/tools-f93e6633.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
