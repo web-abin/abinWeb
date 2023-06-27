@@ -17,7 +17,7 @@ const tools = [{
       "link": "https://www.bootcdn.cn/"
     },
     {
-      "icon": "../icons/56/png",
+      "icon": "../icons/56.png",
       "name": "json在线解析",
       "link": "https://www.sojson.com/"
     },
@@ -32,7 +32,7 @@ const tools = [{
       "link": "https://www.hlcode.cn/"
     },
     {
-      "icon": new URL('~/assets/images/bg2.jpeg', import.meta.url).href,
+      "icon": remoteImg(15),
       "name": "正则表达式测试",
       "link": "http://www.jsons.cn/reg/"
     },
