@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-36720832.js").then((m) => m.default || m)
+    component: () => import("./static/index-3e120379.js").then((m) => m.default || m)
   },
   {
     name: "tools",
