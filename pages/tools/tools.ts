@@ -389,6 +389,11 @@ const tools = [{
   "name": "chatGPT",
   "collection": [
     {
+      "icon": "https://chat.plexpt.com/favicon.svg",
+      "name": "智能喵",
+      "link": "https://chat.plexpt.com/"
+    },
+    {
       "icon": "https://ai.aging.run/pwa-192.png",
       "name": "AIer",
       "link": "https://ai.aging.run/"
@@ -412,21 +417,6 @@ const tools = [{
       "icon": remoteImg(54),
       "name": "chatbot",
       "link": "https://chatbot.theb.ai/#/chat"
-    },
-    {
-      "icon": "https://fastgpt.app/favicon-32x32.e3e6336a.png",
-      "name": "fastgpt",
-      "link": "https://fastgpt.app/"
-    },
-    {
-      "icon": "https://chat.xiaozeai.com/favicon.ico",
-      "name": "zecoba",
-      "link": "https://chat.xiaozeai.com/user/login"
-    },
-    {
-      "icon": "https://chat.ktoai.com/favicon.png",
-      "name": "chatgpt对话",
-      "link": "https://chat.ktoai.com/#/"
     }
   ]
 },
