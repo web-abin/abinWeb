@@ -48,6 +48,13 @@ if (process.client && window.localStorage.getItem('ABIN_SITE_DATA')){
 const siteCreateDays = function () {
   return Math.floor( (Date.now() - new Date('2023-05-28').getTime())/(1000*60*60*24))
 }()
+
+
+if (process.client){
+  var script = document.createElement('script');
+  script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+  document.body.appendChild(script);
+}
 </script>
 
 <style scoped lang="scss">
