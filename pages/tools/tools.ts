@@ -6,7 +6,13 @@ const remoteImg = (name:string | number) => {
 const tools = [{
   "id": "often",
   "name": "常用工具",
-  "collection": [{
+  "collection": [
+    {
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
+      "name": "Github Trending",
+      "link": "https://github.com/trending"
+    },
+    {
       "icon": "https://caniuse.com/img/favicon-128.png",
       "name": "兼容性查询",
       "link": "https://caniuse.com/"
