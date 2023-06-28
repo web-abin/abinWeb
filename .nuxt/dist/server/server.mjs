@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-4d084dd5.js").then((m) => m.default || m)
+    component: () => import("./static/index-c197ee60.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -748,7 +748,7 @@ const _wrapIf = (component, props, slots) => {
   } };
 };
 const layouts = {
-  default: () => import("./static/default-e69221cd.js").then((m) => m.default || m)
+  default: () => import("./static/default-bdae2294.js").then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
