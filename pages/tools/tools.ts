@@ -91,7 +91,12 @@ const tools = [{
       "icon": "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
       "name": "vercel网站托管",
       "link": "https://vercel.com/dashboard"
-    }
+    },
+    {
+      "icon": "https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico",
+      "name": "微信公众平台",
+      "link": "https://mp.weixin.qq.com/"
+    },
   ]
 },
 {
