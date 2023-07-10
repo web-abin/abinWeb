@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-d63ef327.js").then((m) => m.default || m)
+    component: () => import("./static/index-893efd2f.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -501,7 +501,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-df105e00.js").then((m) => m.default || m)
+    component: () => import("./static/index-d431ae06.js").then((m) => m.default || m)
   },
   {
     name: "tools-tools",
@@ -509,7 +509,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/tools-a9efc5e0.js").then((m) => m.default || m)
+    component: () => import("./static/tools-fe9b33f0.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
