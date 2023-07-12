@@ -97,6 +97,11 @@ const tools = [{
       "name": "微信公众平台",
       "link": "https://mp.weixin.qq.com/"
     },
+    {
+      "icon": "https://kaifa.baidu.com/assets/favicon.ico",
+      "name": "开发者搜索",
+      "link": "https://kaifa.baidu.com/"
+    },
   ]
 },
 {
