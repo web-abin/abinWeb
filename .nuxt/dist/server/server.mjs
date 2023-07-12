@@ -437,7 +437,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/404-922b67a0.js").then((m) => m.default || m)
+    component: () => import("./static/404-eaba2dc7.js").then((m) => m.default || m)
   },
   {
     name: "demos",
@@ -445,7 +445,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-e10fa85b.js").then((m) => m.default || m)
+    component: () => import("./static/index-7e6fe4fc.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -453,7 +453,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-fe92b715.js").then((m) => m.default || m)
+    component: () => import("./static/index-05e2635e.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "index",
@@ -461,7 +461,7 @@ const _routes = [
     meta: __nuxt_page_meta$1 || {},
     alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
     redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
-    component: () => import("./static/index-22be88ac.js").then((m) => m.default || m)
+    component: () => import("./static/index-d20268d5.js").then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "links",
@@ -469,7 +469,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./static/index-82f39773.js").then((m) => m.default || m)
+    component: () => import("./static/index-f3be6814.js").then((m) => m.default || m)
   },
   {
     name: "notes",
@@ -477,7 +477,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-db6abc2a.js").then((m) => m.default || m)
+    component: () => import("./static/index-33bffad2.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -485,7 +485,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/fish-8c4a5117.js").then((m) => m.default || m)
+    component: () => import("./static/fish-378c4b7c.js").then((m) => m.default || m)
   },
   {
     name: "relax",
@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-893efd2f.js").then((m) => m.default || m)
+    component: () => import("./static/index-a6f41f22.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -501,7 +501,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-d431ae06.js").then((m) => m.default || m)
+    component: () => import("./static/index-41989fe4.js").then((m) => m.default || m)
   },
   {
     name: "tools-tools",
@@ -748,7 +748,7 @@ const _wrapIf = (component, props, slots) => {
   } };
 };
 const layouts = {
-  default: () => import("./static/default-bdae2294.js").then((m) => m.default || m)
+  default: () => import("./static/default-7c27904c.js").then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",

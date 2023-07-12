@@ -16,7 +16,7 @@ onMounted(() => {
   }
   setTimeout(() => {
     isLoading.value = false
-  }, 3000);
+  }, 2000);
 })
 
 </script>
@@ -28,11 +28,10 @@ onMounted(() => {
   
   <div class="page" v-else>
     <img src="~/assets/images/home.jpg" class="bg" alt="">
-    <img src="~/assets/images/logo-text.png" alt="前端助手" height="130">
+    <img src="~/assets/images/logo-text.png" alt="前端助手" class="img-title">
     <NuxtLink class="enter" to="/tools">进入</NuxtLink>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 .load-box{
@@ -65,6 +64,9 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .img-title{
+    height: 130px;
   }
   h1{
     font-size: 40px;
@@ -111,4 +113,15 @@ onMounted(() => {
   color: #000000;
 }
 
+@media (max-width: 480px) {
+  .page{
+    .img-title{
+      max-width: 80vw;
+      height: 26vw;
+    }
+    .enter{
+      font-size: 16px;
+    }
+  }
+}
 </style>

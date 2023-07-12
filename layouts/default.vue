@@ -162,6 +162,13 @@ footer {
     box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, .05);
   }
 
+  .navigation-link-pc{
+    display: none !important;
+  }
+  .btn-home{
+    display: none;
+  }
+
   .content {
     padding-top: 20px;
     padding-bottom: calc($--header-height + 20px);
@@ -174,15 +181,6 @@ footer {
   footer {
     display: none;
   }
-}
-@media (max-width: 480px) {
-  .navigation-link-pc{
-    display: none !important;
-  }
-  .btn-home{
-    display: none;
-  }
-
 }
 
 </style>
