@@ -56,6 +56,13 @@
         <div class="game-desc">魔性解压网站，急速晃动还会闪亮你的眼</div>
       </div>
     </a>
+    <a class="game-item" target="_blank" rel="nofollow external" href="http://www.bz.bhrgz.cn/">
+      <img src="http://www.bz.bhrgz.cn/images/logo.png" alt="" class="game-logo">
+      <div class="game-info">
+        <div class="game-title">西瓜游戏平台</div>
+        <div class="game-desc">收集了很多小游戏</div>
+      </div>
+    </a>
     <a class="game-item" target="_blank" rel="nofollow external" href="http://www.itmind.net/tetris/">
       <img src="/icons/12.png" alt="" class="game-logo">
       <div class="game-info">
