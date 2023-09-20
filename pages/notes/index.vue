@@ -102,8 +102,8 @@ const list = ref([
   id: '@property',
   name: '@property',
   official: [{
-    link: '@property 可选类型',
-    name: 'https://developer.mozilla.org/zh-CN/docs/Web/CSS/@property/syntax'
+    link: 'https://developer.mozilla.org/zh-CN/docs/Web/CSS/@property/syntax',
+    name: '@property 可选类型'
   }]
 },
 {
