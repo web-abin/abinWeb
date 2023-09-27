@@ -477,7 +477,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-a589f22b.js").then((m) => m.default || m)
+    component: () => import("./static/index-18100f9a.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-533d8b54.js").then((m) => m.default || m)
+    component: () => import("./static/index-f17a149c.js").then((m) => m.default || m)
   },
   {
     name: "tools",
@@ -501,7 +501,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-f2bc7330.js").then((m) => m.default || m)
+    component: () => import("./static/index-9a4a0492.js").then((m) => m.default || m)
   },
   {
     name: "tools-tools",
@@ -509,7 +509,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/tools-2d59de0a.js").then((m) => m.default || m)
+    component: () => import("./static/tools-75cf0b08.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {

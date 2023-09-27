@@ -346,7 +346,12 @@ const tools = [{
       "icon": "https://webdesignclip.com/favicon.ico",
       "name": "WebDesignClip",
       "link": "https://webdesignclip.com/"
-    }
+    },
+    {
+      "icon": 'http://360ab.cn/favicon.ico',
+      "name": '文字创意代码',
+      "link": 'http://360ab.cn/code?game'
+    },
   ]
 },
 {
