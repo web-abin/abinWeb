@@ -374,6 +374,14 @@ const list = ref([
     }]
 },
 {
+    id: 'puppeteer',
+    name: 'puppeteer',
+    official: [{
+      link: 'https://puppeteer.bootcss.com//',
+      name: 'puppeteer官网'
+    }]
+},
+{
     id: 'qiankun',
     name: 'qiankun',
     official: [{
