@@ -221,6 +221,11 @@ const tools = [{
       "icon": "https://huatu.98youxi.com/favicon.ico",
       "name": "流程图/思维导图",
       "link": "https://huatu.98youxi.com/home/myfile/"
+    },
+    {
+      "icon": "https://boardmix.cn/app/pwa/pwa-icons/ios/144.png",
+      "name": "boardmix流程图",
+      "link": "https://boardmix.cn/app/home"
     }
   ]
 },
@@ -351,6 +356,11 @@ const tools = [{
       "icon": 'http://360ab.cn/favicon.ico',
       "name": '文字创意代码',
       "link": 'http://360ab.cn/code?game'
+    },
+    {
+      "icon": 'https://bennettfeely.com/gradients/img/favicon.png',
+      "name": '混合模式创意',
+      "link": 'https://bennettfeely.com/gradients/'
     },
   ]
 },
