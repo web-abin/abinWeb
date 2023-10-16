@@ -115,6 +115,20 @@ const list = ref([
     }]
 },
 {
+  id: 'css',
+  name: 'css',
+  official: [{
+      link: 'https://www.w3.org/Style/CSS/',
+      name: 'css官网-最新资讯'
+    },{
+      link: 'https://web-abin.gitee.io/abin-web/notes',
+      name: 'MDN css所有属性速查'
+    },{
+      link: 'https://www.w3cschool.cn/moresource/cssreference/index.html',
+      name: 'cssreference/.io 一个免费的视觉引导css 学习神器'
+    }]
+},
+{
     id: 'canvas',
     name: 'canvas',
     official: [{
