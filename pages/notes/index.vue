@@ -121,7 +121,7 @@ const list = ref([
       link: 'https://www.w3.org/Style/CSS/',
       name: 'css官网-最新资讯'
     },{
-      link: 'https://web-abin.gitee.io/abin-web/notes',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
       name: 'MDN css所有属性速查'
     },{
       link: 'https://www.w3cschool.cn/moresource/cssreference/index.html',
