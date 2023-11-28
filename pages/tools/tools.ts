@@ -414,6 +414,11 @@ const tools = [{
   "name": "chatGPT",
   "collection": [
     {
+      "icon": "https://cdn.oaistatic.com/_next/static/media/favicon-32x32.be48395e.png",
+      "name": "chatGPT",
+      "link": "https://chat.openai.com/"
+    },
+    {
       "icon": "https://chat.plexpt.com/favicon.svg",
       "name": "智能喵",
       "link": "https://chat.plexpt.com/"
