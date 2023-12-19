@@ -477,7 +477,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-5f1dba05.js").then((m) => m.default || m)
+    component: () => import("./static/index-e235c691.js").then((m) => m.default || m)
   },
   {
     name: "relax-components-fish",
@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-82acc7cb.js").then((m) => m.default || m)
+    component: () => import("./static/index-52eda6de.js").then((m) => m.default || m)
   },
   {
     name: "tools",
