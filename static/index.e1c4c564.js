@@ -1,0 +1,1 @@
+import{a as e,b as _,o as t}from"./entry.e9234102.js";const c=""+new URL("qq-code.30f0f86d.jpeg",import.meta.url).href;const o={},n={src:c,alt:""};function s(a,r){return t(),_("img",n)}const i=e(o,[["render",s],["__scopeId","data-v-013c26a7"]]);export{i as default};
