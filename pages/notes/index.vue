@@ -342,6 +342,10 @@ const list = ref([
       {
         link: 'https://flutter.cn/docs/cookbook',
         name: 'Flutter教程文档'
+      },
+      {
+        link: 'https://book.flutterchina.club/',
+        name: '《Flutter实现·第二版》'
       }
     ]
   },
