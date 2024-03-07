@@ -564,6 +564,17 @@ const list = ref([
     ]
   },
   {
+    id: 'Rollup',
+    name: 'Rollup',
+    official: [
+      {
+        link: 'https://www.rollupjs.com/',
+        name: 'rollup.js 中文文档'
+      }
+    ],
+    others: []
+  },
+  {
     id: 'Svelte.js',
     name: 'Svelte.js',
     official: [
