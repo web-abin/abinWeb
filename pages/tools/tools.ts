@@ -115,7 +115,7 @@ const tools = [
       },
       {
         icon: 'https://www.mujicv.com/favicon.ico',
-        name: '木及建立',
+        name: '木及简历',
         link: 'https://www.mujicv.com/'
       }
     ]
