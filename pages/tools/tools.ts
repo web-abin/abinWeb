@@ -107,6 +107,20 @@ const tools = [
         icon: 'https://kaifa.baidu.com/assets/favicon.ico',
         name: '开发者搜索',
         link: 'https://kaifa.baidu.com/'
+      },
+      {
+        icon: 'https://product.mdnice.com/favicon-32x32.png?v=00d29966e3863b53e83a585435f6a6fc',
+        name: '墨滴文章同步',
+        link: 'https://product.mdnice.com/'
+      },
+      {
+        icon: 'https://product.mdnice.com/favicon-32x32.png?v=00d29966e3863b53e83a585435f6a6fc',
+        name: '墨滴文章同步',
+        link: 'https://product.mdnice.com/'
+      },{
+        icon: 'https://www.mujicv.com/favicon.ico',
+        name: '木及建立',
+        link: 'https://www.mujicv.com/'
       }
     ]
   },
