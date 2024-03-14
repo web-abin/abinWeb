@@ -445,7 +445,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-7e6fe4fc.js").then((m) => m.default || m)
+    component: () => import("./static/index-03424d8b.js").then((m) => m.default || m)
   },
   {
     name: "games",
@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-a398c2a2.js").then((m) => m.default || m)
+    component: () => import("./static/index-d0bc1d77.js").then((m) => m.default || m)
   },
   {
     name: "tools",
