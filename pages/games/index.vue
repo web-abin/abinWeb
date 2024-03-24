@@ -4,7 +4,7 @@
       class="game-item"
       target="_blank"
       rel="nofollow external"
-      href="/abinWeb/games/生死时速.html"
+      href="./abinWeb/games/生死时速.html"
     >
       <img src="~/assets/games/shengsishisu.png" alt="" class="game-logo" />
       <div class="game-info">
