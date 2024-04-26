@@ -247,6 +247,37 @@ const tools = [
     ]
   },
   {
+    id: 'cssart',
+    name: 'web艺术',
+    collection: [
+      {
+        icon: 'https://css-only.art/fav.png',
+        name: 'css-only',
+        link: 'https://css-only.art/'
+      },
+      {
+        icon: 'https://css-only.art/fav.png',
+        name: 'CSS Tip',
+        link: 'https://css-tip.com/'
+      },
+      {
+        icon: 'https://www.smashingmagazine.com/images/favicon/favicon.svg',
+        name: 'smashing杂志',
+        link: 'https://www.smashingmagazine.com/'
+      },
+      {
+        icon: 'https://www.gstatic.com/devrel-devsite/prod/v2a398f8757b82183cb182aec0e7c4771ac1123a40d36fc97c8783f6df9b3c672/web/images/favicon.png',
+        name: 'web.dev',
+        link: 'https://web.dev/blog?hl=zh-cn'
+      },
+      {
+        icon: 'https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico',
+        name: 'DEV Community',
+        link: 'https://dev.to/'
+      }
+    ]
+  },
+  {
     id: 'css',
     name: 'css工具',
     collection: [
