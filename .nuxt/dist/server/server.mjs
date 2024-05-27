@@ -260,7 +260,7 @@ function VueReactiveUseHeadPlugin() {
     }
   });
 }
-const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" }, { "name": "description", "content": "前端助手是面向前端开发工程师的资源分享平台，通过工具。文档，游戏，摸鱼，案例等板块，建立一个完整的前端资源体系，提高前端开发者的开发效率，免费造福前端开发者的工具平台" }, { "name": "keywords", "content": "前端工具，导航，前端资源，网站资源" }, { "name": "author", "content": "前端阿彬" }, { "name": "bytedance-verification-code", "content": "Z39UIZv8+Uw0Uu1UX7Ap" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "src": "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" }, { "src": "/abinWeb/js/busuanzi.js" }], "noscript": [], "title": "前端助手" };
+const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" }, { "name": "description", "content": "前端助手是面向前端开发工程师的资源分享平台，通过工具。文档，游戏，摸鱼，案例等板块，建立一个完整的前端资源体系，提高前端开发者的开发效率，免费造福前端开发者的工具平台" }, { "name": "keywords", "content": "前端工具，导航，前端资源，网站资源" }, { "name": "author", "content": "前端阿彬" }, { "name": "bytedance-verification-code", "content": "Z39UIZv8+Uw0Uu1UX7Ap" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/abinWeb/favicon.ico" }], "style": [], "script": [{ "defer": true, "src": "/abinWeb/js/busuanzi.js" }], "noscript": [], "title": "前端助手" };
 const appLayoutTransition = false;
 const appPageTransition = false;
 const appKeepalive = false;
@@ -493,7 +493,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./static/index-7c3b5982.js").then((m) => m.default || m)
+    component: () => import("./static/index-dc8bcf6b.js").then((m) => m.default || m)
   },
   {
     name: "tools",
