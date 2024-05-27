@@ -34,7 +34,7 @@ export default defineNuxtConfig({
           src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
         },
         {
-          src: '/js/busuanzi.js'
+          src: '/abinWeb/js/busuanzi.js'
         }
       ]
     }
