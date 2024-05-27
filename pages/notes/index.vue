@@ -862,7 +862,7 @@ const list = ref([
     name: 'uniapp',
     official: [
       {
-        link: 'https://uniapp.dcloud.net.cn/uniCloud/unipay.html#',
+        link: 'https://uniapp.dcloud.net.cn/component/',
         name: 'uniapp官网'
       }
     ],
@@ -870,6 +870,10 @@ const list = ref([
       {
         link: 'https://www.w3cschool.cn/uni_app/',
         name: 'uniapp中文文档 w3cSchool'
+      },
+      {
+        link: 'https://www.ucharts.cn/v2/#/demo/index',
+        name: 'uchart 图表库'
       }
     ]
   },
