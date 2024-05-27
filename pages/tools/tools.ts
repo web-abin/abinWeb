@@ -243,6 +243,11 @@ const tools = [
         icon: 'https://boardmix.cn/app/pwa/pwa-icons/ios/144.png',
         name: 'boardmix流程图',
         link: 'https://boardmix.cn/app/home'
+      },
+      {
+        icon: 'https://www.superbed.cn/favicon.ico',
+        name: '聚合图床',
+        link: 'https://www.superbed.cn/'
       }
     ]
   },
