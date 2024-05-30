@@ -369,8 +369,8 @@ const tools = [
     collection: [
       {
         icon: 'https://web-abin.github.io/css-tips/favicon.ico',
-        name: 'CSS-Tips',
-        link: 'https://web-abin.github.io/css-tips/'
+        name: 'CSS-Tips', 
+        link: 'https://web-abin.github.io/css-tips/' 
       },
       {
         icon: 'https://whirl.netlify.app/favicon.ico',
