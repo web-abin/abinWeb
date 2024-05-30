@@ -373,7 +373,7 @@ const tools = [
         link: 'https://web-abin.github.io/css-tips/'
       },
       {
-        icon: '	https://whirl.netlify.app/favicon.ico',
+        icon: 'https://whirl.netlify.app/favicon.ico',
         name: 'whirl加载动效',
         link: 'https://whirl.netlify.app/'
       },
