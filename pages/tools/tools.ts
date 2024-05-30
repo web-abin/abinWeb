@@ -368,6 +368,11 @@ const tools = [
     name: 'UI灵感',
     collection: [
       {
+        icon: 'https://web-abin.github.io/css-tips/favicon.ico',
+        name: 'CSS-Tips',
+        link: 'https://web-abin.github.io/css-tips/'
+      },
+      {
         icon: '	https://whirl.netlify.app/favicon.ico',
         name: 'whirl加载动效',
         link: 'https://whirl.netlify.app/'
