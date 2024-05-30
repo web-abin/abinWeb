@@ -2,6 +2,6 @@
 npm run generate
 git add .
 git commit -m "feat"
-git push origin master
+git push
 npm run deploy
 # ./deploy.sh 
