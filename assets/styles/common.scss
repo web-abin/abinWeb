@@ -1,0 +1,46 @@
+@import './theme.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // cursor:url('https://web-abin.github.io/abinWeb/images/cursor.png'),default;
+}
+body {
+  overflow: hidden;
+}
+#__nuxt {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#__nuxt::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ff5a00;
+}
+#__nuxt::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: yellow;
+}
+
+
+a {
+  text-decoration: none;
+  color: #000000d9;
+  &:hover {
+    color: #1890ff;
+  }
+}
+
+// 内容面板公共样式
+.box {
+  width: 1080px;
+  min-height: 80vh;
+  padding: 16px;
+  margin: 0 auto;
+  border-radius: 8px;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  background-color: $--color-box;
+}
