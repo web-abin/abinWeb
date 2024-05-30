@@ -287,6 +287,11 @@ const tools = [
     name: 'css工具',
     collection: [
       {
+        icon: 'https://css-shape.com/fav.png',
+        name: 'CSS Generators',
+        link: 'https://css-generators.com/'
+      },
+      {
         icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAY1BMVEX///8AAADr+fr////1/PwAqrsAprgKrr5hy9XU8fQUssH0+/xQxdEitsUwusg/v8zE7PAds8P////p+Pqw5eqp4+mN2eH3/P2h4OeQ2+I2vMra8/a86e2b3uRrzthKw89Ewc0z3iepAAAABXRSTlPwAO/g70YqzXQAAADSSURBVDjLhdNLbsMwDARQuqlGjqiv/3HaJPc/ZWUHBYwWpGdH8GGkDak5CTUXog8hn0QXaohbKyQMHVVwgxEC12+g/QVHCOzT9QicL+4da12Myf4F6/h4+pqXnzLPfP8HbHmXr7kf2hjc8YljJl7K/gMBLLPftwLAyLGOIsCjq3sZIHbboDTkEUYB8BxUYO8TjALQsjMKqNMNGkDioINhhFEAAq86+P6C0UDgpIJaYIKVAdKc/BJkEPucXk+5AVMuBtofit22MhBzPb+s09s8ve4fJkoXyynCJe4AAAAASUVORK5CYII=',
         name: '贝塞尔曲线',
         link: 'https://cubic-bezier.com/#.17,.67,.83,.67'
@@ -366,6 +371,16 @@ const tools = [
         icon: '	https://whirl.netlify.app/favicon.ico',
         name: 'whirl加载动效',
         link: 'https://whirl.netlify.app/'
+      },
+      {
+        icon: 'https://css-loaders.com/fav.png',
+        name: '最全loading',
+        link: 'https://css-loaders.com/wobbling/'
+      },
+      {
+        icon: 'https://css-loaders.com/fav.png',
+        name: 'css形状',
+        link: 'https://css-shape.com/'
       },
       {
         icon: 'https://uiverse.io/favicon-32x32.png',
