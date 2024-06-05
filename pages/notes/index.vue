@@ -1,8 +1,9 @@
 <template>
   <div class="page" @click="showPanel = false">
     <div class="box">
+      <input type="text" class="search" placeholder="搜索" v-model="keyword"/>
       <div class="item-box" v-for="item in list" :key="item.id">
-        <div class="item" @click.stop="onLookPanel(item)">
+        <div class="item" :class="{ item_active: !!keyword && item.name.includes(keyword) }" @click.stop="onLookPanel(item)">
           <span class="actual-text"
             >&nbsp;&nbsp;{{ item.name }}&nbsp;&nbsp;</span
           >
@@ -54,6 +55,8 @@ import config from '~/config'
 useSeoMeta({
   description: config.NOTES_description
 })
+
+const keyword = ref('')
 
 const list = ref([
   {
@@ -484,6 +487,16 @@ const list = ref([
     ]
   },
   {
+    id: 'OpenAI',
+    name: 'OpenAI',
+    official: [
+      {
+        link: 'https://platform.openai.com/docs/quickstart?context=node',
+        name: 'openai官方开发文档'
+      }
+    ]
+  },
+  {
     id: 'Pinia',
     name: 'Pinia',
     official: [
@@ -767,6 +780,17 @@ const list = ref([
     others: []
   },
   {
+    id: 'vscode',
+    name: 'vscode',
+    official: [
+      {
+        link: 'https://code.visualstudio.com/api/get-started/your-first-extension',
+        name: 'vscode插件开发文档'
+      }
+    ],
+    others: []
+  },
+  {
     id: 'vant',
     name: 'vant',
     official: [
@@ -934,6 +958,23 @@ const onLookPanel = (item) => {
   margin-bottom: 20px;
   background: url(images/paper.png);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+  .search{
+    height: 38px;
+    font-size: 14px;
+    padding: 0 12px;
+    outline: none;
+    border:1px solid #1e80ff;
+    border-radius: 4px;
+    &:focus{
+      outline: none;
+    }
+    &::after,&::before{
+      display: none;
+    }
+    &::-webkit-input-placeholder{
+      color: #00000066;
+    }
+  }
 }
 .item-box {
   width: 140px;
@@ -977,7 +1018,7 @@ const onLookPanel = (item) => {
   -webkit-text-stroke: 1px var(--animation-color);
 }
 /* hover */
-.item:hover .hover-text {
+:where(.item_active,.item:hover) .hover-text {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
