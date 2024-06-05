@@ -3,7 +3,7 @@
     <div class="box">
       <input type="text" class="search" placeholder="搜索" v-model="keyword"/>
       <div class="item-box" v-for="item in list" :key="item.id">
-        <div class="item" :class="{ item_active: !!keyword && item.name.includes(keyword) }" @click.stop="onLookPanel(item)">
+        <div class="item" :class="{ item_active: !!keyword && item.name.toLowerCase().includes(keyword.toLowerCase()) }" @click.stop="onLookPanel(item)">
           <span class="actual-text"
             >&nbsp;&nbsp;{{ item.name }}&nbsp;&nbsp;</span
           >
