@@ -27,7 +27,7 @@ onMounted(() => {
 }
 </style>
 <style>
-/* #disqus_thread iframe {
+#disqus_thread [sandbox*='allow-scripts'] {
   display: none;
-} */
+}
 </style>
