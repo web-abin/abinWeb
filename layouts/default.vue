@@ -5,55 +5,81 @@
     <NuxtLink class="navigation-link" to="/games">游戏</NuxtLink>
     <NuxtLink class="navigation-link" to="/relax">摸鱼</NuxtLink>
     <NuxtLink class="navigation-link" to="/demos">样例</NuxtLink>
+    <NuxtLink class="navigation-link" to="/comment">评论</NuxtLink>
 
     <!-- <NuxtLink class="navigation-link" to="/link2">友链</NuxtLink> -->
   </header>
   <main class="content">
-    <slot/>
+    <slot />
   </main>
 
   <NuxtLink class="btn-home" to="/">
-    <Home/>
+    <Home />
   </NuxtLink>
 
   <footer>
     <div class="site-links">
-      <a href="https://github.com/web-abin/abinWeb" target="_blank" rel="nofollow external">源码链接</a>、
-      <a href="https://github.com/web-abin" target="_blank" rel="nofollow external">GitHub主页</a>、
-      <a href="https://juejin.cn/user/994399097982728" target="_blank">掘金主页</a>、
-      <a href="https://blog.csdn.net/qq_38974163?type=blog" target="_blank">CSDN主页</a>、
-      <a href="http://web-abin.gitee.io/blog" target="_blank">个人博客</a>、
+      <a
+        href="https://github.com/web-abin/abinWeb"
+        target="_blank"
+        rel="nofollow external"
+        >源码链接</a
+      >、
+      <a
+        href="https://github.com/web-abin"
+        target="_blank"
+        rel="nofollow external"
+        >GitHub主页</a
+      >、
+      <a href="https://juejin.cn/user/994399097982728" target="_blank"
+        >掘金主页</a
+      >、
+      <a href="https://blog.csdn.net/qq_38974163?type=blog" target="_blank"
+        >CSDN主页</a
+      >、 <a href="http://web-abin.gitee.io/blog" target="_blank">个人博客</a>、
       <NuxtLink class="navigation-link" to="/links">友情链接</NuxtLink>
     </div>
-    
+
     <div class="site-data">
-      <span>建站第<span style="color: #1e80ff">{{ siteCreateDays }}</span>天</span>&nbsp;|&nbsp;
-      <span id="busuanzi_container_site_pv">浏览量<span id="busuanzi_value_site_pv" style="color: #1e80ff">{{ siteData.site_pv }}</span></span>&nbsp;|&nbsp;
-      <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv" style="color: #1e80ff">{{ siteData.site_uv }}</span></span>
+      <span
+        >建站第<span style="color: #1e80ff">{{ siteCreateDays }}</span
+        >天</span
+      >&nbsp;|&nbsp;
+      <span id="busuanzi_container_site_pv"
+        >浏览量<span id="busuanzi_value_site_pv" style="color: #1e80ff">{{
+          siteData.site_pv
+        }}</span></span
+      >&nbsp;|&nbsp;
+      <span id="busuanzi_container_site_uv"
+        >访客数<span id="busuanzi_value_site_uv" style="color: #1e80ff">{{
+          siteData.site_uv
+        }}</span></span
+      >
     </div>
   </footer>
 </template>
 
 <script setup>
-import { reactive,ref } from "vue"
-import Home from "~/components/Home.vue";
+import { reactive, ref } from 'vue'
+import Home from '~/components/Home.vue'
 
 let siteData = reactive({
   site_pv: 0,
-  site_uv: 0,
+  site_uv: 0
 })
-if (process.client && window.localStorage.getItem('ABIN_SITE_DATA')){
+if (process.client && window.localStorage.getItem('ABIN_SITE_DATA')) {
   siteData = window.localStorage.getItem('ABIN_SITE_DATA')
 }
-const siteCreateDays = function () {
-  return Math.floor( (Date.now() - new Date('2023-05-28').getTime())/(1000*60*60*24))
-}()
+const siteCreateDays = (function () {
+  return Math.floor(
+    (Date.now() - new Date('2023-05-28').getTime()) / (1000 * 60 * 60 * 24)
+  )
+})()
 
-
-if (process.client){
-  var script = document.createElement('script');
-  script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-  document.body.appendChild(script);
+if (process.client) {
+  var script = document.createElement('script')
+  script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+  document.body.appendChild(script)
 }
 </script>
 
@@ -68,7 +94,7 @@ if (process.client){
   padding: 0 $--padding-side;
   display: flex;
   justify-content: center;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   background-color: $--color-header;
 
   .navigation-link {
@@ -88,7 +114,7 @@ if (process.client){
     }
 
     &:hover::before {
-      content: "";
+      content: '';
       position: absolute;
       top: auto;
       right: 0;
@@ -116,7 +142,7 @@ if (process.client){
   background: $--color-body;
 }
 
-.btn-home{
+.btn-home {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -127,8 +153,8 @@ if (process.client){
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all .3s ease;
-  &:hover{
+  transition: all 0.3s ease;
+  &:hover {
     transform: scale(1.1);
   }
 }
@@ -139,7 +165,7 @@ footer {
   padding: 10px 0;
   background: #fff;
   border-top: 1px solid $--color-border;
-  .site-links{
+  .site-links {
     display: flex;
     justify-content: center;
     a {
@@ -147,7 +173,7 @@ footer {
       font-size: 14px;
     }
   }
-  .site-data{
+  .site-data {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -159,13 +185,13 @@ footer {
   header {
     bottom: 0;
     top: unset !important;
-    box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.05);
   }
 
-  .navigation-link-pc{
+  .navigation-link-pc {
     display: none !important;
   }
-  .btn-home{
+  .btn-home {
     display: none;
   }
 
@@ -182,5 +208,4 @@ footer {
     display: none;
   }
 }
-
 </style>
