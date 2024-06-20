@@ -32,7 +32,7 @@ onMounted(() => {
 }
 </style>
 <style>
-#disqus_thread iframe {
+/* #disqus_thread iframe {
   display: none;
-}
+} */
 </style>
