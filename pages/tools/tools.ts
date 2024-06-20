@@ -114,6 +114,11 @@ const tools = [
         link: 'https://product.mdnice.com/'
       },
       {
+        icon: 'https://a.disquscdn.com/1718305934/img/favicon16-32.ico',
+        name: 'disqus评论',
+        link: 'https://https-web-abin-github-io-abinweb-tools.disqus.com/admin/settings/install/'
+      },
+      {
         icon: 'https://www.mujicv.com/favicon.ico',
         name: '木及简历',
         link: 'https://www.mujicv.com/'
