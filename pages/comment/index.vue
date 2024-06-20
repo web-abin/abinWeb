@@ -30,3 +30,8 @@ onMounted(() => {
   padding: 16px 64px;
 }
 </style>
+<style>
+#disqus_thread iframe{
+  display: none;
+}
+</style>
