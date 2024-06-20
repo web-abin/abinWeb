@@ -27,11 +27,12 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .page {
+  min-height: calc(100vh - $--header-height - 160px);
   padding: 16px 64px;
 }
 </style>
 <style>
-#disqus_thread iframe{
+#disqus_thread iframe {
   display: none;
 }
 </style>
