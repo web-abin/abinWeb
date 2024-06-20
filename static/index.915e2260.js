@@ -1,0 +1,4 @@
+import{a as r,j as p,k as u,b as o,u as n,l as _,o as d,p as l,i as m,e as c}from"./entry.f1751ef1.js";const i=e=>(l("data-v-8174e669"),e=e(),m(),e),h={class:"page"},v={key:0,class:"loader"},b={key:1,class:"error-tip"},f=i(()=>c("div",{id:"disqus_thread"},null,-1)),x=i(()=>c("noscript",null,`Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      >`,-1)),y={__name:"index",setup(e){const t=p(1);return u(()=>{var s=document,a=s.createElement("script");a.src="https://https-web-abin-github-io-abinweb-tools.disqus.com/embed.js",a.setAttribute("data-timestamp",+new Date),(s.head||s.body).appendChild(a),t.value=2,setTimeout(()=>{document.querySelector("#disqus_thread iframe")||(t.value=3)},3e3)}),(s,a)=>(d(),o("div",h,[n(t)===1?(d(),o("div",v)):_("",!0),n(t)===3?(d(),o("p",b,"评论功能加载失败")):_("",!0),f,x]))}},w=r(y,[["__scopeId","data-v-8174e669"]]);export{w as default};
