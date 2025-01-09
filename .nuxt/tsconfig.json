@@ -54,13 +54,13 @@
         "public/*"
       ],
       "#app": [
-        "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app"
+        "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18_sass@1.83.1/node_modules/nuxt/dist/app"
       ],
       "#app/*": [
-        "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/*"
+        "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18_sass@1.83.1/node_modules/nuxt/dist/app/*"
       ],
       "vue-demi": [
-        "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18/node_modules/nuxt/dist/app/compat/vue-demi"
+        "node_modules/.pnpm/nuxt@3.5.3_@types+node@18.16.18_sass@1.83.1/node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#vue-router": [
         ".nuxt/vue-router"
