@@ -24,6 +24,21 @@ const tools = [
         link: 'https://www.bootcdn.cn/'
       },
       {
+        icon: 'https://www.jsdelivr.com/icons/favicon.svg',
+        name: 'jsDelivr CDN服务',
+        link: 'https://www.jsdelivr.com/'
+      },
+      {
+        icon: 'https://cdnjs.com/favicon.png',
+        name: 'cdnjs CDN服务',
+        link: 'https://cdnjs.com/'
+      },
+      {
+        icon: 'https://unpkg.com/favicon.ico',
+        name: 'unpkg CDN服务',
+        link: 'https://unpkg.com/'
+      },
+      {
         icon: '../icons/56.png',
         name: 'json在线解析',
         link: 'https://www.sojson.com/'
@@ -122,6 +137,22 @@ const tools = [
         icon: 'https://www.mujicv.com/favicon.ico',
         name: '木及简历',
         link: 'https://www.mujicv.com/'
+      },
+
+      {
+        icon: 'https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png',
+        name: 'Pagespeed',
+        link: 'https://pagespeed.web.dev/?hl=zh_CN'
+      },
+      {
+        icon: 'https://www.gstatic.com/search-console/scfe/search_console-32.png',
+        name: 'Gougle Search Console',
+        link: 'https://search.google.com/search-console'
+      },
+      {
+        icon: 'https://www.xml-sitemaps.com/images/logo-trans.png',
+        name: 'sitemap验证',
+        link: 'https://www.xml-sitemaps.com/validate-xml-sitemap.html'
       }
     ]
   },
@@ -133,6 +164,11 @@ const tools = [
         icon: 'https://tinypng.com/images/favicon.ico',
         name: '图片压缩',
         link: 'https://tinypng.com/'
+      },
+      {
+        icon: 'https://jakearchibald.github.io/svgomg/imgs/icon.png',
+        name: 'SVG优化压缩',
+        link: 'https://jakearchibald.github.io/svgomg/'
       },
       {
         icon: 'https://www.toptal.com/developers/css/sprite-generator/static/images/favicon.png',
