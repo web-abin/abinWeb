@@ -171,6 +171,11 @@ const tools = [
         link: 'https://jakearchibald.github.io/svgomg/'
       },
       {
+        icon: 'https://www.svgviewer.dev/favicon.ico',
+        name: 'SVG预览',
+        link: 'https://www.svgviewer.dev/'
+      },
+      {
         icon: 'https://www.toptal.com/developers/css/sprite-generator/static/images/favicon.png',
         name: '生成精灵图',
         link: 'https://www.toptal.com/developers/css/sprite-generator'
