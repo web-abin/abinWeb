@@ -104,6 +104,11 @@ const tools = [
         link: 'https://tool.chinaz.com/'
       },
       {
+        icon: 'https://static-app.ahrefs.com/favicon.ico?version=release-20250212-bk225368-56fef11be0625',
+        name: 'Ahrefs 网站分析',
+        link: 'https://app.ahrefs.com/dashboard'
+      },
+      {
         icon: 'https://app.netlify.com/favicon.ico',
         name: 'netlify网站托管',
         link: 'https://app.netlify.com/'
