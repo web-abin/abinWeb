@@ -5,7 +5,7 @@
     <NuxtLink class="navigation-link" to="/games">游戏</NuxtLink>
     <NuxtLink class="navigation-link" to="/relax">摸鱼</NuxtLink>
     <NuxtLink class="navigation-link" to="/demos">样例</NuxtLink>
-    <NuxtLink class="navigation-link" to="/comment">评论</NuxtLink>
+    <NuxtLink class="navigation-link" to="/comment">留言</NuxtLink>
 
     <!-- <NuxtLink class="navigation-link" to="/link2">友链</NuxtLink> -->
   </header>

@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="loader" v-if="loadStatus === 1"></div>
-    <p class="error-tip" v-if="loadStatus === 3">评论功能加载失败</p>
+    <p class="error-tip" v-if="loadStatus === 3">留言功能加载失败</p>
     <div id="disqus_thread"></div>
     <noscript
       >Please enable JavaScript to view the
