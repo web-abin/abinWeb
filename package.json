@@ -9,12 +9,24 @@
     "generate": "nuxt generate && node build/index.js",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "prepare": "husky install",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm lint:prettier",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^18",
     "@types/tailwindcss": "^3.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "nuxt": "^3.5.2",
     "push-dir": "^0.4.1",
     "sass": "^1.83.1",
