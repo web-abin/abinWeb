@@ -3,6 +3,7 @@
 .nuxt
 .nitro
 .cache
+.pnpm-store
 
 # Node dependencies
 node_modules
