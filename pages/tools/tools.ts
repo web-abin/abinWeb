@@ -592,6 +592,11 @@ const tools = [
         link: 'https://chrome.google.com/webstore/category/extensions?hl=zh-CN'
       },
       {
+        icon: 'https://tabbiy.top/favicon.ico',
+        name: 'Tabbiy网页分组',
+        link: 'https://tabbiy.top/'
+      },
+      {
         icon: remoteImg(39),
         name: '前端助手插件',
         link: 'http://www.itmind.net/1470.html'
