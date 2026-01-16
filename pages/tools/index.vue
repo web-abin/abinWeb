@@ -16,8 +16,20 @@
       <section v-for="(tool, index) in list" :key="index">
         <span :id="tool.id" class="point"></span>
         <header>{{ tool.name }}</header>
-        <a target="_blank" rel="nofollow external" class="tool-item" v-for="link in tool.collection" :key="link.link" :href="link.link"
-          ><img alt="" decoding="async" loading="lazy" :src="link.icon" @error="handleImageError($event)" />
+        <a
+          target="_blank"
+          rel="nofollow external"
+          class="tool-item"
+          v-for="link in tool.collection"
+          :key="link.link"
+          :href="link.link"
+          ><img
+            alt=""
+            decoding="async"
+            loading="lazy"
+            :src="link.icon"
+            @error="handleImageError($event)"
+          />
           <span class="tool-name">{{ link.name }}</span></a
         >
       </section>
@@ -27,8 +39,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import tools from "./tools.ts";
-import config from "~/config";
+import tools from './tools.ts'
+import config from '~/config'
+import Icon404 from '@/assets/images/icon-404.png'
 
 // SEO优化
 useSeo({
@@ -50,7 +63,7 @@ const handleImageError = (event) => {
   const img = event.target
   // 如果已经是默认图标，则不再替换，避免无限循环
   if (img.src && !img.src.includes('icon-404.png')) {
-    img.src = '/images/icon-404.png'
+    img.src = Icon404
   }
 }
 </script>
@@ -109,7 +122,7 @@ const handleImageError = (event) => {
     flex-wrap: wrap;
     margin-bottom: 20px;
     background-color: $--color-box;
-    .point{
+    .point {
       position: absolute;
       left: 0;
       top: -60px;
@@ -156,14 +169,14 @@ const handleImageError = (event) => {
     //   display: flex;
     // }
   }
-  .tools-box{
+  .tools-box {
     width: unset;
-    section{
+    section {
       padding: 58px 16px 16px 16px;
-      header{
+      header {
         padding: 0 16px;
       }
-      .tool-item{
+      .tool-item {
         width: 140px;
       }
     }
