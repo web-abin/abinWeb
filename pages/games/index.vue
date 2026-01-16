@@ -195,8 +195,12 @@
 <script setup>
 import config from '~/config'
 
-useSeoMeta({
-  description: config.GAMES_description
+// SEO优化
+useSeo({
+  title: `游戏 - ${config.SEO_title}`,
+  description: config.GAMES_description,
+  keywords: `${config.SEO_keywords}, H5游戏, 在线游戏`,
+  type: 'website'
 })
 </script>
 
@@ -252,6 +256,7 @@ useSeoMeta({
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       -webkit-box-orient: vertical;
       margin-top: 5px;
     }

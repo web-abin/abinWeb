@@ -17,7 +17,7 @@
         <span :id="tool.id" class="point"></span>
         <header>{{ tool.name }}</header>
         <a target="_blank" rel="nofollow external" class="tool-item" v-for="link in tool.collection" :key="link.link" :href="link.link"
-          ><img alt="" decoding="async" loading="lazy" :src="link.icon" />
+          ><img alt="" decoding="async" loading="lazy" :src="link.icon" @error="handleImageError($event)" />
           <span class="tool-name">{{ link.name }}</span></a
         >
       </section>
@@ -30,8 +30,12 @@ import { ref } from 'vue'
 import tools from "./tools.ts";
 import config from "~/config";
 
-useSeoMeta({
-  description: config.TOOLS_description
+// SEO优化
+useSeo({
+  title: `工具 - ${config.SEO_title}`,
+  description: config.TOOLS_description,
+  keywords: `${config.SEO_keywords}, 前端工具, 开发工具`,
+  type: 'website'
 })
 
 const list = ref(tools)
@@ -39,6 +43,15 @@ const list = ref(tools)
 const curIndex = ref(0)
 const toNav = (index) => {
   curIndex.value = index
+}
+
+// 处理图片加载失败，显示默认图标
+const handleImageError = (event) => {
+  const img = event.target
+  // 如果已经是默认图标，则不再替换，避免无限循环
+  if (img.src && !img.src.includes('icon-404.png')) {
+    img.src = '/images/icon-404.png'
+  }
 }
 </script>
 
