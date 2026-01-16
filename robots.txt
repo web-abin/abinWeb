@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# 禁止爬取静态资源目录
+Disallow: /static/
+Disallow: /_nuxt/
+
+# 允许爬取主要页面
+Allow: /
+Allow: /tools
+Allow: /notes
+Allow: /games
+Allow: /relax
+Allow: /comment
+Allow: /demos
+Allow: /links
+
+# 站点地图
+Sitemap: https://web-abin.github.io/abinWeb/sitemap.xml
+
+# 爬取延迟（可选，单位：秒）
+Crawl-delay: 1
