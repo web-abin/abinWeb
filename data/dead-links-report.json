@@ -1,0 +1,475 @@
+{
+  "totalLinks": 382,
+  "deadLinks": 88,
+  "checkedAt": "2026-01-16T02:35:47.417Z",
+  "deadLinksList": [
+    {
+      "url": "https://web-abin.github.io/abinWeb/icons/${name}.png`",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://unpkg.com/favicon.ico",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://app.ahrefs.com/dashboard",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png",
+      "status": "ERROR",
+      "error": "",
+      "alive": false
+    },
+    {
+      "url": "https://www.gstatic.com/search-console/scfe/search_console-32.png",
+      "status": "ERROR",
+      "error": "",
+      "alive": false
+    },
+    {
+      "url": "https://www.toptal.com/developers/css/sprite-generator",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://www.tutieshi.com/",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "http://www.ico51.cn/",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://www.wakatool.com/maker",
+      "status": "ERROR",
+      "error": "getaddrinfo ENOTFOUND www.wakatool.com",
+      "alive": false
+    },
+    {
+      "url": "https://www.pexels.com/zh-cn/",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://pixabay.com/",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://pxhere.com/",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://www.3gbizhi.com/",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://www.gstatic.com/devrel-devsite/prod/v2a398f8757b82183cb182aec0e7c4771ac1123a40d36fc97c8783f6df9b3c672/web/images/favicon.png",
+      "status": "ERROR",
+      "error": "",
+      "alive": false
+    },
+    {
+      "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://www.bezier-curve.com/favicon.ico",
+      "status": "ERROR",
+      "error": "getaddrinfo ENOTFOUND www.bezier-curve.com",
+      "alive": false
+    },
+    {
+      "url": "https://www.bezier-curve.com/",
+      "status": "ERROR",
+      "error": "getaddrinfo ENOTFOUND www.bezier-curve.com",
+      "alive": false
+    },
+    {
+      "url": "https://cssgradient.io/images/favicon-23859487.png",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://shadows.brumm.af/favicon.svg",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://shadows.brumm.af/",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://box-shadow.art/wp-content/uploads/2021/10/logo-icon-150x150.png",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://img2.baidu.com/it/u=3541918504",
+      "status": 400,
+      "alive": false
+    },
+    {
+      "url": "https://uiverse.io/buttons",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://www.googlefonts.cn/Public/google/zh-cn/gstatic/google_fonts_lodp.ico",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://ai.aging.run/pwa-192.png",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://ai.aging.run/",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://chat.ktoai.com/favicon.png",
+      "status": "ERROR",
+      "error": "certificate has expired",
+      "alive": false
+    },
+    {
+      "url": "https://ai.tgmeng.com/",
+      "status": "ERROR",
+      "error": "",
+      "alive": false
+    },
+    {
+      "url": "https://chat.aidutu.cn/",
+      "status": "ERROR",
+      "error": "connect ECONNREFUSED 111.230.73.161:443",
+      "alive": false
+    },
+    {
+      "url": "https://chatbot.theb.ai/#/chat",
+      "status": "ERROR",
+      "error": "",
+      "alive": false
+    },
+    {
+      "url": "https://cdn.kjj8.com/images/2021/11/20211638043297-unnamed-6.png",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://extfans.com/productivity/bgnkhhnnamicmpeenaelnjfhikgbkllg/",
+      "status": "ERROR",
+      "error": "getaddrinfo ENOTFOUND extfans.com",
+      "alive": false
+    },
+    {
+      "url": "https://extfans.com/productivity/hdokiejnpimakedhajhdlcegeplioahd/",
+      "status": "ERROR",
+      "error": "getaddrinfo ENOTFOUND extfans.com",
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=cipchk.cssrem",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=chendm.translate",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://mp-b28966cb-26bc-43ae-b98b-aa286fad0729.cdn.bspapp.com/cloudstorage/31e91b77-d492-4f27-9ce1-d20ad54ad8e2.ico",
+      "status": "ERROR",
+      "error": "getaddrinfo ENOTFOUND mp-b28966cb-26bc-43ae-b98b-aa286fad0729.cdn.bspapp.com",
+      "alive": false
+    },
+    {
+      "url": "https://www.5cv.top/",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://static.runoob.com/images/c-runoob-logo.ico",
+      "status": "ERROR",
+      "error": "getaddrinfo ENOTFOUND static.runoob.com",
+      "alive": false
+    },
+    {
+      "url": "http://www.animate.net.cn/",
+      "status": 444,
+      "alive": false
+    },
+    {
+      "url": "http://blog.fer-link.com/demo/20220915111146/index2.html",
+      "status": 400,
+      "alive": false
+    },
+    {
+      "url": "https://www.w3.org/Style/CSS/",
+      "status": "ERROR",
+      "error": "Client network socket disconnected before secure TLS connection was established",
+      "alive": false
+    },
+    {
+      "url": "http://demo.color-ui.com/",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://element-plus.gitee.io/images/element-plus-logo.svg",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://element-plus.gitee.io/zh-CN/component/button.html",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "http://caibaojian.com/iscroll-5/gettingstart.html",
+      "status": "ERROR",
+      "error": "socket hang up",
+      "alive": false
+    },
+    {
+      "url": "http://hemin.cn/jq/",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://nodejs.p2hp.com/",
+      "status": "ERROR",
+      "error": "socket hang up",
+      "alive": false
+    },
+    {
+      "url": "https://www.nuxtjs.cn/guide/installation",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "http://57code.gitee.io/nuxt3-docs-zh/getting-started/installation.html",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://ezdoc.cn/docs/nuxtjs/nuxt-config",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://www.naiveui.com/zh-CN/os-theme/docs/installation",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://platform.openai.com/docs/quickstart?context=node",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://www.svelte.cn/",
+      "status": 502,
+      "alive": false
+    },
+    {
+      "url": "https://taro.jd.com/",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "http://tinymce.ax-z.cn/",
+      "status": 500,
+      "alive": false
+    },
+    {
+      "url": "http://typescript.p2hp.com/",
+      "status": "ERROR",
+      "error": "socket hang up",
+      "alive": false
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/601687200",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://blog.51cto.com/u_15689678/5396841",
+      "status": 567,
+      "alive": false
+    },
+    {
+      "url": "http://wiki.41bj.com/brochure/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%AD%A6%E9%80%8FTypeScript/31-%E9%80%90%E6%9D%A1%E6%9D%A5%E7%9C%8Btsconfig.json%E9%85%8D%E7%BD%AE.html",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://www.javascriptc.com/vue3js/guide/introduction.html",
+      "status": "TIMEOUT",
+      "error": "Request timeout",
+      "alive": false
+    },
+    {
+      "url": "https://vant-contrib.gitee.io/vant/v2/#/zh-CN/",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://vant-contrib.gitee.io/vant/#/zh-CN",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://vant-contrib.gitee.io/vant-weapp/#/home",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://www.npmjs.com/package/vue-quill-editor",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://www.kancloud.cn/liuwave/quill/1409423",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://web-abin.gitee.io/abin-web/games/snake.html",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://web-abin.gitee.io/abin-web/games/five-chess.html",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://web-abin.gitee.io/abin-web/games/fly-bird/index.html",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://img1.baidu.com/it/u=2482939586",
+      "status": 400,
+      "alive": false
+    },
+    {
+      "url": "https://yzyx.info/",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://yzyx.info/images/favicon.png",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "http://www.bz.bhrgz.cn/",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "http://www.bz.bhrgz.cn/images/logo.png",
+      "status": 403,
+      "alive": false
+    },
+    {
+      "url": "https://fishpi.cn/",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://www.acgdh.cc/acgdaohang",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://web-abin.gitee.io/abin-web/js/fish.js",
+      "status": 404,
+      "alive": false
+    },
+    {
+      "url": "https://blog.csdn.net/qq_38974163?type=blog",
+      "status": 500,
+      "alive": false
+    },
+    {
+      "url": "http://web-abin.gitee.io/blog",
+      "status": 404,
+      "alive": false
+    }
+  ]
+}

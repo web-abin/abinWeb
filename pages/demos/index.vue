@@ -5,7 +5,17 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import config from '~/config'
+
+// SEO优化
+useSeo({
+  title: `样例 - ${config.SEO_title}`,
+  description: `前端助手样例页面，展示各种前端案例和示例`,
+  keywords: `${config.SEO_keywords}, 前端案例, 示例代码`,
+  type: 'website'
+})
+</script>
 
 <style lang="scss" scoped>
 .page {

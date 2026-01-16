@@ -13,6 +13,16 @@
 </template>
 
 <script setup>
+import config from '~/config'
+
+// SEO优化
+useSeo({
+  title: `留言 - ${config.SEO_title}`,
+  description: `前端助手留言页面，欢迎留下您的宝贵意见和建议`,
+  keywords: `${config.SEO_keywords}, 留言, 反馈`,
+  type: 'website'
+})
+
 const loadStatus = ref(1)
 
 onMounted(() => {

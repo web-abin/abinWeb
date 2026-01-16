@@ -215,9 +215,14 @@
 import fish from './components/fish.vue'
 import config from '~/config'
 
-useSeoMeta({
-  description: config.RELAX_description
+// SEO优化
+useSeo({
+  title: `摸鱼 - ${config.SEO_title}`,
+  description: config.RELAX_description,
+  keywords: `${config.SEO_keywords}, 有趣网站, 创意网站`,
+  type: 'website'
 })
+
 useHead({
   script: [
     {
@@ -235,6 +240,7 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
+// @use "sass:math" 已在 nuxt.config.ts 的 additionalData 中全局注入
 $--footerHeight: 160px;
 .box {
   position: relative;
@@ -342,6 +348,7 @@ $--footerHeight: 160px;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       -webkit-box-orient: vertical;
       margin-top: 2px;
     }
@@ -396,13 +403,13 @@ $--footerHeight: 160px;
 
 @for $i from 1 through 30 {
   .b#{$i} {
-    $--radius: random(20) + 10 + px;
+    $--radius: math.random(20) + 10 + px;
     width: $--radius;
     height: $--radius;
-    left: (random(1600)) + px;
-    bottom: (random(100)) + px;
-    animation: bubble- + (random(3)) 12s infinite linear;
-    animation-delay: random(12) + s;
+    left: (math.random(1600)) + px;
+    bottom: (math.random(100)) + px;
+    animation: bubble- + (math.random(3)) 12s infinite linear;
+    animation-delay: math.random(12) + s;
   }
 }
 

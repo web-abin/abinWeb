@@ -1,0 +1,5 @@
+// 统一变量入口文件，导入并转发所有变量
+@use './theme.scss' as *;
+@use './layout.scss' as *;
+@forward './theme.scss';
+@forward './layout.scss';

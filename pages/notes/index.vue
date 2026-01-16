@@ -52,8 +52,12 @@
 import { nextTick, ref } from 'vue'
 import config from '~/config'
 
-useSeoMeta({
-  description: config.NOTES_description
+// SEO优化
+useSeo({
+  title: `文档 - ${config.SEO_title}`,
+  description: config.NOTES_description,
+  keywords: `${config.SEO_keywords}, 前端文档, 技术文档`,
+  type: 'website'
 })
 
 const keyword = ref('')

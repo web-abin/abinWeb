@@ -9,7 +9,11 @@ export default defineNuxtConfig({
     baseURL: isDev ? '/' : '/abinWeb/',
     buildAssetsDir: 'static', //修改站点资产的文件夹名称，默认是_nuxt
     head: {
-      title: '前端助手',
+      title: config.title,
+      titleTemplate: '%s - 前端助手',
+      htmlAttrs: {
+        lang: 'zh-CN'
+      },
       meta: [
         { charset: 'utf-8' },
         {
@@ -20,19 +24,32 @@ export default defineNuxtConfig({
         { name: 'description', content: config.SEO_description },
         { name: 'keywords', content: config.SEO_keywords },
         { name: 'author', content: config.author },
+        { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+        { name: 'googlebot', content: 'index, follow' },
+        { name: 'bingbot', content: 'index, follow' },
+        { name: 'format-detection', content: 'telephone=no' },
+        { name: 'theme-color', content: '#1e80ff' },
         {
           name: 'bytedance-verification-code',
           content: 'Z39UIZv8+Uw0Uu1UX7Ap'
-        }
+        },
+        // Open Graph
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: config.title },
+        { property: 'og:locale', content: 'zh_CN' },
+        // Twitter Card
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:creator', content: '@' + config.author }
       ],
 
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/abinWeb/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: isDev ? '/favicon.ico' : '/abinWeb/favicon.ico' },
+        { rel: 'apple-touch-icon', href: isDev ? '/favicon.ico' : '/abinWeb/favicon.ico' }
       ],
       script: [
         {
           defer: true,
-          src: '/abinWeb/js/busuanzi.js'
+          src: isDev ? '/js/busuanzi.js' : '/abinWeb/js/busuanzi.js'
         }
       ]
     }
@@ -44,13 +61,16 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData:
-            "@import '~/assets/styles/common.scss';@import '~/assets/styles/theme.scss';@import '~/assets/styles/layout.scss';"
+          // 使用 @import 在 additionalData 中全局注入变量（功能正常，虽然会警告）
+          // 对于全局注入场景，@import 是合适的，因为变量需要在所有文件中可用
+          // 同时注入 math 模块供 relax/index.vue 使用
+          additionalData: "@use 'sass:math';@import '~/assets/styles/theme.scss';@import '~/assets/styles/layout.scss';",
+          silenceDeprecations: ['legacy-js-api', 'import'] // 静默弃用警告
         }
       }
     }
   },
-  css: ['@/assets/styles/global.scss'],
+  css: ['@/assets/styles/common.scss'],
   postcss: {
     plugins: {
       tailwindcss: {}
