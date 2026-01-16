@@ -41,7 +41,7 @@
 import { ref } from 'vue'
 import tools from './tools.ts'
 import config from '~/config'
-import Icon404 from '@/assets/images/icon-404.png'
+import { getRemoteImg } from '~/utils/common'
 
 // SEO优化
 useSeo({
@@ -63,7 +63,7 @@ const handleImageError = (event) => {
   const img = event.target
   // 如果已经是默认图标，则不再替换，避免无限循环
   if (img.src && !img.src.includes('icon-404.png')) {
-    img.src = Icon404
+    img.src = getRemoteImg('/images/icon-404.png')
   }
 }
 </script>

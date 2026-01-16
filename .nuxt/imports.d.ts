@@ -31,4 +31,4 @@ export { setInterval } from '#app/compat/interval';
 export { definePageMeta } from '../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/pages/runtime/composables';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { useSeo, SeoOptions } from '../composables/useSeo';
-export { useNuxtDevTools } from '../node_modules/.pnpm/@nuxt+devtools@3.1.1_vite@7.3.1_@types+node@18.19.130_jiti@1.21.7_sass@1.97.2_terser@5.46.0_yaml@2.8.2__vue@3.5.26/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
+export { getRemoteImg } from '../utils/common';

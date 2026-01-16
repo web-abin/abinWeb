@@ -28,6 +28,7 @@ declare global {
   const getAppManifest: typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/manifest').getAppManifest
   const getCurrentInstance: typeof import('../../node_modules/vue').getCurrentInstance
   const getCurrentScope: typeof import('../../node_modules/vue').getCurrentScope
+  const getRemoteImg: typeof import('../../utils/common').getRemoteImg
   const getRouteRules: typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/manifest').getRouteRules
   const h: typeof import('../../node_modules/vue').h
   const hasInjectionContext: typeof import('../../node_modules/vue').hasInjectionContext
@@ -113,7 +114,6 @@ declare global {
   const useModel: typeof import('../../node_modules/vue').useModel
   const useNuxtApp: typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/nuxt').useNuxtApp
   const useNuxtData: typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/asyncData').useNuxtData
-  const useNuxtDevTools: typeof import('../../node_modules/.pnpm/@nuxt+devtools@3.1.1_vite@7.3.1_@types+node@18.19.130_jiti@1.21.7_sass@1.97.2_terser@5.46.0_yaml@2.8.2__vue@3.5.26/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools').useNuxtDevTools
   const usePreviewMode: typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/preview').usePreviewMode
   const useRequestEvent: typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/ssr').useRequestEvent
   const useRequestFetch: typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/ssr').useRequestFetch
@@ -217,6 +217,7 @@ declare module 'vue' {
     readonly getAppManifest: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/manifest')['getAppManifest']>
     readonly getCurrentInstance: UnwrapRef<typeof import('../../node_modules/vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('../../node_modules/vue')['getCurrentScope']>
+    readonly getRemoteImg: UnwrapRef<typeof import('../../utils/common')['getRemoteImg']>
     readonly getRouteRules: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/manifest')['getRouteRules']>
     readonly h: UnwrapRef<typeof import('../../node_modules/vue')['h']>
     readonly hasInjectionContext: UnwrapRef<typeof import('../../node_modules/vue')['hasInjectionContext']>
@@ -302,7 +303,6 @@ declare module 'vue' {
     readonly useModel: UnwrapRef<typeof import('../../node_modules/vue')['useModel']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
-    readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/.pnpm/@nuxt+devtools@3.1.1_vite@7.3.1_@types+node@18.19.130_jiti@1.21.7_sass@1.97.2_terser@5.46.0_yaml@2.8.2__vue@3.5.26/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly usePreviewMode: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/ssr')['useRequestEvent']>
     readonly useRequestFetch: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.20.2_@parcel+watcher@2.5.4_@types+node@18.19.130_@vue+compiler-sfc@3.5.26_cac@6._52e017639587f34f88e9281a0941e148/node_modules/nuxt/dist/app/composables/ssr')['useRequestFetch']>
