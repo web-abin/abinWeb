@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import config from '~/config'
+import { getRemoteImg } from '~/utils/common'
 
 definePageMeta({
   layout: false
@@ -66,7 +67,7 @@ onMounted(() => {
 
   <div class="page" v-else>
     <img
-      src="~/assets/images/home.jpg"
+      :src="getRemoteImg('/images/home.jpg')"
       class="bg"
       alt=""
       @load="handleImageLoad"
