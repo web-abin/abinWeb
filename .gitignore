@@ -1,7 +1,6 @@
 # Nuxt dev/build outputs
 .output
 .nuxt
-.nuxt/
 .nitro
 .cache
 .pnpm-store
@@ -23,4 +22,3 @@ logs
 .env.*
 !.env.example
 dist
-dist/
