@@ -71,7 +71,7 @@ onMounted(() => {
   <div class="home-page">
     <!-- 粒子背景 -->
     <LogoParticles ref="particleRef" />
-    
+
     <!-- 加载状态 -->
     <Transition name="fade">
       <div class="load-box" v-if="isLoading">
@@ -95,14 +95,22 @@ onMounted(() => {
         </div>
 
         <div class="action-section">
-          <NuxtLink 
-            class="enter-btn" 
-            to="/tools"
-            @mouseenter="onButtonEnter"
-            @mouseleave="onButtonLeave"
-          >
-            <span class="btn-text">开始探索</span>
-            <span class="btn-icon">→</span>
+          <NuxtLink class="uiverse" to="/tools" @mouseenter="onButtonEnter" @mouseleave="onButtonLeave">
+            <div class="wrapper">
+              <span>开始探索</span>
+              <div class="circle circle-12"></div>
+              <div class="circle circle-11"></div>
+              <div class="circle circle-10"></div>
+              <div class="circle circle-9"></div>
+              <div class="circle circle-8"></div>
+              <div class="circle circle-7"></div>
+              <div class="circle circle-6"></div>
+              <div class="circle circle-5"></div>
+              <div class="circle circle-4"></div>
+              <div class="circle circle-3"></div>
+              <div class="circle circle-2"></div>
+              <div class="circle circle-1"></div>
+            </div>
           </NuxtLink>
         </div>
 
@@ -180,7 +188,7 @@ onMounted(() => {
   border-top-color: #1e80ff;
   border-radius: 50%;
   animation: spin 1.5s linear infinite;
-  
+
   &:nth-child(2) {
     width: 70%;
     height: 70%;
@@ -190,7 +198,7 @@ onMounted(() => {
     animation-duration: 1s;
     animation-direction: reverse;
   }
-  
+
   &:nth-child(3) {
     width: 40%;
     height: 40%;
@@ -202,8 +210,13 @@ onMounted(() => {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 // 内容区域
@@ -229,7 +242,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  
+
   .title-line {
     display: block;
     background: linear-gradient(135deg, #ffffff 0%, #1e80ff 50%, #00d4ff 100%);
@@ -238,7 +251,7 @@ onMounted(() => {
     background-clip: text;
     animation: gradient-shift 3s ease infinite;
     background-size: 200% 200%;
-    
+
     &.highlight {
       background: linear-gradient(135deg, #1e80ff 0%, #00d4ff 50%, #ffffff 100%);
       -webkit-background-clip: text;
@@ -250,8 +263,15 @@ onMounted(() => {
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .subtitle {
@@ -265,62 +285,187 @@ onMounted(() => {
   margin-bottom: 4rem;
 }
 
-.enter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.2rem 3rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #1e80ff 0%, #00d4ff 100%);
-  border: 2px solid transparent;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.uiverse {
+  --duration: 7s;
+  --easing: linear;
+  --c-color-1: rgba(30, 128, 255, 0.6);
+  --c-color-2: #1e80ff;
+  --c-color-3: #00d4ff;
+  --c-color-4: rgba(0, 212, 255, 0.6);
+  --c-shadow: rgba(30, 128, 255, 0.35);
+  --c-shadow-inset-top: rgba(0, 212, 255, 0.45);
+  --c-shadow-inset-bottom: rgba(15, 20, 40, 0.8);
+  --c-radial-inner: #1e80ff;
+  --c-radial-outer: #0f1a3a;
+  --c-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
   position: relative;
+  cursor: pointer;
+  border: none;
+  display: table;
+  border-radius: 28px;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: var(--c-color);
+  text-decoration: none;
+  background: radial-gradient(circle, var(--c-radial-inner), var(--c-radial-outer) 80%);
+  box-shadow: 0 0 18px var(--c-shadow);
+}
+
+.uiverse::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 28px;
+  box-shadow:
+    inset 0 3px 12px var(--c-shadow-inset-top),
+    inset 0 -3px 4px var(--c-shadow-inset-bottom);
+}
+
+.uiverse .wrapper {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(30, 128, 255, 0.3);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(30, 128, 255, 0.5);
-    
-    &::before {
-      left: 100%;
-    }
-    
-    .btn-icon {
-      transform: translateX(5px);
-    }
-  }
-  
-  &:active {
-    transform: translateY(-1px);
-  }
-  
-  .btn-text {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .btn-icon {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease;
-    font-size: 1.5rem;
-  }
+  position: relative;
+  border-radius: 28px;
+  min-width: 180px;
+  padding: 16px 0;
+}
+
+.uiverse .wrapper span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.uiverse:hover {
+  --duration: 1600ms;
+}
+
+.uiverse .wrapper .circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  filter: blur(var(--blur, 8px));
+  background: var(--background, transparent);
+  transform: translate(var(--x, 0), var(--y, 0)) translateZ(0);
+  animation: var(--animation, none) var(--duration) var(--easing) infinite;
+}
+
+.uiverse .wrapper .circle.circle-1,
+.uiverse .wrapper .circle.circle-9,
+.uiverse .wrapper .circle.circle-10 {
+  --background: var(--c-color-4);
+}
+
+.uiverse .wrapper .circle.circle-3,
+.uiverse .wrapper .circle.circle-4 {
+  --background: var(--c-color-2);
+  --blur: 14px;
+}
+
+.uiverse .wrapper .circle.circle-5,
+.uiverse .wrapper .circle.circle-6 {
+  --background: var(--c-color-3);
+  --blur: 16px;
+}
+
+.uiverse .wrapper .circle.circle-2,
+.uiverse .wrapper .circle.circle-7,
+.uiverse .wrapper .circle.circle-8,
+.uiverse .wrapper .circle.circle-11,
+.uiverse .wrapper .circle.circle-12 {
+  --background: var(--c-color-1);
+  --blur: 12px;
+}
+
+.uiverse .wrapper .circle.circle-1 {
+  --x: 0;
+  --y: -40px;
+  --animation: circle-1;
+}
+
+.uiverse .wrapper .circle.circle-2 {
+  --x: 122px;
+  --y: 8px;
+  --animation: circle-2;
+}
+
+.uiverse .wrapper .circle.circle-3 {
+  --x: -12px;
+  --y: -12px;
+  --animation: circle-3;
+}
+
+.uiverse .wrapper .circle.circle-4 {
+  --x: 140px;
+  --y: -12px;
+  --animation: circle-4;
+}
+
+.uiverse .wrapper .circle.circle-5 {
+  --x: 12px;
+  --y: -4px;
+  --animation: circle-5;
+}
+
+.uiverse .wrapper .circle.circle-6 {
+  --x: 56px;
+  --y: 16px;
+  --animation: circle-6;
+}
+
+.uiverse .wrapper .circle.circle-7 {
+  --x: 8px;
+  --y: 28px;
+  --animation: circle-7;
+}
+
+.uiverse .wrapper .circle.circle-8 {
+  --x: 28px;
+  --y: -4px;
+  --animation: circle-8;
+}
+
+.uiverse .wrapper .circle.circle-9 {
+  --x: 20px;
+  --y: -12px;
+  --animation: circle-9;
+}
+
+.uiverse .wrapper .circle.circle-10 {
+  --x: 64px;
+  --y: 16px;
+  --animation: circle-10;
+}
+
+.uiverse .wrapper .circle.circle-11 {
+  --x: 4px;
+  --y: 4px;
+  --animation: circle-11;
+}
+
+.uiverse .wrapper .circle.circle-12 {
+  --blur: 14px;
+  --x: 52px;
+  --y: 4px;
+  --animation: circle-12;
 }
 
 .features {
@@ -335,30 +480,30 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.75rem 1.1rem;
-  min-width: 96px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  transition: all 0.25s ease;
+  padding: 0.4rem 0.6rem;
+  min-width: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: all 0.2s ease;
   text-decoration: none;
   cursor: pointer;
-  
+
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
   }
-  
+
   .feature-icon {
     font-size: 1.6rem;
   }
-  
+
   .feature-text {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 }
 
@@ -411,12 +556,16 @@ onMounted(() => {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
+
   33% {
     transform: translate(30px, -30px) scale(1.1);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9);
   }
@@ -447,29 +596,28 @@ onMounted(() => {
   .content {
     padding: 1rem;
   }
-  
+
   .main-title {
     font-size: 2.5rem;
   }
-  
-  .enter-btn {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+
+  .uiverse {
+    font-size: 16px;
   }
-  
+
   .features {
     gap: 0.8rem;
   }
-  
+
   .feature-item {
-    padding: 0.65rem 0.9rem;
-    
+    padding: 0.35rem 0.5rem;
+
     .feature-icon {
       font-size: 1.4rem;
     }
-    
+
     .feature-text {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
     }
   }
 }
@@ -478,16 +626,16 @@ onMounted(() => {
   .main-title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 0.9rem;
   }
-  
+
   .enter-btn {
     padding: 0.9rem 1.5rem;
     font-size: 0.9rem;
   }
-  
+
   .features {
     gap: 0.5rem;
   }
