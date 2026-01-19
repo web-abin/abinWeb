@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     buildAssetsDir: 'static', //修改站点资产的文件夹名称，默认是_nuxt
     head: {
       title: config.title,
-      titleTemplate: '%s - 前端助手',
+      titleTemplate: '%s',
       htmlAttrs: {
         lang: 'zh-CN'
       },
