@@ -40,11 +40,12 @@ useHead({
 })
 
 const isLoading = ref(true)
-const homeImg = '/images/home.jpg' // 直接使用 public 目录路径，避免导入时的 ufo 模块问题
 
 // 图片加载完成
 const handleImageLoad = () => {
-  isLoading.value = false
+  setTimeout(() => {
+    isLoading.value = false
+  }, 200);
 }
 
 // 图片加载失败
@@ -56,7 +57,7 @@ const handleImageError = () => {
 onMounted(() => {
   setTimeout(() => {
     isLoading.value = false
-  }, 2000)
+  }, 3000)
 })
 </script>
 
@@ -66,13 +67,7 @@ onMounted(() => {
   </div>
 
   <div class="page" v-else>
-    <img
-      :src="getRemoteImg('/images/home.jpg')"
-      class="bg"
-      alt=""
-      @load="handleImageLoad"
-      @error="handleImageError"
-    />
+    <img :src="getRemoteImg('/images/home.jpg')" class="bg" alt="" @load="handleImageLoad" @error="handleImageError" />
     <img src="~/assets/images/logo-text.png" alt="前端助手" class="img-title" />
     <NuxtLink class="enter" to="/tools">进入</NuxtLink>
   </div>
@@ -101,6 +96,7 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .bg {
     position: absolute;
     top: 0;
@@ -110,12 +106,15 @@ onMounted(() => {
     height: 100%;
     object-fit: cover;
   }
+
   .img-title {
     height: 130px;
   }
+
   h1 {
     font-size: 40px;
   }
+
   .enter {
     color: #fff;
     font-size: 20px;
@@ -133,13 +132,9 @@ onMounted(() => {
   padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
-  background: conic-gradient(
-      from 90deg at var(--b) var(--b),
+  background: conic-gradient(from 90deg at var(--b) var(--b),
       #0000 90deg,
-      var(--color) 0
-    )
-    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-    calc(100% - var(--b) - 2 * var(--_p));
+      var(--color) 0) var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
   transition: 0.3s linear, color 0s, background-color 0s;
   outline: var(--b) solid #0000;
   outline-offset: 0.6em;
@@ -168,6 +163,7 @@ onMounted(() => {
       max-width: 80vw;
       height: 26vw;
     }
+
     .enter {
       font-size: 16px;
     }
