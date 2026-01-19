@@ -29,6 +29,15 @@
       "@@/*": [
         "../*"
       ],
+      "nitropack/types": [
+        "../node_modules/.pnpm/nitropack@2.13.1/node_modules/nitropack/types"
+      ],
+      "nitropack/runtime": [
+        "../node_modules/.pnpm/nitropack@2.13.1/node_modules/nitropack/runtime"
+      ],
+      "nitropack": [
+        "../node_modules/.pnpm/nitropack@2.13.1/node_modules/nitropack"
+      ],
       "defu": [
         "../node_modules/.pnpm/defu@6.1.4/node_modules/defu"
       ],
