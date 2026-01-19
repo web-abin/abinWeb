@@ -32,4 +32,3 @@ export { definePageMeta } from '../node_modules/.pnpm/nuxt@3.20.2_@parcel+watche
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { useSeo, SeoOptions } from '../composables/useSeo';
 export { getRemoteImg } from '../utils/common';
-export { useNuxtDevTools } from '../node_modules/.pnpm/@nuxt+devtools@3.1.1_vite@7.3.1_@types+node@20.19.30_jiti@1.21.7_sass@1.97.2_terser@5.46.0_yaml@2.8.2__vue@3.5.26/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
