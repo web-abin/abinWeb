@@ -1,6 +1,7 @@
 # Nuxt dev/build outputs
 .output
 .nuxt
+.nuxt/*
 .nitro
 .cache
 .pnpm-store
