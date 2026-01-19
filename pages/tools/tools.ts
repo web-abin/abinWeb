@@ -267,9 +267,9 @@ const toolsFlat: ToolItem[] = [
   },
   {
     icon: 'https://ai-bot.cn/favicon.ico',
-    name: 'ai-bot.cn',
+    name: 'AI 工具集',
     link: 'https://ai-bot.cn/ai-ui-generation-tools/',
-    class: ToolCategory.CHATGPT
+    class: ToolCategory.SITE
   },
   {
     icon: 'https://audiomass.co/favicon.ico',
