@@ -5,6 +5,7 @@
 <script setup lang="ts">
 import * as THREE from 'three'
 import { onMounted, onUnmounted, ref } from 'vue'
+import { getRemoteImg } from '~/utils/common'
 
 const containerRef = ref<HTMLDivElement | null>(null)
 
@@ -28,7 +29,7 @@ let mouse = new THREE.Vector2(9999, 9999)
 let targetMouse = new THREE.Vector2(9999, 9999)
 let logoScale = 1
 
-const imageSrc = '/logo.webp'
+const imageSrc = getRemoteImg('/logo.webp')
 const threshold = 30
 const sampleStep = 2
 
@@ -173,6 +174,7 @@ const initScene = () => {
   containerRef.value.appendChild(renderer.domElement)
 
   const image = new Image()
+  image.crossOrigin = 'anonymous'
   image.src = imageSrc
   image.onload = () => createParticlesFromImage(image)
 }
