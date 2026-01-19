@@ -37,5 +37,8 @@
   "volta": {
     "node": "20.19.0",
     "pnpm": "10.19.0"
+  },
+  "dependencies": {
+    "three": "^0.182.0"
   }
 }
