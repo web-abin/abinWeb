@@ -906,10 +906,10 @@ const toolsFlat: ToolItem[] = [
     class: ToolCategory.COOL
   },
   {
-    name: 'sandspiel.club',
+    name: '粒子效果',
     link: 'https://sandspiel.club/',
     icon: 'https://sandspiel.club/favicon.ico',
-    class: ToolCategory.CSS
+    class: ToolCategory.COOL
   }
 ]
 
