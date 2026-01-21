@@ -189,6 +189,18 @@
         <div class="game-desc">你是一条鱼，能活多久？</div>
       </div>
     </a>
+    <a
+      class="game-item"
+      target="_blank"
+      rel="nofollow external"
+      href="https://www.gamer520.com/"
+    >
+      <img src="https://www.gamer520.com/favicon.ico" alt="" class="game-logo" />
+      <div class="game-info">
+        <div class="game-title">gamer520.com</div>
+        <div class="game-desc">一个游戏平台，收录了丰富的免费游戏!</div>
+      </div>
+    </a>
   </div>
 </template>
 

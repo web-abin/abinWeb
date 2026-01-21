@@ -906,10 +906,10 @@ const toolsFlat: ToolItem[] = [
     class: ToolCategory.COOL
   },
   {
-    icon: 'https://www.gamer520.com/favicon.ico',
-    name: 'gamer520.com',
-    link: 'https://www.gamer520.com/',
-    class: ToolCategory.OFTEN
+    name: 'sandspiel.club',
+    link: 'https://sandspiel.club/',
+    icon: 'https://sandspiel.club/favicon.ico',
+    class: ToolCategory.CSS
   }
 ]
 

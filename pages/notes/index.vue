@@ -453,6 +453,16 @@ const list = ref([
     ]
   },
   {
+    id: 'Next.js',
+    name: 'Next.js',
+    official: [
+      {
+        link: 'https://nextjs.org/',
+        name: 'Next.js官网'
+      }
+    ]
+  },
+  {
     id: 'nuxt',
     name: 'nuxt',
     official: [
