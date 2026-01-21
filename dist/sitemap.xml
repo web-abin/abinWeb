@@ -5,7 +5,7 @@
   <!-- 首页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   <!-- 工具页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/tools</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -21,7 +21,7 @@
   <!-- 文档页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/notes</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -29,7 +29,7 @@
   <!-- 游戏页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/games</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -37,7 +37,7 @@
   <!-- 摸鱼页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/relax</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -45,7 +45,7 @@
   <!-- 摸鱼组件页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/relax/components/fish</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -53,7 +53,7 @@
   <!-- 留言页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/comment</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -61,9 +61,17 @@
   <!-- 样例页 -->
   <url>
     <loc>https://web-abin.github.io/abinWeb/demos</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- 友情链接页 -->
+  <url>
+    <loc>https://web-abin.github.io/abinWeb/links</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
