@@ -19,6 +19,16 @@ const sites = [
   'https://devtool.tech/'
 ]
 
+function loadSitesFromFile() {
+  const filePath = path.join(__dirname, '..', 'data', '新工具.txt')
+  if (!fs.existsSync(filePath)) return []
+  const content = fs.readFileSync(filePath, 'utf-8')
+  return content
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line && !line.startsWith('#'))
+}
+
 // 提取域名
 function getDomain(url) {
   try {
@@ -207,8 +217,10 @@ async function main() {
   console.log('🚀 开始抓取网站 favicon...\n')
   
   const results = []
+  const customSites = loadSitesFromFile()
+  const sitesToFetch = customSites.length ? customSites : sites
   
-  for (const url of sites) {
+  for (const url of sitesToFetch) {
     try {
       const domain = getDomain(url)
       const favicon = await findFavicon(url)
