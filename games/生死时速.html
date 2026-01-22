@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>《生死时速》</title>
+    <style>
+        :root {
+            --speed: 10s;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: url(https://pic.imgdb.cn/item/65fa6c879f345e8d036f8ae0.png);
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #panel {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99;
+            background-color: #fee422;
+            display: grid;
+            place-content: center;
+            /* filter: brightness(.1); */
+        }
+
+        #panel>img {
+            height: 100vh;
+            object-fit: contain;
+            -webkit-mask: radial-gradient(black 54%, transparent 70%, transparent 100%);
+        }
+
+        #panel>button,
+        .end>button {
+            width: 55vh;
+            height: 8vh;
+            background: linear-gradient(to bottom, #eff0ea, #dddbda 30%, #cac9c9 50%, #dddbda 70%, #eff0ea);
+            border-radius: 2.5vh;
+            border: 4px solid #000;
+            box-shadow: 0 0 3px 3px #eeeaea, 0 0 0 4px #000;
+            font-size: 3.6vh;
+            font-weight: bolder;
+            letter-spacing: .15em;
+            white-space: nowrap;
+            text-shadow: 0 0 2px #fff;
+            cursor: pointer;
+        }
+
+        #panel>button {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 26vh;
+        }
+
+        .end {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: grid;
+            place-content: center;
+            display: none;
+        }
+
+        .end>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .end>h1 {
+            position: absolute;
+            top: 15vh;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4vw;
+            color: #fff;
+            white-space: nowrap;
+            text-shadow:
+                -2px -2px 0 black,
+                2px -2px 0 black,
+                -2px 2px 0 black,
+                2px 2px 0 black;
+        }
+
+        .end>button {
+            position: absolute;
+            bottom: 15vh;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timing {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 1000px;
+            height: 600px;
+        }
+
+        #police,
+        #thief {
+            position: absolute;
+            offset: url(#road);
+            animation: move var(--speed) linear infinite;
+        }
+
+        svg {
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        :where(#police, #thief)>img {
+            width: 160px;
+        }
+
+        #police {
+            animation-play-state: paused;
+            offset-position: 25% 75%;;
+        }
+
+        #thief {
+            --paused: paused;
+            animation-play-state: var(--paused);
+        }
+
+        @keyframes move {
+            from {
+                offset-distance: 0%;
+            }
+
+            to {
+                offset-distance: 100%;
+            }
+        }
+
+        .my-input {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 24px;
+            width: 80vw;
+            height: fit-content;
+            border: 10px solid #dbddda;
+            border-left-width: 30px;
+            border-right-width: 30px;
+            padding: 10px;
+            background: #fafaf8;
+            overflow-x: scroll;
+        }
+
+        .my-input::-webkit-scrollbar {
+            display: none;
+        }
+
+        .my-input p {
+            white-space: nowrap;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .answer-area {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: fit-content;
+            height: fit-content;
+            min-width: 1.5px;
+            padding-right: 50vw;
+        }
+
+        #answer {
+            position: relative;
+            color: #59acdf;
+            width: fit-content;
+            min-width: 1.5px;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            white-space: pre;
+        }
+
+        /* 打字效果 */
+        #answer::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 15%;
+            width: 1.5px;
+            height: 70%;
+            background: #000;
+            animation: blink-caret .7s step-end infinite;
+            -webkit-animation: blink-caret .7s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                background: transparent;
+            }
+
+            50% {
+                background: #333333;
+            }
+        }
+
+        .show {
+            position: absolute;
+            right: 0;
+        }
+    </style>
+
+<body>
+    <!-- 计时 -->
+    <div class="timing">你的成绩：00:00:00</div>
+    <!-- 开始游戏面板 -->
+    <div id="panel"><img src="https://pic.imgdb.cn/item/65fa3bca9f345e8d03b1b41d.jpg" alt="">
+        <button id="start">开始游戏</button>
+    </div>
+    <div class="end success">
+        <h1>溜之大吉！</h1>
+        <img src="https://pic.imgdb.cn/item/65faed7c9f345e8d03f461a1.jpg" alt="" class="success">
+    </div>
+    <div class="end fail">
+        <h1>你被逮捕了！</h1>
+        <img src="https://pic.imgdb.cn/item/65faed7d9f345e8d03f4639d.jpg" alt="" class="fail">
+        <button id="restart">重新开始</button>
+    </div>
+
+
+    <main>
+        <div id="police">
+            <img src="https://pic.imgdb.cn/item/65fad7409f345e8d0356ed45.png" alt="警察">
+        </div>
+        <div id="thief">
+            <img src="https://pic.imgdb.cn/item/65fade359f345e8d03834b24.png" alt="小偷">
+        </div>
+    </main>
+
+    <svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+        <g>
+            <title>地图</title>
+            <path id="road" stroke="#00000085" stroke-width="30" fill="none" opacity="undefined"
+                d="m33.46785,373.40689c162.84202,-0.63566 223.03917,-0.95695 292.78098,-0.63368c-0.65651,-115.80554 0.34349,-75.35113 -1.14012,-160.67702c-165.1604,0 -180.36944,0.19468 -186.57847,0.19468c1.37595,-112.33324 0.83507,-186.32053 0.81227,-203.0128c201.74026,0.7161 272.8014,0.7161 344.76344,0.7161c1.2295,130.10873 2.15319,156.93454 2.13039,219.74859c127.92581,-1.19498 151.91325,-1.93477 253.25076,-1.46303c-2.15324,-123.90854 -1.78409,-139.98917 -1.64914,-140.37301c88.0059,-0.00691 166.21859,-0.94442 223.17022,-0.54247c3.72539,412.89437 6.05517,313.33547 4.31422,429.29474l-931.21418,3.75985l-0.57269,-147.61631"
+                id="svg_5" />
+        </g>
+    </svg>
+
+
+    <div class="my-input">
+        <p id="tip"></p>
+        <div class="answer-area">
+            <p id="answer"></p><span class="show"></span>
+        </div>
+    </div>
+
+
+    <script>
+        const words =
+            'zhi yin ni tai mei baby. ying mian zou lai de ni rang wo ru ci chun chun yu dong, zhe zhong gan jue wo cong wei you, cause i got a crush on you, who you. ni shi wo de wo shi ni de shui, zai duo yi yan zai kan yi yan jiu hui bao zha, zai jin yi dian kao jin dian kuai bei rong hua, xiang yao ba ni zhan wei ji you baby baby!'
+
+        tip.textContent = words
+
+        // 碰撞检测
+        function checkCollision() {
+            const policeRect = police.getBoundingClientRect()
+            const thiefRect = thief.getBoundingClientRect()
+            if (answer.textContent.length >= words.length) {
+                showResult(true)
+                return
+            }
+            if (Math.abs(policeRect.x - thiefRect.x) < 2 && Math.abs(policeRect.y - thiefRect.y) < 2) {
+                showResult()
+                return
+            }
+            requestAnimationFrame(checkCollision)
+        }
+        // 结局判断
+        function showResult(flag) {
+            if (flag) {
+                document.querySelector('.success').style.display = 'grid'
+            } else {
+                document.querySelector('.fail h1').textContent =
+                    `你被逮捕了！${document.querySelector(".timing").textContent}`
+                document.querySelector('.fail').style.display = 'grid'
+            }
+        }
+        restart.onclick = function () {
+            location.reload()
+        }
+
+
+        start.onclick = function () {
+            panel.style.display = 'none'
+            startTimer()
+            let timer
+            // 监听打字
+            document.addEventListener('keydown', function (event) {
+                const myinput = answer.textContent
+                if (event.key === words[myinput.length]) {
+                    timer && clearTimeout(timer)
+                    answer.textContent = myinput + event.key
+                    thief.style.setProperty('--paused', 'running');
+                    document.querySelector('.show').scrollIntoView(true)
+                    timer = setTimeout(() => {
+                        thief.style.setProperty('--paused', 'paused');
+                    }, 400);
+                }
+            });
+            setTimeout(() => {
+                checkCollision()
+                police.style['animation-play-state'] = 'running'
+            }, 3000);
+        }
+
+        var timerInterval; // 用于存储计时器的ID
+        var startTime; // 用于存储开始时间
+
+        function startTimer() {
+            // 获取当前时间
+            startTime = new Date().getTime();
+            // 每1000毫秒更新一次计时器
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            // 计算已经过的时间
+            var currentTime = new Date().getTime();
+            var elapsedTime = currentTime - startTime;
+
+            // 将毫秒转换为时、分、秒
+            var hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+            var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+            // 格式化时间
+            var formattedTime =
+                `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`
+
+            // 更新显示
+            document.querySelector(".timing").textContent = '你的成绩：' + formattedTime;
+        }
+
+        function formatTime(time) {
+            // 在数字前面加上0，使其始终为两位数
+            return time < 10 ? "0" + time : time;
+        }
+    </script>
+</body>
+
+</html>
