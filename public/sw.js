@@ -1,10 +1,11 @@
 // Service Worker 版本
-const CACHE_VERSION = 'v1'
+const CACHE_VERSION = 'v3'
 const HTML_CACHE_NAME = `html-cache-${CACHE_VERSION}`
-const LOG_PREFIX = '[SW]'
+const LOG_PREFIX = '[Service Worker]'
 
 // 开关：是否开启 SWR (Stale-While-Revalidate)
 const ENABLE_SWR = false
+console.log('===========================', LOG_PREFIX);
 
 // 开关：Push 后是否预加载 HTML
 const ENABLE_PRELOAD_AFTER_PUSH = true
@@ -46,11 +47,10 @@ self.addEventListener('fetch', (event) => {
   const isHtmlRequest =
     event.request.method === 'GET' &&
     isSameOrigin &&
-    (event.request.mode === 'navigate' ||
+    ( event.request.mode === 'navigate' ||
       event.request.headers.get('accept')?.includes('text/html') ||
       url.pathname.endsWith('.html') ||
       HTML_PAGES.some((page) => url.pathname === page))
-
   if (!isHtmlRequest) return
 
   console.log(`${LOG_PREFIX} fetch html`, url.pathname)

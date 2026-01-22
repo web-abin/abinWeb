@@ -1,15 +1,12 @@
 <template>
   <div class="page" @click="showPanel = false">
     <div class="box">
-      <input type="text" class="search" placeholder="搜索" v-model="keyword"/>
+      <input ref="searchInputRef" type="text" class="search" placeholder="搜索" v-model="keyword" />
       <div class="item-box" v-for="item in list" :key="item.id">
-        <div class="item" :class="{ item_active: !!keyword && item.name.toLowerCase().includes(keyword.toLowerCase()) }" @click.stop="onLookPanel(item)">
-          <span class="actual-text"
-            >&nbsp;&nbsp;{{ item.name }}&nbsp;&nbsp;</span
-          >
-          <span class="hover-text" aria-hidden="true"
-            >&nbsp;&nbsp;{{ item.name }}&nbsp;&nbsp;</span
-          >
+        <div class="item" :class="{ item_active: !!keyword && item.name.toLowerCase().includes(keyword.toLowerCase()) }"
+          @click.stop="onLookPanel(item)">
+          <span class="actual-text">&nbsp;&nbsp;{{ item.name }}&nbsp;&nbsp;</span>
+          <span class="hover-text" aria-hidden="true">&nbsp;&nbsp;{{ item.name }}&nbsp;&nbsp;</span>
         </div>
       </div>
 
@@ -21,35 +18,22 @@
     <div class="popup" v-if="showPanel" @click.stop>
       <h3>【 {{ activeDocs.name }} 】</h3>
       <p>官方文档</p>
-      <a
-        target="_blank"
-        rel="nofollow external"
-        :href="link1.link"
-        v-for="(link1, link1Index) in activeDocs.official"
-        :key="link1.link"
-        >{{
+      <a target="_blank" rel="nofollow external" :href="link1.link" v-for="(link1, link1Index) in activeDocs.official"
+        :key="link1.link">{{
           link1.name
             ? link1.name
-            : `${activeDocs.name} 官方文档${
-                activeDocs.official.length > 1 ? link1Index + 1 : ''
-              }`
-        }}</a
-      >
+            : `${activeDocs.name} 官方文档${activeDocs.official.length > 1 ? link1Index + 1 : ''
+            }`
+        }}</a>
       <p v-if="activeDocs.others && activeDocs.others.length">相关文档</p>
-      <a
-        target="_blank"
-        rel="nofollow external"
-        :href="link2.link"
-        v-for="link2 in activeDocs.others"
-        :key="link2.link"
-        >{{ link2.name }}</a
-      >
+      <a target="_blank" rel="nofollow external" :href="link2.link" v-for="link2 in activeDocs.others"
+        :key="link2.link">{{ link2.name }}</a>
     </div>
   </div>
 </template>
 
-<script setup>
-import { nextTick, ref } from 'vue'
+<script setup lang="ts">
+import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import config from '~/config'
 
 // SEO优化
@@ -60,9 +44,23 @@ useSeo({
   type: 'website'
 })
 
-const keyword = ref('')
+type DocLink = {
+  link: string
+  name?: string
+}
 
-const list = ref([
+type DocItem = {
+  id: string
+  name: string
+  official: DocLink[]
+  others?: DocLink[]
+  icon?: string
+}
+
+const keyword = ref('')
+const searchInputRef = ref<HTMLInputElement | null>(null)
+
+const list = ref<DocItem[]>([
   {
     id: 'animate.js',
     name: 'Animate.js',
@@ -942,15 +940,36 @@ const onChangeMode = () => {
   mode.value = mode.value == 0 ? 1 : 0
 }
 
-const activeDocs = ref({})
+const activeDocs = ref<DocItem>({ id: '', name: '', official: [], others: [] })
 const showPanel = ref(false)
-const onLookPanel = (item) => {
+const onLookPanel = (item: DocItem) => {
   showPanel.value = false
   nextTick(() => {
     showPanel.value = true
   })
   activeDocs.value = item
 }
+
+const focusSearchInput = () => {
+  searchInputRef.value?.focus()
+}
+
+const onGlobalKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Enter') {
+    focusSearchInput()
+  }
+}
+
+onMounted(() => {
+  nextTick(() => {
+    focusSearchInput()
+  })
+  window.addEventListener('keydown', onGlobalKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', onGlobalKeydown)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -960,6 +979,7 @@ const onLookPanel = (item) => {
   max-width: 1250px;
   font-size: 20px;
 }
+
 .box {
   width: 1080px;
   min-height: 80vh;
@@ -972,38 +992,45 @@ const onLookPanel = (item) => {
   margin-bottom: 20px;
   background: url(images/paper.png);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-  .search{
+
+  .search {
     height: 38px;
     font-size: 14px;
     padding: 0 12px;
     outline: none;
-    border:1px solid #1e80ff;
+    border: 1px solid #1e80ff;
     border-radius: 4px;
-    &:focus{
+
+    &:focus {
       outline: none;
     }
-    &::after,&::before{
+
+    &::after,
+    &::before {
       display: none;
     }
-    &::-webkit-input-placeholder{
+
+    &::-webkit-input-placeholder {
       color: #00000066;
     }
   }
 }
 
-:global(html[data-theme='dark']) .box .search {
-  background: rgba(15, 23, 42, 0.85);
+[data-theme='dark'] input.search {
+  background-color: rgba(17, 24, 39, 0.92) !important;
   border-color: rgba(34, 211, 238, 0.5);
   color: #e2e8f0;
 }
 
-:global(html[data-theme='dark']) .box .search::placeholder {
+[data-theme='dark'] input.search::placeholder {
   color: rgba(148, 163, 184, 0.8);
 }
+
 .item-box {
   width: 140px;
   margin: 12px 15px;
 }
+
 .item {
   margin: 0;
   width: fit-content;
@@ -1012,6 +1039,7 @@ const onLookPanel = (item) => {
   padding: 0;
   border: none;
 }
+
 .item {
   --border-right: 6px;
   --text-stroke-color: rgba(255, 255, 255, 0.6);
@@ -1028,6 +1056,7 @@ const onLookPanel = (item) => {
   cursor: pointer;
   white-space: nowrap;
 }
+
 /* this is the text, when you hover on item */
 .hover-text {
   position: absolute;
@@ -1041,8 +1070,9 @@ const onLookPanel = (item) => {
   transition: 0.5s;
   -webkit-text-stroke: 1px var(--animation-color);
 }
+
 /* hover */
-:where(.item_active,.item:hover) .hover-text {
+:where(.item_active, .item:hover) .hover-text {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
@@ -1063,31 +1093,38 @@ const onLookPanel = (item) => {
   animation: popup 0.4s ease-out forwards;
   transform-origin: center center;
   color: #fff;
+
   h3 {
     text-align: center;
     margin-bottom: 8px;
   }
+
   p {
     font-size: 18px;
     font-weight: bold;
   }
+
   p:nth-of-type(2) {
     margin-top: 20px;
   }
+
   a {
     display: block;
     font-size: 15px;
     margin: 6px 0;
     color: #fff;
+
     &:hover {
       text-decoration: underline;
     }
   }
 }
+
 @keyframes popup {
   from {
     transform: translate(-50%, -50%) scaleX(0);
   }
+
   75% {
     transform: translate(-50%, -50%) scaleX(1);
   }

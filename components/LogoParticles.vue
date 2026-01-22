@@ -48,10 +48,12 @@ let targetMouse = new THREE.Vector2(9999, 9999)
 let logoScale = 1
 const { theme } = useTheme()
 let tintMix = 0.0
-let tintColor = new THREE.Color(0.05, 0.05, 0.05)
+let tintColor = new THREE.Color(0x0ea5e9) // 主题色蓝色（#0ea5e9）
 
 const imageSrc = getRemoteImg('/logo.webp')
+// 像素亮度阈值：越大保留的像素越少（形状更稀疏）
 const threshold = 30
+// 采样步长：越大粒子越少（性能更好）
 const sampleStep = 2
 
 const createParticlesFromImage = (image: HTMLImageElement) => {
@@ -77,8 +79,10 @@ const createParticlesFromImage = (image: HTMLImageElement) => {
 
   const containerWidth = containerRef.value?.clientWidth || 1200
   const containerHeight = containerRef.value?.clientHeight || 800
+  // 聚合时 logo 的缩放系数（相对容器大小）
   logoScale = Math.min(containerWidth / width, containerHeight / height) * 1.35
 
+  // 散开范围倍率：越大越稀疏、越铺满屏幕
   const scatterScale = 1.8
   const scatterWidth = containerWidth * scatterScale
   const scatterHeight = containerHeight * scatterScale
@@ -121,9 +125,13 @@ const createParticlesFromImage = (image: HTMLImageElement) => {
       time: { value: 0 },
       progress: { value: 0 },
       mouse: { value: new THREE.Vector2(9999, 9999) },
+      // 主题色混合（0=原色，1=完全替换为 tintColor）
       tintMix: { value: tintMix },
+      // 主题色（浅色模式时用于压暗）
       tintColor: { value: tintColor },
+      // 聚合形状相对画布的偏移
       gatherOffset: { value: gatherOffset },
+      // 聚合形状缩放
       gatherScale: { value: gatherScale }
     },
     vertexShader: `
@@ -155,7 +163,7 @@ const createParticlesFromImage = (image: HTMLImageElement) => {
         ) * (1.0 - progress);
         pos.z += sin(time * 0.1 + pos.x * 0.01 + pos.y * 0.01) * 8.0 * (1.0 - progress);
 
-        // 鼠标排斥
+        // 鼠标排斥（仅散开时）
         vec2 diff = pos.xy - mouse;
         float dist = length(diff);
         float force = smoothstep(200.0, 0.0, dist);
@@ -243,6 +251,7 @@ const onMouseMove = (event: MouseEvent) => {
   const rect = containerRef.value.getBoundingClientRect()
   const ndcX = ((event.clientX - rect.left) / rect.width) * 2 - 1
   const ndcY = -((event.clientY - rect.top) / rect.height) * 2 + 1
+  // 将 NDC 映射到相机可视平面坐标，确保交互与画布一致
   const viewHeight = camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * 2
   const viewWidth = viewHeight * camera.aspect
   mouse.x = ndcX * (viewWidth / 2)
@@ -271,6 +280,7 @@ onMounted(() => {
     () => theme.value,
     (value) => {
       const isLight = value === 'light'
+      // 浅色模式下加重 tintMix，让粒子更显眼
       tintMix = isLight ? 0.85 : 0.0
       if (particles && particles.material instanceof THREE.ShaderMaterial) {
         particles.material.uniforms.tintMix.value = tintMix

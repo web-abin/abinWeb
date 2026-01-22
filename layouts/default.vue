@@ -16,7 +16,7 @@
       <NuxtLink class="navigation-link" to="/comment">留言</NuxtLink>
     </nav>
 
-    <button class="theme-toggle" type="button" @click="toggleTheme">
+    <button id="theme-btn" class="theme-toggle" type="button" @click="onToggleTheme">
       <span v-if="theme === 'dark'">🌙</span>
       <span v-else>☀️</span>
       <span class="toggle-text">{{ theme === 'dark' ? 'Dark' : 'Light' }}</span>
@@ -73,11 +73,11 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive, ref } from 'vue'
 import Home from '~/components/Home.vue'
 
-const { theme, toggleTheme } = useTheme()
+const { theme, applyTheme } = useTheme()
 
 let siteData = reactive({
   site_pv: 0,
@@ -96,6 +96,46 @@ if (process.client) {
   var script = document.createElement('script')
   script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
   document.body.appendChild(script)
+}
+
+const onToggleTheme = (event: MouseEvent) => {
+  const nextTheme = theme.value === 'dark' ? 'light' : 'dark'
+  if (typeof document === 'undefined' || !('startViewTransition' in document)) {
+    applyTheme(nextTheme)
+    return
+  }
+
+  const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  if (prefersReduced) {
+    applyTheme(nextTheme)
+    return
+  }
+
+  const target = event.currentTarget as HTMLElement | null
+  const rect = target?.getBoundingClientRect()
+  const x = rect ? rect.left + rect.width / 2 : window.innerWidth / 2
+  const y = rect ? rect.top + rect.height / 2 : window.innerHeight / 2
+  const maxRadius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))
+
+  const transition = document.startViewTransition(() => {
+    applyTheme(nextTheme)
+  })
+
+  transition.ready.then(() => {
+    document.documentElement.animate(
+      {
+        clipPath: [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${maxRadius}px at ${x}px ${y}px)`
+        ]
+      },
+      {
+        duration: 480,
+        easing: 'ease-in-out',
+        pseudoElement: '::view-transition-new(root)'
+      }
+    )
+  })
 }
 </script>
 

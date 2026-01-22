@@ -13,8 +13,7 @@ useHead({
       innerHTML: `(() => {
         try {
           const stored = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          const next = stored || (prefersDark ? 'dark' : 'light');
+          const next = stored || 'light';
           document.documentElement.dataset.theme = next;
         } catch (e) {}
       })();`
@@ -80,5 +79,11 @@ html[data-theme='dark'] {
   --app-accent-2: #22d3ee;
   --app-accent-3: #38bdf8;
   --app-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 </style>
