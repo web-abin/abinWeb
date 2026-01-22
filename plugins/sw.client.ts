@@ -37,6 +37,7 @@ export default defineNuxtPlugin(() => {
         scope: baseUrl
       })
       console.log('[SW] registered', registration.scope)
+      await registration.update()
     } catch (error) {
       console.warn('[SW] 注册失败', error)
     }
@@ -80,6 +81,9 @@ export default defineNuxtPlugin(() => {
 
   window.addEventListener('load', () => {
     registerServiceWorker()
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.update()
+    })
   })
 
   document.addEventListener(
