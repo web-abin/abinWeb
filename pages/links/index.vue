@@ -26,7 +26,7 @@ import config from '~/config'
 
 // SEO优化
 useSeo({
-  title: `友情链接 - ${config.SEO_title}`,
+  title: `友情链接 | ${config.SEO_title}`,
   description: `前端助手友情链接页面，欢迎交换友情链接`,
   keywords: `${config.SEO_keywords}, 友情链接, 友链`,
   type: 'website'

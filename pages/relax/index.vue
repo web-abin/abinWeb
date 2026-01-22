@@ -217,7 +217,7 @@ import config from '~/config'
 
 // SEO优化
 useSeo({
-  title: `摸鱼 - ${config.SEO_title}`,
+  title: `摸鱼网站集 | ${config.SEO_title}`,
   description: config.RELAX_description,
   keywords: `${config.SEO_keywords}, 有趣网站, 创意网站`,
   type: 'website'
