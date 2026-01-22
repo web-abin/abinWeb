@@ -1,15 +1,29 @@
 <template>
   <header class="header">
-    <NuxtLink class="navigation-link" to="/tools">工具</NuxtLink>
-    <NuxtLink class="navigation-link" to="/notes">文档</NuxtLink>
-    <NuxtLink class="navigation-link" to="/games">游戏</NuxtLink>
-    <NuxtLink class="navigation-link" to="/relax">摸鱼</NuxtLink>
-    <NuxtLink class="navigation-link" to="/demos">样例</NuxtLink>
-    <NuxtLink class="navigation-link" to="/comment">留言</NuxtLink>
+    <div class="topbar-left">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="branch">main</span>
+    </div>
 
-    <!-- <NuxtLink class="navigation-link" to="/link2">友链</NuxtLink> -->
+    <nav class="nav-links">
+      <NuxtLink class="navigation-link" to="/tools">工具</NuxtLink>
+      <NuxtLink class="navigation-link" to="/notes">文档</NuxtLink>
+      <NuxtLink class="navigation-link" to="/games">游戏</NuxtLink>
+      <NuxtLink class="navigation-link" to="/relax">摸鱼</NuxtLink>
+      <NuxtLink class="navigation-link" to="/demos">样例</NuxtLink>
+      <NuxtLink class="navigation-link" to="/comment">留言</NuxtLink>
+    </nav>
+
+    <button class="theme-toggle" type="button" @click="toggleTheme">
+      <span v-if="theme === 'dark'">🌙</span>
+      <span v-else>☀️</span>
+      <span class="toggle-text">{{ theme === 'dark' ? 'Dark' : 'Light' }}</span>
+    </button>
   </header>
   <main class="content">
+    <div class="content-rail"></div>
     <slot />
   </main>
 
@@ -63,6 +77,8 @@
 import { reactive, ref } from 'vue'
 import Home from '~/components/Home.vue'
 
+const { theme, toggleTheme } = useTheme()
+
 let siteData = reactive({
   site_pv: 0,
   site_uv: 0
@@ -93,11 +109,55 @@ if (process.client) {
   height: $--header-height;
   padding: 0 $--padding-side;
   display: flex;
-  justify-content: center;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: none;
+  border-bottom: 1px solid $--color-border;
   background-color: $--color-header;
 
-  .navigation-link {
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--app-muted);
+  font-size: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background: #ff6b6b;
+}
+
+.dot-yellow {
+  background: #facc15;
+}
+
+.dot-green {
+  background: #22c55e;
+}
+
+.branch {
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid $--color-border;
+  color: var(--app-muted);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.navigation-link {
     position: relative;
     display: flex;
     padding: 12px 18px;
@@ -105,12 +165,12 @@ if (process.client) {
     align-items: center;
     flex: 0 0 auto;
     transition: color 200ms ease;
-    color: #546681;
+    color: var(--app-muted);
     font-size: 16px;
     text-decoration: none;
 
     &:hover {
-      color: #333333;
+      color: var(--app-fg);
     }
 
     &:hover::before {
@@ -121,7 +181,7 @@ if (process.client) {
       bottom: 0;
       left: 1rem;
       height: 2px;
-      background-color: #1e80ff;
+      background-color: var(--app-accent-2);
       width: calc(100% - 2rem);
     }
   }
@@ -132,14 +192,48 @@ if (process.client) {
   }
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid $--color-border;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--app-fg);
+  cursor: pointer;
+  font-size: 12px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--app-accent-2);
+  color: var(--app-accent-2);
+}
+
+.toggle-text {
+  letter-spacing: 0.1em;
+}
+
 .content {
   width: 100%;
   height: fit-content;
   padding-top: calc($--header-height + 20px);
   padding-bottom: 40px;
-  padding-left: $--padding-side;
+  padding-left: calc($--padding-side + 40px);
   padding-right: $--padding-side;
   background: $--color-body;
+  position: relative;
+}
+
+.content-rail {
+  position: absolute;
+  left: calc($--padding-side + 16px);
+  top: calc($--header-height + 30px);
+  bottom: 30px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, var(--app-accent), transparent);
+  opacity: 0.5;
 }
 
 .btn-home {
@@ -163,7 +257,7 @@ footer {
   position: relative;
   width: 100%;
   padding: 10px 0;
-  background: #fff;
+  background: transparent;
   border-top: 1px solid $--color-border;
   .site-links {
     display: flex;
@@ -186,6 +280,7 @@ footer {
     bottom: 0;
     top: unset !important;
     box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
   }
 
   .navigation-link-pc {
@@ -198,6 +293,7 @@ footer {
   .content {
     padding-top: 20px;
     padding-bottom: calc($--header-height + 20px);
+    padding-left: $--padding-side;
 
     &::-webkit-scrollbar {
       display: none;
@@ -205,6 +301,10 @@ footer {
   }
 
   footer {
+    display: none;
+  }
+
+  .content-rail {
     display: none;
   }
 }

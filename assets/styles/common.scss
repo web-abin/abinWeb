@@ -6,6 +6,9 @@
 }
 body {
   overflow: hidden;
+  background: var(--app-bg);
+  color: var(--app-fg);
+  
 }
 #__nuxt {
   height: 100vh;
@@ -13,20 +16,21 @@ body {
   overflow-x: hidden;
 }
 #__nuxt::-webkit-scrollbar {
-  width: 5px;
-  background-color: #ff5a00;
+  width: 6px;
+  background-color: transparent;
 }
 #__nuxt::-webkit-scrollbar-thumb {
-  width: 5px;
-  background: yellow;
+  width: 6px;
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 8px;
 }
 
 
 a {
   text-decoration: none;
-  color: #000000d9;
+  color: var(--app-fg);
   &:hover {
-    color: #1890ff;
+    color: var(--app-accent-2);
   }
 }
 
@@ -36,12 +40,14 @@ a {
   min-height: 80vh;
   padding: 16px;
   margin: 0 auto;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 20px;
   background-color: $--color-box;
+  border: none;
+  box-shadow: none;
 }
 
 @keyframes circle-1 {
