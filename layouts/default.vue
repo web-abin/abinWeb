@@ -1,11 +1,29 @@
 <template>
   <header class="header">
-    <NuxtLink class="navigation-link" to="/tools">工具</NuxtLink>
-    <NuxtLink class="navigation-link" to="/notes">文档</NuxtLink>
-    <NuxtLink class="navigation-link" to="/games">游戏</NuxtLink>
-    <NuxtLink class="navigation-link" to="/relax">摸鱼</NuxtLink>
-    <NuxtLink class="navigation-link" to="/demos">样例</NuxtLink>
-    <NuxtLink class="navigation-link" to="/comment">留言</NuxtLink>
+    <NuxtLink class="navigation-link" to="/tools">
+      <h1 v-if="route.path === '/tools'">工具</h1>
+      <template v-else>工具</template>
+    </NuxtLink>
+    <NuxtLink class="navigation-link" to="/notes">
+      <h1 v-if="route.path === '/notes'">文档</h1>
+      <template v-else>文档</template>
+    </NuxtLink>
+    <NuxtLink class="navigation-link" to="/games">
+      <h1 v-if="route.path === '/games'">游戏</h1>
+      <template v-else>游戏</template>
+    </NuxtLink>
+    <NuxtLink class="navigation-link" to="/relax">
+      <h1 v-if="route.path === '/relax'">摸鱼</h1>
+      <template v-else>摸鱼</template>
+    </NuxtLink>
+    <NuxtLink class="navigation-link" to="/demos">
+      <h1 v-if="route.path === '/demos'">样例</h1>
+      <template v-else>样例</template>
+    </NuxtLink>
+    <NuxtLink class="navigation-link" to="/comment">
+      <h1 v-if="route.path === '/comment'">留言</h1>
+      <template v-else>留言</template>
+    </NuxtLink>
 
     <!-- <NuxtLink class="navigation-link" to="/link2">友链</NuxtLink> -->
   </header>
@@ -19,42 +37,22 @@
 
   <footer>
     <div class="site-links">
-      <a
-        href="https://github.com/web-abin/abinWeb"
-        target="_blank"
-        rel="nofollow external"
-        >源码链接</a
-      >、
-      <a
-        href="https://github.com/web-abin"
-        target="_blank"
-        rel="nofollow external"
-        >GitHub主页</a
-      >、
-      <a href="https://juejin.cn/user/994399097982728" target="_blank"
-        >掘金主页</a
-      >、
-      <a href="https://blog.csdn.net/qq_38974163?type=blog" target="_blank"
-        >CSDN主页</a
-      >、 <a href="http://web-abin.gitee.io/blog" target="_blank">个人博客</a>、
+      <a href="https://github.com/web-abin/abinWeb" target="_blank" rel="nofollow external">源码链接</a>、
+      <a href="https://github.com/web-abin" target="_blank" rel="nofollow external">GitHub主页</a>、
+      <a href="https://juejin.cn/user/994399097982728" target="_blank">掘金主页</a>、
+      <a href="https://blog.csdn.net/qq_38974163?type=blog" target="_blank">CSDN主页</a>、 <a
+        href="http://web-abin.gitee.io/blog" target="_blank">个人博客</a>、
       <NuxtLink class="navigation-link" to="/links">友情链接</NuxtLink>
     </div>
 
     <div class="site-data">
-      <span
-        >建站第<span style="color: #1e80ff">{{ siteCreateDays }}</span
-        >天</span
-      >&nbsp;|&nbsp;
-      <span id="busuanzi_container_site_pv"
-        >浏览量<span id="busuanzi_value_site_pv" style="color: #1e80ff">{{
-          siteData.site_pv
-        }}</span></span
-      >&nbsp;|&nbsp;
-      <span id="busuanzi_container_site_uv"
-        >访客数<span id="busuanzi_value_site_uv" style="color: #1e80ff">{{
-          siteData.site_uv
-        }}</span></span
-      >
+      <span>建站第<span style="color: #1e80ff">{{ siteCreateDays }}</span>天</span>&nbsp;|&nbsp;
+      <span id="busuanzi_container_site_pv">浏览量<span id="busuanzi_value_site_pv" style="color: #1e80ff">{{
+        siteData.site_pv
+          }}</span></span>&nbsp;|&nbsp;
+      <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv" style="color: #1e80ff">{{
+        siteData.site_uv
+          }}</span></span>
     </div>
   </footer>
 </template>
@@ -62,6 +60,8 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import Home from '~/components/Home.vue'
+
+const route = useRoute()
 
 let siteData = reactive({
   site_pv: 0,
@@ -109,11 +109,24 @@ if (process.client) {
     font-size: 16px;
     text-decoration: none;
 
-    &:hover {
-      color: #333333;
+    h1 {
+      margin: 0;
+      font-size: inherit;
+      color: inherit;
     }
 
-    &:hover::before {
+    &:hover {
+      color: $--color-menu-active;
+      font-weight: bold;
+    }
+
+  }
+
+  .router-link-active {
+    color: $--color-menu-active;
+    font-weight: bold;
+
+    ::before {
       content: '';
       position: absolute;
       top: auto;
@@ -124,11 +137,6 @@ if (process.client) {
       background-color: #1e80ff;
       width: calc(100% - 2rem);
     }
-  }
-
-  .router-link-active {
-    color: $--color-menu-active;
-    font-weight: bold;
   }
 }
 
@@ -154,6 +162,7 @@ if (process.client) {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
+
   &:hover {
     transform: scale(1.1);
   }
@@ -165,14 +174,17 @@ footer {
   padding: 10px 0;
   background: #fff;
   border-top: 1px solid $--color-border;
+
   .site-links {
     display: flex;
     justify-content: center;
+
     a {
       line-height: 25px;
       font-size: 14px;
     }
   }
+
   .site-data {
     width: 100%;
     display: flex;
@@ -191,6 +203,7 @@ footer {
   .navigation-link-pc {
     display: none !important;
   }
+
   .btn-home {
     display: none;
   }
