@@ -1,6 +1,7 @@
 import config from './config'
 
 const isDev = process.env.NODE_ENV === 'development'
+const siteURL = isDev ? 'http://localhost:3000' : 'https://web-abin.github.io/abinWeb'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -32,6 +33,7 @@ export default defineNuxtConfig({
         { name: 'googlebot', content: 'index, follow' },
         { name: 'bingbot', content: 'index, follow' },
         { name: 'format-detection', content: 'telephone=no' },
+        { name: 'application-name', content: config.title },
         { name: 'theme-color', content: '#1e80ff' },
         {
           name: 'bytedance-verification-code',
@@ -41,8 +43,11 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: config.title },
         { property: 'og:locale', content: 'zh_CN' },
+        { property: 'og:image', content: `${siteURL}/images/logo-text.png` },
+        { property: 'og:url', content: siteURL },
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:image', content: `${siteURL}/images/logo-text.png` },
         { name: 'twitter:creator', content: '@' + config.author }
       ],
 
@@ -50,17 +55,38 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: isDev ? '/favicon.ico' : '/abinWeb/favicon.ico'
+          href: isDev ? '/favicon.ico' : `${siteURL}/favicon.ico`
+        },
+        {
+          rel: 'shortcut icon',
+          type: 'image/x-icon',
+          href: isDev ? '/favicon.ico' : `${siteURL}/favicon.ico`
         },
         {
           rel: 'apple-touch-icon',
-          href: isDev ? '/favicon.ico' : '/abinWeb/favicon.ico'
+          href: isDev ? '/favicon.ico' : `${siteURL}/favicon.ico`
         }
       ],
       script: [
         {
           defer: true,
           src: isDev ? '/js/busuanzi.js' : '/abinWeb/js/busuanzi.js'
+        },
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: config.title,
+            alternateName: '前端导航',
+            url: siteURL,
+            inLanguage: 'zh-CN',
+            publisher: {
+              '@type': 'Organization',
+              name: config.author,
+              logo: `${siteURL}/images/logo-text.png`
+            }
+          })
         }
       ]
     }
