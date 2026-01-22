@@ -1,10 +1,10 @@
 // Service Worker 版本
-const CACHE_VERSION = 'v3'
+const CACHE_VERSION = 'v1'
 const HTML_CACHE_NAME = `html-cache-${CACHE_VERSION}`
 const LOG_PREFIX = '[Service Worker]'
 
 // 开关：是否开启 SWR (Stale-While-Revalidate)
-const ENABLE_SWR = false
+const ENABLE_SWR = true
 console.log('===========================', LOG_PREFIX);
 
 // 开关：Push 后是否预加载 HTML
