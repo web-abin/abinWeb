@@ -1,3 +1,3 @@
 export const getRemoteImg = (url: string) => {
-  return `https://web-abin.github.io/abinWeb${url}`
+  return `${import.meta.env.VITE_APP_WEB_BASEURL}${url}`
 }
