@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    
     <button class="btn-back" type="button" @click="goHome">
     <strong>返回</strong>
     <div id="container-stars">
@@ -52,6 +53,20 @@ const goHome = () => {
   font-weight: 100;
   text-align: center;
   color: #000;
+}
+
+html[data-theme='dark'] .title {
+  color: #e2e8f0;
+}
+
+html[data-theme='dark'] .links-list .item {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.15);
+}
+
+html[data-theme='dark'] .links-list .item a {
+  color: #e2e8f0;
 }
 .links-list{
     margin: 30px auto 60px auto;
@@ -119,6 +134,7 @@ const goHome = () => {
   transition: 0.5s;
   backdrop-filter: blur(1rem);
   border-radius: 5rem;
+  cursor: pointer;
 }
 
 strong {
