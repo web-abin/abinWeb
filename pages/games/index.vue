@@ -209,7 +209,7 @@ import config from '~/config'
 
 // SEO优化
 useSeo({
-  title: `游戏 - ${config.SEO_title}`,
+  title: `游戏收录 | ${config.SEO_title}`,
   description: config.GAMES_description,
   keywords: `${config.SEO_keywords}, H5游戏, 在线游戏`,
   type: 'website'
