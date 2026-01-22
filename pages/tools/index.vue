@@ -45,7 +45,7 @@ import { getRemoteImg } from '~/utils/common'
 
 // SEO优化
 useSeo({
-  title: `前端工具集 | ${config.SEO_title}`,
+  title: `工具集 | ${config.SEO_title}`,
   description: config.TOOLS_description,
   keywords: `${config.SEO_keywords}, 前端工具, 开发工具`,
   type: 'website'
