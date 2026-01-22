@@ -14,7 +14,7 @@
   </button>
 
 
-  <h1 class="title">友情链接</h1>
+  <h1 class="title">友情链接6</h1>
   <ul class="links-list">
     <li class="item"><a href="https://herrylo.github.io/" target="_blank">Herrylo`s Blog </a></li>
   </ul>
