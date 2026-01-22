@@ -42,37 +42,70 @@ useHead({
 
 const isLoading = ref(true)
 const showContent = ref(false)
-const particleRef = ref<{ setGatherProgress: (progress: number) => void } | null>(null)
+const particleRef = ref<{
+  setGatherProgress: (progress: number) => void
+  setGatherOffset: (x: number, y: number) => void
+  setGatherScale: (scale: number) => void
+} | null>(null)
+const cardRef = ref<HTMLDivElement | null>(null)
+const { theme, toggleTheme } = useTheme()
+const searchValue = ref('')
+const router = useRouter()
+
+const runSearch = async () => {
+  const keyword = searchValue.value.trim()
+  if (!keyword) return
+  await router.push({
+    path: '/tools',
+    query: { q: keyword }
+  })
+}
 
 // 鼠标移入按钮 - 粒子聚集成风车
 const onButtonEnter = () => {
-  if (particleRef.value) {
-    particleRef.value.setGatherProgress(1)
-  }
+  if (!particleRef.value) return
+  particleRef.value.setGatherProgress(1)
+  if (!cardRef.value) return
+  const rect = cardRef.value.getBoundingClientRect()
+  const offsetX = rect.width  - 240
+  const offsetY = -rect.height  + 240
+  particleRef.value.setGatherOffset(offsetX, offsetY)
+  particleRef.value.setGatherScale(0.5)
 }
 
 // 鼠标移出按钮 - 粒子散落
 const onButtonLeave = () => {
-  if (particleRef.value) {
-    particleRef.value.setGatherProgress(0)
-  }
+  if (!particleRef.value) return
+  particleRef.value.setGatherProgress(0)
+  particleRef.value.setGatherOffset(0, 0)
+  particleRef.value.setGatherScale(1)
 }
 
 onMounted(() => {
   // 延迟显示内容，等待粒子效果加载
   setTimeout(() => {
     isLoading.value = false
-    setTimeout(() => {
-      showContent.value = true
-    }, 500)
-  }, 1500)
+    showContent.value = true
+  }, 100)
 })
 </script>
 
 <template>
   <div class="home-page">
-    <!-- 粒子背景 -->
-    <LogoParticles ref="particleRef" />
+
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="branch">main</span>
+      </div>
+      <button class="theme-toggle" type="button" @click="toggleTheme">
+        <span v-if="theme === 'dark'">🌙</span>
+        <span v-else>☀️</span>
+        <span class="toggle-text">{{ theme === 'dark' ? 'Dark' : 'Light' }}</span>
+      </button>
+    </div>
 
     <!-- 加载状态 -->
     <Transition name="fade">
@@ -88,62 +121,57 @@ onMounted(() => {
     <!-- 主要内容 -->
     <Transition name="slide-up">
       <div class="content" v-if="showContent">
-        <div class="title-section">
-          <h1 class="main-title">
-            <span class="title-line">前端助手</span>
-            <span class="title-line highlight">超好用</span>
-          </h1>
-          <p class="subtitle">面向前端开发工程师的资源分享平台</p>
-        </div>
-
-        <div class="action-section">
-          <NuxtLink class="uiverse" to="/tools" @mouseenter="onButtonEnter" @mouseleave="onButtonLeave">
-            <div class="wrapper">
-              <span>开始探索</span>
-              <div class="circle circle-12"></div>
-              <div class="circle circle-11"></div>
-              <div class="circle circle-10"></div>
-              <div class="circle circle-9"></div>
-              <div class="circle circle-8"></div>
-              <div class="circle circle-7"></div>
-              <div class="circle circle-6"></div>
-              <div class="circle circle-5"></div>
-              <div class="circle circle-4"></div>
-              <div class="circle circle-3"></div>
-              <div class="circle circle-2"></div>
-              <div class="circle circle-1"></div>
+        <div class="ide-shell" ref="cardRef">
+          <div class="card-particles">
+            <LogoParticles ref="particleRef" />
+          </div>
+          <div class="ide-main">
+            <div class="title-section git-section">
+              <h1 class="main-title">
+                前端助手
+                <span class="title-accent">Frontend Companion</span>
+              </h1>
+              <p class="subtitle">面向前端开发工程师的资源分享平台</p>
             </div>
-          </NuxtLink>
-        </div>
 
-        <!-- 功能标签 -->
-        <div class="features">
-          <NuxtLink to="/tools" class="feature-item">
-            <span class="feature-icon">🛠️</span>
-            <span class="feature-text">工具</span>
-          </NuxtLink>
-          <NuxtLink to="/notes" class="feature-item">
-            <span class="feature-icon">📚</span>
-            <span class="feature-text">文档</span>
-          </NuxtLink>
-          <NuxtLink to="/games" class="feature-item">
-            <span class="feature-icon">🎮</span>
-            <span class="feature-text">游戏</span>
-          </NuxtLink>
-          <NuxtLink to="/relax" class="feature-item">
-            <span class="feature-icon">🎨</span>
-            <span class="feature-text">摸鱼</span>
-          </NuxtLink>
+            <div class="search-section git-section">
+              <div class="terminal-search">
+                <span class="terminal-path">~/abinweb</span>
+                <span class="terminal-symbol">$</span>
+                <input type="text" placeholder="Search / grep..." aria-label="Search" v-model="searchValue"
+                  @keydown.enter.prevent="runSearch" />
+              </div>
+              <p class="hint">高效聚合 · 按需检索 · 即开即用</p>
+            </div>
+
+            <div class="action-section git-section">
+              <NuxtLink class="primary-btn" to="/tools" @mouseenter="onButtonEnter" @mouseleave="onButtonLeave">
+                开始探索 →
+              </NuxtLink>
+            </div>
+
+            <div class="features git-section">
+              <NuxtLink to="/tools" class="feature-item">
+                <span class="feature-icon">🛠️</span>
+                <span class="feature-text">工具</span>
+              </NuxtLink>
+              <NuxtLink to="/notes" class="feature-item">
+                <span class="feature-icon">📚</span>
+                <span class="feature-text">文档</span>
+              </NuxtLink>
+              <NuxtLink to="/games" class="feature-item">
+                <span class="feature-icon">🎮</span>
+                <span class="feature-text">游戏</span>
+              </NuxtLink>
+              <NuxtLink to="/relax" class="feature-item">
+                <span class="feature-icon">🎨</span>
+                <span class="feature-text">摸鱼</span>
+              </NuxtLink>
+            </div>
+          </div>
         </div>
       </div>
     </Transition>
-
-    <!-- 背景装饰 -->
-    <div class="bg-decoration">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-      <div class="gradient-orb orb-3"></div>
-    </div>
   </div>
 </template>
 
@@ -153,50 +181,116 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-  color: #fff;
+  background: var(--app-bg);
+  color: var(--app-fg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.topbar {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  left: 24px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--app-muted);
+  font-size: 0.8rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background: #ff6b6b;
+}
+
+.dot-yellow {
+  background: #facc15;
+}
+
+.dot-green {
+  background: #22c55e;
+}
+
+.branch {
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--app-border);
+  color: var(--app-muted);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--app-border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--app-fg);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--app-accent-2);
+  color: var(--app-accent-2);
+}
+
+.toggle-text {
+  letter-spacing: 0.08em;
+}
+
 // 加载动画
 .load-box {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(10, 12, 20, 0.92);
   z-index: 100;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .loader {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
 }
 
 .loader-ring {
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 3px solid transparent;
-  border-top-color: #1e80ff;
+  border: 2px solid transparent;
+  border-top-color: var(--app-accent);
   border-radius: 50%;
-  animation: spin 1.5s linear infinite;
+  animation: spin 1.4s linear infinite;
 
   &:nth-child(2) {
     width: 70%;
     height: 70%;
     top: 15%;
     left: 15%;
-    border-top-color: #00d4ff;
+    border-top-color: var(--app-accent-2);
     animation-duration: 1s;
     animation-direction: reverse;
   }
@@ -211,6 +305,22 @@ onMounted(() => {
   }
 }
 
+:global(html[data-theme='light'] .home-page .load-box) {
+  background: rgba(248, 250, 252, 0.95);
+}
+
+:global(html[data-theme='light'] .home-page .loader-ring) {
+  border-top-color: #2563eb;
+}
+
+:global(html[data-theme='light'] .home-page .loader-ring:nth-child(2)) {
+  border-top-color: #0ea5e9;
+}
+
+:global(html[data-theme='light'] .home-page .loader-ring:nth-child(3)) {
+  border-top-color: #0f172a;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -221,359 +331,218 @@ onMounted(() => {
   }
 }
 
-// 内容区域
 .content {
   position: relative;
   z-index: 10;
-  text-align: center;
   padding: 2rem;
-  max-width: 1200px;
   width: 100%;
+  max-width: 1100px;
   pointer-events: auto;
 }
 
-.title-section {
-  margin-bottom: 3rem;
+.ide-shell {
+  background: rgba(10, 12, 20, 0.35);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--app-shadow);
+  border: 1px solid var(--app-border);
+  position: relative;
+  overflow: hidden;
+}
+
+:global(html[data-theme='light'] .home-page .ide-shell) {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(59, 130, 246, 0.12);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.ide-main {
+  position: relative;
+  padding-left: 56px;
+  z-index: 2;
+}
+
+.card-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ide-main::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, var(--app-accent), transparent);
+  opacity: 0.6;
+}
+
+.git-section {
+  position: relative;
+  padding: 18px 0;
+}
+
+.git-section::before {
+  content: '';
+  position: absolute;
+  left: -48px;
+  top: 32px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--app-accent-2);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+}
+
+.git-section::after {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 36px;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--app-accent-2), transparent);
+  opacity: 0.8;
 }
 
 .main-title {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-
-  .title-line {
-    display: block;
-    background: linear-gradient(135deg, #ffffff 0%, #1e80ff 50%, #00d4ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 3s ease infinite;
-    background-size: 200% 200%;
-
-    &.highlight {
-      background: linear-gradient(135deg, #1e80ff 0%, #00d4ff 50%, #ffffff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      background-size: 200% 200%;
-    }
-  }
+  gap: 0.4rem;
 }
 
-@keyframes gradient-shift {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
+.title-accent {
+  font-size: 1rem;
+  color: var(--app-accent-2);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 300;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--app-muted);
   letter-spacing: 0.1em;
 }
 
-.action-section {
-  margin-bottom: 4rem;
+.terminal-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--app-border);
+  color: var(--app-accent-3);
 }
 
-.uiverse {
-  --duration: 7s;
-  --easing: linear;
-  --c-color-1: rgba(30, 128, 255, 0.6);
-  --c-color-2: #1e80ff;
-  --c-color-3: #00d4ff;
-  --c-color-4: rgba(0, 212, 255, 0.6);
-  --c-shadow: rgba(30, 128, 255, 0.35);
-  --c-shadow-inset-top: rgba(0, 212, 255, 0.45);
-  --c-shadow-inset-bottom: rgba(15, 20, 40, 0.8);
-  --c-radial-inner: #1e80ff;
-  --c-radial-outer: #0f1a3a;
-  --c-color: #fff;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
-  appearance: none;
-  outline: none;
-  position: relative;
-  cursor: pointer;
+.terminal-path {
+  color: var(--app-accent-2);
+}
+
+.terminal-symbol {
+  color: var(--app-accent);
+}
+
+.terminal-search input {
+  flex: 0 0 240px;
+  width: 440px;
+  background: transparent;
   border: none;
-  display: table;
-  border-radius: 28px;
-  padding: 0;
-  margin: 0 auto;
-  text-align: center;
+  color: var(--app-fg);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.terminal-search input::placeholder {
+  color: var(--app-muted);
+}
+
+:global(html[data-theme='light'] .home-page .terminal-search) {
+  background: rgba(248, 250, 252, 0.95);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: #1e3a8a;
+}
+
+:global(html[data-theme='light'] .home-page .terminal-search input) {
+  color: #0f172a;
+}
+
+:global(html[data-theme='light'] .home-page .terminal-search input::placeholder) {
+  color: rgba(100, 116, 139, 0.7);
+}
+
+:global(html[data-theme='light'] .home-page .logo-particles-container canvas) {
+  mix-blend-mode: normal;
+  opacity: 1;
+  filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.25));
+}
+
+.hint {
+  margin-top: 0.6rem;
+  color: var(--app-muted);
+  font-size: 0.85rem;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: linear-gradient(120deg, var(--app-accent), var(--app-accent-2));
+  color: #0b1018;
   font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  color: var(--c-color);
   text-decoration: none;
-  background: radial-gradient(circle, var(--c-radial-inner), var(--c-radial-outer) 80%);
-  box-shadow: 0 0 18px var(--c-shadow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.uiverse::before {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 28px;
-  box-shadow:
-    inset 0 3px 12px var(--c-shadow-inset-top),
-    inset 0 -3px 4px var(--c-shadow-inset-bottom);
-}
-
-.uiverse .wrapper {
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  mask-image: radial-gradient(white, black);
-  overflow: hidden;
-  position: relative;
-  border-radius: 28px;
-  min-width: 180px;
-  padding: 16px 0;
-}
-
-.uiverse .wrapper span {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-}
-
-.uiverse:hover {
-  --duration: 1600ms;
-}
-
-.uiverse .wrapper .circle {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  filter: blur(var(--blur, 8px));
-  background: var(--background, transparent);
-  transform: translate(var(--x, 0), var(--y, 0)) translateZ(0);
-  animation: var(--animation, none) var(--duration) var(--easing) infinite;
-}
-
-.uiverse .wrapper .circle.circle-1,
-.uiverse .wrapper .circle.circle-9,
-.uiverse .wrapper .circle.circle-10 {
-  --background: var(--c-color-4);
-}
-
-.uiverse .wrapper .circle.circle-3,
-.uiverse .wrapper .circle.circle-4 {
-  --background: var(--c-color-2);
-  --blur: 14px;
-}
-
-.uiverse .wrapper .circle.circle-5,
-.uiverse .wrapper .circle.circle-6 {
-  --background: var(--c-color-3);
-  --blur: 16px;
-}
-
-.uiverse .wrapper .circle.circle-2,
-.uiverse .wrapper .circle.circle-7,
-.uiverse .wrapper .circle.circle-8,
-.uiverse .wrapper .circle.circle-11,
-.uiverse .wrapper .circle.circle-12 {
-  --background: var(--c-color-1);
-  --blur: 12px;
-}
-
-.uiverse .wrapper .circle.circle-1 {
-  --x: 0;
-  --y: -40px;
-  --animation: circle-1;
-}
-
-.uiverse .wrapper .circle.circle-2 {
-  --x: 122px;
-  --y: 8px;
-  --animation: circle-2;
-}
-
-.uiverse .wrapper .circle.circle-3 {
-  --x: -12px;
-  --y: -12px;
-  --animation: circle-3;
-}
-
-.uiverse .wrapper .circle.circle-4 {
-  --x: 140px;
-  --y: -12px;
-  --animation: circle-4;
-}
-
-.uiverse .wrapper .circle.circle-5 {
-  --x: 12px;
-  --y: -4px;
-  --animation: circle-5;
-}
-
-.uiverse .wrapper .circle.circle-6 {
-  --x: 56px;
-  --y: 16px;
-  --animation: circle-6;
-}
-
-.uiverse .wrapper .circle.circle-7 {
-  --x: 8px;
-  --y: 28px;
-  --animation: circle-7;
-}
-
-.uiverse .wrapper .circle.circle-8 {
-  --x: 28px;
-  --y: -4px;
-  --animation: circle-8;
-}
-
-.uiverse .wrapper .circle.circle-9 {
-  --x: 20px;
-  --y: -12px;
-  --animation: circle-9;
-}
-
-.uiverse .wrapper .circle.circle-10 {
-  --x: 64px;
-  --y: 16px;
-  --animation: circle-10;
-}
-
-.uiverse .wrapper .circle.circle-11 {
-  --x: 4px;
-  --y: 4px;
-  --animation: circle-11;
-}
-
-.uiverse .wrapper .circle.circle-12 {
-  --blur: 14px;
-  --x: 52px;
-  --y: 4px;
-  --animation: circle-12;
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(34, 211, 238, 0.35);
 }
 
 .features {
   display: flex;
-  justify-content: center;
-  gap: 1.2rem;
+  gap: 1.6rem;
   flex-wrap: wrap;
 }
 
 .feature-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.6rem;
-  min-width: auto;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  transition: all 0.2s ease;
+  gap: 0.6rem;
+  padding: 6px 0;
   text-decoration: none;
-  cursor: pointer;
+  color: var(--app-fg);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    color: rgba(255, 255, 255, 1);
-    transform: translateY(-2px);
+    color: var(--app-accent-2);
+    border-color: var(--app-accent-2);
   }
 
   .feature-icon {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .feature-text {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 500;
-    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 }
 
-// 背景装饰
-.bg-decoration {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.gradient-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.3;
-  animation: float 20s ease-in-out infinite;
-}
-
-.orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, #1e80ff 0%, transparent 70%);
-  top: -200px;
-  left: -200px;
-  animation-delay: 0s;
-}
-
-.orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #00d4ff 0%, transparent 70%);
-  bottom: -150px;
-  right: -150px;
-  animation-delay: 5s;
-}
-
-.orb-3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, #ffffff 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation-delay: 10s;
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
-// 过渡动画
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
@@ -593,53 +562,25 @@ onMounted(() => {
   transform: translateY(30px);
 }
 
-// 响应式设计
-@media (max-width: 768px) {
-  .content {
-    padding: 1rem;
+@media (max-width: 900px) {
+  .ide-shell {
+    padding: 2rem 1.5rem;
   }
 
-  .main-title {
-    font-size: 2.5rem;
-  }
-
-  .uiverse {
-    font-size: 16px;
-  }
-
-  .features {
-    gap: 0.8rem;
-  }
-
-  .feature-item {
-    padding: 0.35rem 0.5rem;
-
-    .feature-icon {
-      font-size: 1.4rem;
-    }
-
-    .feature-text {
-      font-size: 0.75rem;
-    }
+  .ide-main {
+    padding-left: 46px;
   }
 }
 
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-  }
-
-  .enter-btn {
-    padding: 0.9rem 1.5rem;
-    font-size: 0.9rem;
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .features {
-    gap: 0.5rem;
+    gap: 1rem;
   }
 }
 </style>

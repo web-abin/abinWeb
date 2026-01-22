@@ -274,6 +274,12 @@ useSeo({
     }
   }
 }
+
+:global(html[data-theme='dark'] .game-item) {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: none;
+}
 @media (max-width: 480px) {
   .box {
     padding: 8px;

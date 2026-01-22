@@ -990,6 +990,16 @@ const onLookPanel = (item) => {
     }
   }
 }
+
+:global(html[data-theme='dark']) .box .search {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(34, 211, 238, 0.5);
+  color: #e2e8f0;
+}
+
+:global(html[data-theme='dark']) .box .search::placeholder {
+  color: rgba(148, 163, 184, 0.8);
+}
 .item-box {
   width: 140px;
   margin: 12px 15px;

@@ -4,20 +4,38 @@
 
 <script setup lang="ts">
 import * as THREE from 'three'
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { getRemoteImg } from '~/utils/common'
 
 const containerRef = ref<HTMLDivElement | null>(null)
 
 let targetProgress = 0
 let currentProgress = 0
+const gatherOffset = new THREE.Vector3(0, 0, 0)
+let gatherScale = 1
 
 const setGatherProgress = (progress: number) => {
   targetProgress = progress
 }
 
+const setGatherOffset = (x: number, y: number) => {
+  gatherOffset.set(x, y, 0)
+  if (particles && particles.material instanceof THREE.ShaderMaterial) {
+    particles.material.uniforms.gatherOffset.value.copy(gatherOffset)
+  }
+}
+
+const setGatherScale = (scale: number) => {
+  gatherScale = scale
+  if (particles && particles.material instanceof THREE.ShaderMaterial) {
+    particles.material.uniforms.gatherScale.value = gatherScale
+  }
+}
+
 defineExpose({
-  setGatherProgress
+  setGatherProgress,
+  setGatherOffset,
+  setGatherScale
 })
 
 let scene: THREE.Scene
@@ -28,6 +46,9 @@ let animationId: number
 let mouse = new THREE.Vector2(9999, 9999)
 let targetMouse = new THREE.Vector2(9999, 9999)
 let logoScale = 1
+const { theme } = useTheme()
+let tintMix = 0.0
+let tintColor = new THREE.Color(0.05, 0.05, 0.05)
 
 const imageSrc = getRemoteImg('/logo.webp')
 const threshold = 30
@@ -99,7 +120,11 @@ const createParticlesFromImage = (image: HTMLImageElement) => {
     uniforms: {
       time: { value: 0 },
       progress: { value: 0 },
-      mouse: { value: new THREE.Vector2(9999, 9999) }
+      mouse: { value: new THREE.Vector2(9999, 9999) },
+      tintMix: { value: tintMix },
+      tintColor: { value: tintColor },
+      gatherOffset: { value: gatherOffset },
+      gatherScale: { value: gatherScale }
     },
     vertexShader: `
       attribute float size;
@@ -107,27 +132,36 @@ const createParticlesFromImage = (image: HTMLImageElement) => {
       attribute vec3 logoPosition;
       attribute vec3 scatterPosition;
       varying vec3 vColor;
+      varying float vTwinkle;
       uniform float time;
       uniform float progress;
       uniform vec2 mouse;
+      uniform vec3 gatherOffset;
+      uniform float gatherScale;
 
       void main() {
         vColor = particleColor;
 
-        vec3 pos = mix(scatterPosition, logoPosition, progress);
+        vec3 pos = mix(scatterPosition, logoPosition * gatherScale + gatherOffset, progress);
 
         // 轻微流动
         pos.xy += vec2(
           sin(time * 0.2 + pos.y * 0.01) * 2.0,
           cos(time * 0.2 + pos.x * 0.01) * 2.0
         ) * (1.0 - progress);
+        pos.xy += vec2(
+          sin(time * 0.15 + pos.y * 0.005) * 6.0,
+          cos(time * 0.12 + pos.x * 0.005) * 6.0
+        ) * (1.0 - progress);
+        pos.z += sin(time * 0.1 + pos.x * 0.01 + pos.y * 0.01) * 8.0 * (1.0 - progress);
 
         // 鼠标排斥
         vec2 diff = pos.xy - mouse;
         float dist = length(diff);
         float force = smoothstep(200.0, 0.0, dist);
-        pos.xy += normalize(diff) * force * 25.0;
+        pos.xy += normalize(diff) * force * 25.0 * (1.0 - progress);
 
+        vTwinkle = 0.6 + 0.4 * sin(time * 0.6 + pos.x * 0.02 + pos.y * 0.02);
         vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
         float sizeBoost = mix(1.1, 1.0, progress);
         gl_PointSize = size * (420.0 / -mvPosition.z) * sizeBoost;
@@ -136,11 +170,17 @@ const createParticlesFromImage = (image: HTMLImageElement) => {
     `,
     fragmentShader: `
       varying vec3 vColor;
+      varying float vTwinkle;
+      uniform float tintMix;
+      uniform vec3 tintColor;
+      uniform float progress;
 
       void main() {
         float dist = distance(gl_PointCoord, vec2(0.5));
         float alpha = 1.0 - smoothstep(0.0, 0.55, dist);
-        gl_FragColor = vec4(vColor, alpha);
+        alpha *= mix(1.0, vTwinkle, 1.0 - progress);
+        vec3 tinted = mix(vColor, tintColor, tintMix);
+        gl_FragColor = vec4(tinted, alpha);
       }
     `,
     transparent: true,
@@ -199,11 +239,14 @@ const animate = () => {
 }
 
 const onMouseMove = (event: MouseEvent) => {
-  if (!containerRef.value) return
+  if (!containerRef.value || !camera) return
   const rect = containerRef.value.getBoundingClientRect()
-  const x = event.clientX - rect.left - rect.width / 2
-  const y = rect.height / 2 - (event.clientY - rect.top)
-  mouse.set(x, y)
+  const ndcX = ((event.clientX - rect.left) / rect.width) * 2 - 1
+  const ndcY = -((event.clientY - rect.top) / rect.height) * 2 + 1
+  const viewHeight = camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * 2
+  const viewWidth = viewHeight * camera.aspect
+  mouse.x = ndcX * (viewWidth / 2)
+  mouse.y = ndcY * (viewHeight / 2)
 }
 
 const onWindowResize = () => {
@@ -220,7 +263,22 @@ onMounted(() => {
   initScene()
   animate()
   window.addEventListener('resize', onWindowResize)
-  window.addEventListener('mousemove', onMouseMove)
+  if (renderer) {
+    renderer.domElement.addEventListener('mousemove', onMouseMove)
+  }
+
+  watch(
+    () => theme.value,
+    (value) => {
+      const isLight = value === 'light'
+      tintMix = isLight ? 0.85 : 0.0
+      if (particles && particles.material instanceof THREE.ShaderMaterial) {
+        particles.material.uniforms.tintMix.value = tintMix
+        particles.material.uniforms.tintColor.value = tintColor
+      }
+    },
+    { immediate: true }
+  )
 })
 
 onUnmounted(() => {
@@ -229,9 +287,9 @@ onUnmounted(() => {
   }
 
   window.removeEventListener('resize', onWindowResize)
-  window.removeEventListener('mousemove', onMouseMove)
 
   if (renderer) {
+    renderer.domElement.removeEventListener('mousemove', onMouseMove)
     renderer.dispose()
   }
   if (particles) {

@@ -20,6 +20,7 @@
           target="_blank"
           rel="nofollow external"
           class="tool-item"
+          :class="{ 'is-match': isMatch(link.name, link.link) }"
           v-for="link in tool.collection"
           :key="link.link"
           :href="link.link"
@@ -38,7 +39,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import tools from './tools.ts'
 import config from '~/config'
 import { getRemoteImg } from '~/utils/common'
@@ -58,6 +59,50 @@ const toNav = (index) => {
   curIndex.value = index
 }
 
+const route = useRoute()
+const searchTerm = computed(() => {
+  const raw = route.query.q
+  if (!raw) return ''
+  return Array.isArray(raw) ? raw[0]?.toString().trim() : raw.toString().trim()
+})
+
+const normalizedTerm = computed(() => searchTerm.value.toLowerCase())
+
+const isMatch = (name, link) => {
+  if (!normalizedTerm.value) return false
+  const nameMatch = name?.toLowerCase().includes(normalizedTerm.value)
+  const linkMatch = link?.toLowerCase().includes(normalizedTerm.value)
+  return Boolean(nameMatch || linkMatch)
+}
+
+const focusFirstMatch = async () => {
+  if (!normalizedTerm.value) return
+  await nextTick()
+  const match = document.querySelector('.tool-item.is-match')
+  if (match) {
+    match.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+}
+
+const updateActiveCategory = () => {
+  if (!normalizedTerm.value) return
+  const index = list.value.findIndex((tool) =>
+    tool.collection.some((item) => isMatch(item.name, item.link))
+  )
+  if (index >= 0) {
+    curIndex.value = index
+  }
+}
+
+watch(
+  () => searchTerm.value,
+  () => {
+    updateActiveCategory()
+    focusFirstMatch()
+  },
+  { immediate: true }
+)
+
 // 处理图片加载失败，显示默认图标
 const handleImageError = (event) => {
   const img = event.target
@@ -72,7 +117,7 @@ const handleImageError = (event) => {
 .page {
   margin: 0 auto;
   position: relative;
-  max-width: 1300px;
+  max-width: 1360px;
 }
 .navigation-tools {
   position: fixed;
@@ -94,6 +139,7 @@ const handleImageError = (event) => {
       padding: 2px 4px;
       transition: 0.1s;
       text-decoration: none;
+      white-space: nowrap;
       &:hover {
         background: #ff5a00;
         border-radius: 3px;
@@ -141,11 +187,16 @@ const handleImageError = (event) => {
       border-bottom: 0.5px solid $--color-border;
     }
     .tool-item {
-      width: 164px;
+      width: 180px;
       height: 42px;
       flex-shrink: 0;
       line-height: 42px;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 8px;
+      border-radius: 8px;
+      transition: color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       img {
         width: 20px;
         height: 20px;
@@ -156,6 +207,16 @@ const handleImageError = (event) => {
         font-size: 14px;
         color: $--color-text;
         vertical-align: middle;
+        white-space: nowrap;
+      }
+    }
+    .tool-item.is-match {
+      background: rgba(34, 211, 238, 0.15);
+      box-shadow:
+        0 0 0 1px rgba(34, 211, 238, 0.35),
+        0 0 18px rgba(34, 211, 238, 0.25);
+      .tool-name {
+        color: var(--app-accent-2);
       }
     }
   }
