@@ -1,5 +1,5 @@
 // Service Worker 版本
-const CACHE_VERSION = 'v1'
+const CACHE_VERSION = 'v2'
 const HTML_CACHE_NAME = `html-cache-${CACHE_VERSION}`
 const LOG_PREFIX = '[Service Worker]'
 
