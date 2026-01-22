@@ -1,5 +1,5 @@
 export const useTheme = () => {
-  const theme = useState<'dark' | 'light'>('theme', () => 'dark')
+  const theme = useState<'dark' | 'light'>('theme', () => 'light')
 
   const applyTheme = (value: 'dark' | 'light') => {
     theme.value = value
@@ -16,8 +16,7 @@ export const useTheme = () => {
   const initTheme = () => {
     if (!process.client) return
     const stored = localStorage.getItem('theme') as 'dark' | 'light' | null
-    const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches
-    applyTheme(stored || (prefersDark ? 'dark' : 'light'))
+    applyTheme(stored || 'light')
   }
 
   return {

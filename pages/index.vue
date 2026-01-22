@@ -48,7 +48,46 @@ const particleRef = ref<{
   setGatherScale: (scale: number) => void
 } | null>(null)
 const cardRef = ref<HTMLDivElement | null>(null)
-const { theme, toggleTheme } = useTheme()
+const { theme, applyTheme } = useTheme()
+const onToggleTheme = (event: MouseEvent) => {
+  const nextTheme = theme.value === 'dark' ? 'light' : 'dark'
+  if (typeof document === 'undefined' || !('startViewTransition' in document)) {
+    applyTheme(nextTheme)
+    return
+  }
+
+  const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  if (prefersReduced) {
+    applyTheme(nextTheme)
+    return
+  }
+
+  const target = event.currentTarget as HTMLElement | null
+  const rect = target?.getBoundingClientRect()
+  const x = rect ? rect.left + rect.width / 2 : window.innerWidth / 2
+  const y = rect ? rect.top + rect.height / 2 : window.innerHeight / 2
+  const maxRadius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))
+
+  const transition = document.startViewTransition(() => {
+    applyTheme(nextTheme)
+  })
+
+  transition.ready.then(() => {
+    document.documentElement.animate(
+      {
+        clipPath: [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${maxRadius}px at ${x}px ${y}px)`
+        ]
+      },
+      {
+        duration: 480,
+        easing: 'ease-in-out',
+        pseudoElement: '::view-transition-new(root)'
+      }
+    )
+  })
+}
 const searchValue = ref('')
 const router = useRouter()
 
@@ -67,8 +106,8 @@ const onButtonEnter = () => {
   particleRef.value.setGatherProgress(1)
   if (!cardRef.value) return
   const rect = cardRef.value.getBoundingClientRect()
-  const offsetX = rect.width  - 240
-  const offsetY = -rect.height  + 240
+  const offsetX = rect.width - 240
+  const offsetY = -rect.height + 240
   particleRef.value.setGatherOffset(offsetX, offsetY)
   particleRef.value.setGatherScale(0.5)
 }
@@ -100,7 +139,7 @@ onMounted(() => {
         <span class="dot dot-green"></span>
         <span class="branch">main</span>
       </div>
-      <button class="theme-toggle" type="button" @click="toggleTheme">
+      <button class="theme-toggle" type="button" @click="onToggleTheme">
         <span v-if="theme === 'dark'">🌙</span>
         <span v-else>☀️</span>
         <span class="toggle-text">{{ theme === 'dark' ? 'Dark' : 'Light' }}</span>
@@ -122,6 +161,7 @@ onMounted(() => {
     <Transition name="slide-up">
       <div class="content" v-if="showContent">
         <div class="ide-shell" ref="cardRef">
+          <!-- 粒子效果 -->
           <div class="card-particles">
             <LogoParticles ref="particleRef" />
           </div>
@@ -350,7 +390,7 @@ onMounted(() => {
   overflow: hidden;
 }
 
-:global(html[data-theme='light'] .home-page .ide-shell) {
+html[data-theme='light'] .home-page .ide-shell {
   background: rgba(255, 255, 255, 0.88);
   border-color: rgba(59, 130, 246, 0.12);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
