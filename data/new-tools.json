@@ -1,0 +1,68 @@
+[
+  {
+    "domain": "ahrefs.com",
+    "name": "ahrefs.com",
+    "link": "https://ahrefs.com/backlink-checker/?input=https%3A%2F%2Fwww.clipzap.ai%2F&mode=subdomains",
+    "icon": "https://ahrefs.com/favicon.ico"
+  },
+  {
+    "domain": "moz.com",
+    "name": "moz.com",
+    "link": "https://moz.com/link-explorer",
+    "icon": "https://moz.com/favicon.ico"
+  },
+  {
+    "domain": "collectui.com",
+    "name": "collectui.com",
+    "link": "https://collectui.com/challenges/sign-up",
+    "icon": "https://collectui.com/img/favicon.ico"
+  },
+  {
+    "domain": "cloudconvert.com",
+    "name": "cloudconvert.com",
+    "link": "https://cloudconvert.com/mov-to-gif",
+    "icon": "https://cloudconvert.com/favicon.ico"
+  },
+  {
+    "domain": "ezgif.com",
+    "name": "ezgif.com",
+    "link": "https://ezgif.com/video-to-gif",
+    "icon": "https://ezgif.com/favicon.png"
+  },
+  {
+    "domain": "app.neilpatel.com",
+    "name": "app.neilpatel.com",
+    "link": "https://app.neilpatel.com/en/traffic_analyzer/overview?domain=https%3A%2F%2Fcrushon.ai&lang=en&locId=2702&mode=domain",
+    "icon": "https://app.neilpatel.com/favicon.ico"
+  },
+  {
+    "domain": "skywork.ai",
+    "name": "skywork.ai",
+    "link": "https://skywork.ai/project/1980553300111826944?from=recent_project",
+    "icon": "https://skywork.ai/favicon.ico"
+  },
+  {
+    "domain": "ai-bot.cn",
+    "name": "ai-bot.cn",
+    "link": "https://ai-bot.cn/ai-ui-generation-tools/",
+    "icon": "https://ai-bot.cn/favicon.ico"
+  },
+  {
+    "domain": "iloveimg.com",
+    "name": "iloveimg.com",
+    "link": "https://www.iloveimg.com/zh-cn",
+    "icon": "https://www.iloveimg.com/favicon.ico"
+  },
+  {
+    "domain": "audiomass.co",
+    "name": "audiomass.co",
+    "link": "https://audiomass.co/",
+    "icon": "https://audiomass.co/favicon.ico"
+  },
+  {
+    "domain": "devtool.tech",
+    "name": "devtool.tech",
+    "link": "https://devtool.tech/",
+    "icon": "https://devtool.tech/favicon.ico"
+  }
+]
