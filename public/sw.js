@@ -1,5 +1,5 @@
 // Service Worker 版本
-const CACHE_VERSION = 'v2'
+const CACHE_VERSION = 'v3'
 const HTML_CACHE_NAME = `html-cache-${CACHE_VERSION}`
 const LOG_PREFIX = '[Service Worker]'
 
@@ -7,8 +7,12 @@ const LOG_PREFIX = '[Service Worker]'
 const ENABLE_SWR = true
 console.log('===========================', LOG_PREFIX);
 
+// 开关：是否启用 HTML 缓存策略（false 时完全走网络请求）
+const ENABLE_HTML_CACHE = false
+
 // 开关：Push 后是否预加载 HTML
 const ENABLE_PRELOAD_AFTER_PUSH = true
+
 
 const SCOPE_PATH = new URL(self.registration.scope).pathname
 const HTML_PAGES = [
@@ -42,6 +46,7 @@ self.addEventListener('activate', (event) => {
 
 // HTML 缓存策略
 self.addEventListener('fetch', (event) => {
+  if (!ENABLE_HTML_CACHE) return
   const url = new URL(event.request.url)
   const isSameOrigin = url.origin === self.location.origin
   const isHtmlRequest =
@@ -121,7 +126,7 @@ self.addEventListener('push', (event) => {
   }
 
   let cacheUpdatePromise = Promise.resolve()
-  if (pushData && pushData.data?.action === 'FORCE_UPDATE_HTML') {
+  if (ENABLE_HTML_CACHE && pushData && pushData.data?.action === 'FORCE_UPDATE_HTML') {
     console.log(`${LOG_PREFIX} push action FORCE_UPDATE_HTML`)
     cacheUpdatePromise = handleForceUpdateHTML(pushData)
   }
@@ -140,6 +145,7 @@ self.addEventListener('push', (event) => {
 })
 
 async function handleForceUpdateHTML(pushData) {
+  if (!ENABLE_HTML_CACHE) return null
   const targetUrl = pushData.url || `${SCOPE_PATH}index.html`
   console.log(`${LOG_PREFIX} force update html`, targetUrl)
   try {
