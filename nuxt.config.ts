@@ -65,6 +65,13 @@ export default defineNuxtConfig({
       ]
     }
   },
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL || '',
+      supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY || '',
+      vapidPublicKey: process.env.NUXT_PUBLIC_VAPID_PUBLIC_KEY || ''
+    }
+  },
   experimental: {
     payloadExtraction: false //提取使用nuxt generate生成的页面的有效负载
   },

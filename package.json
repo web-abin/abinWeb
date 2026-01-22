@@ -39,6 +39,7 @@
     "pnpm": "10.19.0"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
     "three": "^0.182.0"
   }
 }

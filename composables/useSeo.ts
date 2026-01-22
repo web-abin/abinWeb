@@ -13,7 +13,7 @@ export interface SeoOptions {
 export const useSeo = (options: SeoOptions = {}) => {
   const route = useRoute()
   const isDev = process.env.NODE_ENV === 'development'
-  const baseURL = isDev ? 'http://localhost:3000' : 'https://web-abin.github.io'
+  const baseURL = isDev ? 'http://localhost:3000' : import.meta.env.VITE_APP_WEB_BASEURL || '/'
   const siteURL = `${baseURL}${isDev ? '' : '/abinWeb'}`
   
   // 获取当前页面的完整URL
@@ -71,7 +71,7 @@ export const useSeo = (options: SeoOptions = {}) => {
     script: [
       {
         type: 'application/ld+json',
-        children: JSON.stringify({
+        innerHTML: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: siteConfig.title || '前端助手',
@@ -81,7 +81,7 @@ export const useSeo = (options: SeoOptions = {}) => {
       },
       {
         type: 'application/ld+json',
-        children: JSON.stringify({
+        innerHTML: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': type.value === 'article' ? 'Article' : 'WebPage',
           name: title.value,

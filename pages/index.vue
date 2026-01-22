@@ -7,8 +7,7 @@ definePageMeta({
 
 // SEO优化
 const isDev = process.env.NODE_ENV === 'development'
-const baseURL = isDev ? 'http://localhost:3000' : 'https://web-abin.github.io'
-const siteURL = `${baseURL}${isDev ? '' : '/abinWeb'}`
+const siteURL = isDev ? '' : import.meta.env.VITE_APP_WEB_BASEURL
 
 useHead({
   title: config.title,
@@ -91,7 +90,7 @@ onMounted(() => {
       <div class="content" v-if="showContent">
         <div class="title-section">
           <h1 class="main-title">
-            <span class="title-line">前端导航</span>
+            <span class="title-line">前端助手</span>
             <span class="title-line highlight">超好用</span>
           </h1>
           <p class="subtitle">面向前端开发工程师的资源分享平台</p>
