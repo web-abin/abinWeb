@@ -2,10 +2,10 @@
 const CACHE_VERSION = 'v3'
 const HTML_CACHE_NAME = `html-cache-${CACHE_VERSION}`
 const LOG_PREFIX = '[Service Worker]'
+console.log('====================', LOG_PREFIX, "====================");
 
 // 开关：是否开启 SWR (Stale-While-Revalidate)
 const ENABLE_SWR = true
-console.log('===========================', LOG_PREFIX);
 
 // 开关：是否启用 HTML 缓存策略（false 时完全走网络请求）
 const ENABLE_HTML_CACHE = true
