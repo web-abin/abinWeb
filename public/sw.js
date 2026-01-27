@@ -8,7 +8,7 @@ const ENABLE_SWR = true
 console.log('===========================', LOG_PREFIX);
 
 // 开关：是否启用 HTML 缓存策略（false 时完全走网络请求）
-const ENABLE_HTML_CACHE = false
+const ENABLE_HTML_CACHE = true
 
 // 开关：Push 后是否预加载 HTML
 const ENABLE_PRELOAD_AFTER_PUSH = true
