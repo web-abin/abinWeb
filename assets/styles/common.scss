@@ -20,7 +20,7 @@ body {
 }
 #__nuxt::-webkit-scrollbar-thumb {
   width: 6px;
-  background: rgba(59, 130, 246, 0.4);
+  background: var(--app-scrollbar);
   border-radius: 8px;
 }
 

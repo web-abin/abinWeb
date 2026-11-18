@@ -82,7 +82,7 @@
 
 新增题目：在 `data/interview/questions.json` 添加条目，保证 `id` 唯一且只含小写字母、数字和连字符，`track` 与 `category` 对应 `data/interview/catalog.ts` 中的配置。新增方向、分类或参考来源时同步修改 `catalog.ts`。
 
-题目通过 `/interview/<id>/` 访问。`nuxt generate` 会从目录链接发现所有题目并输出独立 HTML，适配 GitHub Pages 的 `/abinWeb/` 子路径。`build/index.js` 会将新题目自动加入部署产物的静态 sitemap。发布仍沿用现有流程：
+题目通过 `/interview/<id>/` 访问。`nuxt generate` 会从目录链接发现所有题目并输出独立 HTML，适配 GitHub Pages 的 `/abinWeb/` 子路径。`build/index.js` 会将新题目自动加入部署产物的静态 sitemap。`public/.nojekyll` 会复制到发布根目录，避免 Jekyll 过滤下划线开头的构建资源。发布仍沿用现有流程：
 
 ```sh
 pnpm install --frozen-lockfile

@@ -58,6 +58,8 @@ body {
 }
 
 :root {
+  color-scheme: light;
+  --app-scrollbar: rgba(59, 130, 246, 0.4);
   --app-bg: #f6f8fb;
   --app-fg: #0f172a;
   --app-muted: #64748b;
@@ -70,15 +72,17 @@ body {
 }
 
 html[data-theme='dark'] {
-  --app-bg: #0b1018;
-  --app-fg: #e2e8f0;
-  --app-muted: #94a3b8;
-  --app-panel: #0f172a;
-  --app-border: rgba(148, 163, 184, 0.16);
-  --app-accent: #3b82f6;
-  --app-accent-2: #22d3ee;
-  --app-accent-3: #38bdf8;
-  --app-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
+  --app-bg: #111111;
+  --app-fg: #ededed;
+  --app-muted: #a3a3a3;
+  --app-panel: #1a1a1a;
+  --app-border: rgba(255, 255, 255, 0.12);
+  --app-accent: #d4d4d4;
+  --app-accent-2: #fafafa;
+  --app-accent-3: #a3a3a3;
+  --app-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  --app-scrollbar: rgba(255, 255, 255, 0.24);
+  color-scheme: dark;
 }
 
 ::view-transition-old(root),

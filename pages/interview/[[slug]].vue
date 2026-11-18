@@ -87,8 +87,8 @@ async function copyLink() {
 </template>
 
 <style scoped>
-.interview { --interview-muted: #526176; --interview-link: #1d4ed8; --interview-soft: #edf3fc; display: grid; grid-template-columns: 292px minmax(0, 1fr); align-items: start; max-width: 1440px; margin: 0 auto; min-height: calc(100vh - 140px); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; letter-spacing: 0; color: var(--app-fg); }
-:global(html[data-theme='dark'] .interview) { --interview-muted: #a9b7cb; --interview-link: #8cbbff; --interview-soft: #192b45; }
+.interview { --interview-muted: #526176; --interview-link: #1d4ed8; --interview-soft: #edf3fc; display: grid; grid-template-columns: 292px minmax(0, 1fr); align-items: start; max-width: 1440px; margin: 0 auto; min-height: calc(100dvh - 110px); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; letter-spacing: 0; color: var(--app-fg); }
+:global(html[data-theme='dark'] .interview) { --interview-muted: #a3a3a3; --interview-link: #ededed; --interview-soft: #2b2b2b; }
 .interview a, .interview button, .interview input, .interview select, .interview summary { -webkit-tap-highlight-color: transparent; }
 .interview :is(a, button, input, select, summary):focus-visible { outline: 2px solid var(--interview-link); outline-offset: 4px; }
 .interview ::selection { background: var(--interview-soft); color: var(--interview-link); }
@@ -113,7 +113,7 @@ summary span { float: right; font-variant-numeric: tabular-nums; font-size: 12px
 .question-link:hover { color: var(--interview-link); background: var(--interview-soft); }
 .question-link[aria-current='page'] { background: var(--interview-soft); color: var(--interview-link); font-weight: 600; }
 .catalog-note { font-size: 11px; color: var(--interview-muted); line-height: 1.8; border-top: 1px solid var(--app-border); margin-top: 28px; padding-top: 18px; }
-.reading-area { background: var(--app-panel); min-height: calc(100vh - 140px); border-radius: 12px; padding: 30px clamp(24px, 4.5vw, 72px) 48px; min-width: 0; }
+.reading-area { background: var(--app-panel); min-height: calc(100dvh - 110px); border-radius: 12px; padding: 30px clamp(24px, 4.5vw, 72px) 48px; min-width: 0; }
 .question-article, .overview { max-width: 780px; margin: 0 auto; overflow-wrap: anywhere; }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; line-height: 1.7; color: var(--interview-muted); margin-bottom: 30px; }
 .breadcrumbs a { color: var(--interview-link); }

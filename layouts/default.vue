@@ -32,7 +32,7 @@
     <Home />
   </NuxtLink>
 
-  <footer>
+  <footer v-if="!$route.path.startsWith('/interview')">
     <div class="site-links">
       <a
         href="https://github.com/web-abin/abinWeb"
