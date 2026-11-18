@@ -74,4 +74,37 @@
     <priority>0.6</priority>
   </url>
 
+  <url><loc>https://web-abin.github.io/abinWeb/interview/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-vs-workflow/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-loop/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-planning/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-multi/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/tool-contract/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/tool-idempotency/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/mcp-basics/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/tool-approval/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/rag-pipeline/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/rag-eval/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-memory/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/context-budget/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-evaluation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-injection/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-recovery/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/agent-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-definition/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-opportunity/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-ux/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-stream/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-model/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-prompt/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-rag-ft/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-output/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-coding/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-repo-context/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-review/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-agent-work/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-release/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-privacy/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-monitor/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://web-abin.github.io/abinWeb/interview/native-system-design/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

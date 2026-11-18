@@ -1,5 +1,5 @@
 // Service Worker 版本
-const CACHE_VERSION = 'v3'
+const CACHE_VERSION = 'v4'
 const HTML_CACHE_NAME = `html-cache-${CACHE_VERSION}`
 const LOG_PREFIX = '[Service Worker]'
 console.log('====================', LOG_PREFIX, "====================");
