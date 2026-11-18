@@ -7,12 +7,13 @@
       <span class="branch">main</span>
     </div>
 
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="主导航">
       <NuxtLink class="navigation-link" to="/tools">工具</NuxtLink>
       <NuxtLink class="navigation-link" to="/notes">文档</NuxtLink>
       <NuxtLink class="navigation-link" to="/games">游戏</NuxtLink>
       <NuxtLink class="navigation-link" to="/relax">摸鱼</NuxtLink>
       <NuxtLink class="navigation-link" to="/demos">样例</NuxtLink>
+      <NuxtLink class="navigation-link" :class="{ 'router-link-active': $route.path.startsWith('/interview') }" to="/interview">面试题</NuxtLink>
       <NuxtLink class="navigation-link" to="/comment">留言</NuxtLink>
     </nav>
 
@@ -315,12 +316,26 @@ footer {
   }
 }
 
+@media (max-width: 900px) {
+  .header {
+    padding: 0 12px;
+    gap: 8px;
+    .topbar-left { display: none; }
+    .nav-links { min-width: 0; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+    .navigation-link { padding: 14px 10px; font-size: 14px; }
+  }
+  .theme-toggle { flex-shrink: 0; padding: 6px 9px; }
+  .toggle-text { display: none; }
+}
+
 @media (max-width: 480px) {
   header {
     bottom: 0;
     top: unset !important;
     box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.05);
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    padding-bottom: env(safe-area-inset-bottom);
+    height: calc($--header-height + env(safe-area-inset-bottom));
   }
 
   .navigation-link-pc {
@@ -332,7 +347,7 @@ footer {
 
   .content {
     padding-top: 20px;
-    padding-bottom: calc($--header-height + 20px);
+    padding-bottom: calc($--header-height + 20px + env(safe-area-inset-bottom));
     padding-left: $--padding-side;
 
     &::-webkit-scrollbar {

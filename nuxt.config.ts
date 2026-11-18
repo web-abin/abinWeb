@@ -19,7 +19,7 @@ export default defineNuxtConfig({
         {
           name: 'viewport',
           content:
-            'width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
+            'width=device-width,initial-scale=1'
         },
         { name: 'description', content: config.SEO_description },
         { name: 'keywords', content: config.SEO_keywords },
@@ -71,6 +71,9 @@ export default defineNuxtConfig({
       supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY || '',
       vapidPublicKey: process.env.NUXT_PUBLIC_VAPID_PUBLIC_KEY || ''
     }
+  },
+  nitro: {
+    prerender: { routes: ['/interview/', '/sitemap.xml'] }
   },
   experimental: {
     payloadExtraction: false //提取使用nuxt generate生成的页面的有效负载

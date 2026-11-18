@@ -207,6 +207,10 @@ onMounted(() => {
                 <span class="feature-icon">🎨</span>
                 <span class="feature-text">摸鱼</span>
               </NuxtLink>
+              <NuxtLink to="/interview" class="feature-item">
+                <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4zM13 7a3 3 0 0 1 3-3h5v15h-4a4 4 0 0 0-4 2"/></svg>
+                <span class="feature-text">面试题</span>
+              </NuxtLink>
             </div>
           </div>
         </div>

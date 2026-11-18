@@ -1,4 +1,4 @@
-import config from '~/config'
+import questions from '~/data/interview/questions.json'
 
 export default defineEventHandler((event) => {
   const isDev = process.env.NODE_ENV === 'development'
@@ -9,6 +9,8 @@ export default defineEventHandler((event) => {
   
   // 定义所有页面
   const pages = [
+    { loc: `${siteURL}/interview/`, lastmod: '2026-11-18', changefreq: 'weekly', priority: '0.9' },
+    ...questions.map(q => ({ loc: `${siteURL}/interview/${q.id}/`, lastmod: '2026-11-18', changefreq: 'monthly', priority: '0.8' })),
     {
       loc: siteURL,
       lastmod: currentDate,
